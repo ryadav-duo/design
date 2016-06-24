@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}: Duo Design Standards</title>
+  {% block styles %}
+    <link rel="stylesheet" href="styles/base.css">
+  {% endblock %}
+</head>
+<body>
+  {{ content|markdown }}
+</body>
+</html>
