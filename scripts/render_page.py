@@ -33,6 +33,7 @@ def main(input_path, base_path):
     print(template.render(
         content=page.content,
         title=page.get('title'),
+        active_page=page.get('active_page'),
     ))
 
 
