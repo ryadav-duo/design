@@ -1,6 +1,7 @@
 ---
 title: Pattern library
 template: child-example.html
+active_page: logos
 ---
 
 ## Logo

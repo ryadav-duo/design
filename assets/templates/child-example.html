@@ -1,7 +1,7 @@
-{% extends "child-longform.html" %}
+{% extends "base.html" %}
 
-{% block content %}
   <div class="l-col-3 c-example-render">
+    {% block content %}
       {{ content|markdown }}
+    {% endblock content %}
   </div>
-{% endblock content %}
