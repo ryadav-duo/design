@@ -31,3 +31,19 @@ function ready(fa) {
 }
 
 ready(fn);
+=======
+// Global vairabled defined here
+var codeSnippets = document.querySelectorAll('codehilite')
+
+
+// Functions go here
+
+//////// Create tabs for code snippets
+function snippetTabs() {
+  // internal Variables
+  var snippetContainer = document.querySelector('c-example-code')
+  Array.prototype.forEach.call(codeSnippets, function(codeSnippet) {
+
+  }
+
+}
