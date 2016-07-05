@@ -4,9 +4,7 @@ template: child-example.html
 active_page: logos
 ---
 
-## Logo
----
-
+<div class="base-header">
 <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320">
   <g>
   <path class="logo-path logo-path-d" d="M0,0 L0,150 L320,150 C320,75 235,0 160,0 L0,0 Z"></path>
@@ -21,3 +19,4 @@ active_page: logos
   <path class="logo-path logo-path-o logo-path-translucent" d="M0,170 L320,170 C320,245 250,320 160,320 C70,320 0,245 0,170 Z"></path>
   </g>
 </svg>
+</div>

@@ -1,7 +1,6 @@
 {% extends "base.html" %}
-
-  <div class="l-col-3 c-example-render">
-    {% block content %}
-      {{ content|markdown }}
-    {% endblock content %}
-  </div>
+  {% block content %}
+    <div class="col3-6 c-example-render">
+    {{ content|markdown }}
+    </div>
+  {% endblock content %}

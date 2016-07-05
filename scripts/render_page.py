@@ -34,6 +34,12 @@ def main(input_path, base_path):
         content=page.content,
         title=page.get('title'),
         active_page=page.get('active_page'),
+        snippet_title=page.get('snippet_title'),
+        notes=page.get('notes'),
+        # variables I created for colors
+        color_name=page.get('color_name'),
+        color_hex=page.get('color_hex'),
+        color_var=page.get('color_var'),
     ))
 
 

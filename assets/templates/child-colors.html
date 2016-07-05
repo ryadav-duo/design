@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% if snippet_title %}
+<section class="col-6-6">
+  <h2>{{ snippet_title }}</h2>
+  <hr />
+</section>
+{% endif %}
+  {% block content %}
+      <section class="l-d-col-2">
+        <div class="c-color-chip {{ color_var }}">
+          <h4>{{ color_name }}</h4>
+          <p>{{ color_hex }}</p>
+          <p>${{ color_var }}</p>
+        </div>
+        {% if notes %}
+          <h3>Notes</h3>
+          <p>{{ notes }}</p>
+        {% endif %}
+      </section>
+      {{ content|markdown }}
+  {% endblock content %}

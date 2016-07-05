@@ -64,6 +64,50 @@ h1 {
 .l-marg--pattern-header {
   margin: 40px 0;
 }
+.l-marg-bump-right {
+  @media (min-width: 64rem) {
+    margin-left: 50%;
+  }
+}
+
+// breakpoints map
+$breakpoints: (
+  m: 30rem,
+  d: 64rem,
+);
+
+// media query mixin
+@mixin break($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// number of columns variable
+$items: 6;
+
+// grid container
+.l-grid {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 1rem;
+}
+
+.l-stretch {
+  align-items: stretch;
+}
+
+// loop over the breakpoints
+@each $key, $value in $breakpoints {
+  @for $i from 1 through $items {
+    .l-#{$key}-col-#{$i} {
+      flex: 0 0 100%;
+      @include break($key) {
+        flex: 0 0 #{$i / $items * 100%};
+      }
+    }
+  }
+}
 
 // 4 Organisms
 
@@ -86,7 +130,55 @@ h1 {
   }
 }
 
-// 5 Admin stuff I've had to grab
+// 5 Components
+// 5.1 toggle nav
+.c-example-code {
+  position: relative;
+  border-radius: 3px;
+  border: 2px solid map-get($gray, light);
+  .codehilite {
+    // position: absolute;
+    background-color: white;
+    width: 100%;
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+[class*=".nav--"] {
+  margin-left: 0;
+
+  li {
+    list-style: none;
+
+  }
+}
+.nav--snippet-toggle {
+  border-bottom: 2px solid map-get($gray, light);
+  padding: 0 0 0 17.5px;
+  margin: 0;
+  li {
+    display: inline-block;
+    margin: 0;
+
+    &.current {
+      border-top: 6px solid $duo-green;
+    }
+    a {
+      display: block;
+      color: currentColor;
+      text-decoration: none;
+      padding: 17.5px 9px;
+      &:active, &:focus {
+        outline:none;
+      }
+    }
+  }
+}
+
+
+// 6 Admin stuff I've had to grab
 
 .centering-container {
   width: 100vw;
