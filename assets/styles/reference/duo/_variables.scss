@@ -8,10 +8,10 @@ $duo-green-lightest: lighten($duo-green, 40%);
 $duo-blue: #405665;
 $duo-blue-dark: #2f424f;
 $duo-blue-darkest: darken($duo-blue-dark, 10%);
-$duo-blue-light: lighten($duo-blue, 20%);
+$duo-blue-light: #2798D4;
 
 // Shortcuts for common and standard monochromes
-$grey-darker: #333;
+$grey-darker: #444;
 $grey-dark: #666;
 $grey: #888;
 $grey-light: #e1e1e1;
@@ -22,7 +22,7 @@ $white: white;
 $success-green: $duo-green;
 $success-green-light: $duo-green-light;
 $success-green-lightest: lighten($duo-green, 40%);
-$error-red: #a13639;
+$error-red: #D4423B;
 $error-red-light: lighten($error-red, 20%);
 $error-red-lightest: lighten($error-red, 40%);
 $error-red-dark: darken($error-red, 40%);
@@ -48,7 +48,7 @@ $grey-lighter-low-res: #f2f2f2;
 $base-border-color-low-res: #dadada;
 
 // Heading fonts and colors
-$heading-color: $grey-dark;
+$heading-color: $grey-darker;
 $heading-font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 $icon-font-family: "Duo Admin Icons";
@@ -84,6 +84,3 @@ $policy-builder-warning-border-yellow: #F5E1BF;
 $policy-builder-help-text-grey: #757E81;
 $policy-builder-help-text-background-grey: #F8F8F8;
 $policy-builder-help-text-border-grey: #D0DCE2
-
-
-
