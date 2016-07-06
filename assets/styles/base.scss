@@ -43,11 +43,16 @@ $border-radius : 3px;
 // 2 Global Element styles
 body {
   background: map-get($gray, bkg);
-  color: map-get($gray, mid);
+  color: map-get($gray, dark);
   font-family: $base-font-family;
 }
 h1 {
 
+}
+
+// 2.1 Atom
+.bold {
+  font-weight: 500;
 }
 
 // 3 Layout & Grid for pattern libray
@@ -64,11 +69,17 @@ h1 {
 .l-marg--pattern-header {
   margin: 40px 0;
 }
-.l-marg-bump-right {
+.l-marg-right-50 {
   @media (min-width: 64rem) {
-    margin-left: 50%;
+    margin-left: calc(50% + 0.5rem);
   }
 }
+.l-pad-l-50 {
+  @media (min-width: 64rem) {
+    padding-left: calc(50% + 0.5rem);
+  }
+}
+
 
 // breakpoints map
 $breakpoints: (
@@ -174,6 +185,61 @@ $items: 6;
         outline:none;
       }
     }
+  }
+}
+
+.c-color-chip {
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin: 40px 0 20px;
+  padding: 16px;
+  list-style: none;
+  dt, dd {
+    margin: 0;
+    line-height: 1.8em;
+  }
+  dt {
+    font-weight: bold;
+  }
+  dd {
+    font-weight: 100;
+  }
+  &.duo-green {
+    background: $duo-green;
+  }
+  &.duo-blue {
+    background: $duo-blue;
+  }
+  &.duo-blue-light {
+    background: $duo-blue-light;
+  }
+  &.gray-dark {
+    background: map-get($gray, dark);
+  }
+  &.gray {
+    background: map-get($gray, mid);
+  }
+  &.gray-light {
+    background: map-get($gray, light);
+    color: map-get($gray, dark);
+  }
+  &.red-alert {
+    background: $error-red;
+  }
+  &.orange-warning {
+    background: $warning-orange;
+  }
+}
+.c--notes {
+  margin-top: 20px;
+}
+.c--snippet-title {
+  margin-bottom: 40px;
+  margin-right: 0;
+  hr {
+    border-color: map-get($gray, light);
+    border-style: solid;
   }
 }
 

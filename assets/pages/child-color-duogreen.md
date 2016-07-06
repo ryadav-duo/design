@@ -1,5 +1,6 @@
 ---
 title: Color
+snippet_title: Color
 template: child-colors.html
 active_page: color
 color_name: Duo Green
