@@ -43,7 +43,7 @@ $border-radius : 3px;
 // 2 Global Element styles
 body {
   background: map-get($gray, bkg);
-  color: map-get($gray, mid);
+  color: map-get($gray, dark);
   font-family: $base-font-family;
 }
 h1 {
@@ -52,7 +52,7 @@ h1 {
 
 // 2.1 Atom
 .bold {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 // 3 Layout & Grid for pattern libray
@@ -232,7 +232,7 @@ $items: 6;
   }
 }
 .c--notes {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .c--snippet-title {
   margin-bottom: 40px;

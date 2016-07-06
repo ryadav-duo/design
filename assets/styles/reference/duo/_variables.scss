@@ -11,7 +11,7 @@ $duo-blue-darkest: darken($duo-blue-dark, 10%);
 $duo-blue-light: #2798D4;
 
 // Shortcuts for common and standard monochromes
-$grey-darker: #333;
+$grey-darker: #444;
 $grey-dark: #666;
 $grey: #888;
 $grey-light: #e1e1e1;
@@ -48,7 +48,7 @@ $grey-lighter-low-res: #f2f2f2;
 $base-border-color-low-res: #dadada;
 
 // Heading fonts and colors
-$heading-color: $grey-dark;
+$heading-color: $grey-darker;
 $heading-font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 $icon-font-family: "Duo Admin Icons";
