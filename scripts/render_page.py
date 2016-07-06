@@ -33,9 +33,13 @@ def main(input_path, base_path):
     print(template.render(
         content=page.content,
         title=page.get('title'),
+        # for toggling the active state of the menu
         active_page=page.get('active_page'),
+        # variable for internal header
         snippet_title=page.get('snippet_title'),
+        # variables for two col layout with code and Example
         notes=page.get('notes'),
+        example=page.get('example'),
         # variables I created for colors
         color_name=page.get('color_name'),
         color_hex=page.get('color_hex'),
