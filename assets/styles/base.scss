@@ -1506,23 +1506,33 @@ input[name="port"] {
 }
 
 // browser icon from image styles
-.browser-icon-chrome {
+.browser-icon-chrome:before {
     display: inline-block !important;
     background-position: 0px -48px !important;
 }
-.browser-icon-firefox {
+.browser-icon-firefox:before {
     display: inline-block !important;
     background-position: 0px -32px !important;
 }
-.browser-icon-safari {
+.browser-icon-safari:before {
     display: inline-block !important;
     background-position: 0px -16px !important;
 }
-.browser-icon {
+.browser-icon:before {
     background-image: url("../images/browsers.png") !important;
     display: none;
 }
-.access-icon {
+.plugin-icon.plugin-icon-flash:before {
+    background-position: 0px 0px !important;
+}
+
+.plugin-icon.plugin-icon-java:before {
+    background-position: 0px -16px !important;
+}
+.plugin-icon:before {
+    background-image: url("../images/plugins.png") !important;
+}
+.access-icon:before {
     background-size: 16px !important;
     display: inline-block;
     overflow: hidden;
@@ -1531,4 +1541,37 @@ input[name="port"] {
     height: 16px !important;
     margin-right: 4px;
     vertical-align: -3px !important;
+    content: ' ';
+}
+.flag-US:before {
+    background-position: -5px -5829px !important;
+}
+.flag:before {
+    display: inline-block;
+    overflow: hidden;
+    width: 16px !important;
+    height: 16px !important;
+    background-image: url("../images/flags.png") !important;
+    background-size: 26px 6760px !important;
+    background-repeat: no-repeat !important;
+    background-position: -5px -6713px;
+    vertical-align: -3px;
+    margin-right: 3px;
+    content: ' ';
+}
+.result-cell.result-failure:before {
+    background-image: url("../images/failure.png");
+}
+.result-cell.result-success:before {
+    background-image: url("../images/success.png");
+}
+.result-cell:before {
+    width: 16px !important;
+    height: 16px !important;
+    background-size: 16px !important;
+    vertical-align: -3px;
+    margin-right: 4px;
+    line-height: 12px;
+    content: ' ';
+    display: inline-block;
 }
