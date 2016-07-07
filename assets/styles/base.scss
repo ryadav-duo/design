@@ -276,19 +276,19 @@ $items: 6;
     }
     p {
       width: 6vw;
-      height: 2vw;
+      // height: 2vw;
       margin: 0 auto;
-      overflow: hidden;
-      &:after {
-        content: "...";
-      }
-      &:hover {
-        width: 100%;
-        height: auto;
-        &:after {
-          content: "";
-        }
-      }
+      // overflow: hidden;
+      // &:after {
+      //   content: "...";
+      // }
+      // &:hover {
+      //   width: 100%;
+      //   height: auto;
+      //   &:after {
+      //     content: "";
+      //   }
+      // }
     }
   }
 }
@@ -1471,4 +1471,64 @@ input[name="port"] {
         padding: 0.25em;
         color: fade-out($duo-blue, 0.5);
     }
+}
+// added for pagination styles
+.paginate_button.current {
+    background-color: #63B246 !important;
+    color: white !important;
+}
+.paginate_button {
+    transition-property: color, background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+.paginate_button, .paginate_active {
+    border: none;
+    border-radius: 50% !important;
+    cursor: pointer;
+    display: inline-block;
+    height: 30px;
+    line-height: 20px;
+    margin: 3px;
+    padding: 6px;
+    text-align: center;
+    width: 30px;
+}
+// validation icons from ss library
+.validation.valid:before {
+    content: '✓';
+    color: #e1e1e1;
+}
+
+.validation:before {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+// browser icon from image styles
+.browser-icon-chrome {
+    display: inline-block !important;
+    background-position: 0px -48px !important;
+}
+.browser-icon-firefox {
+    display: inline-block !important;
+    background-position: 0px -32px !important;
+}
+.browser-icon-safari {
+    display: inline-block !important;
+    background-position: 0px -16px !important;
+}
+.browser-icon {
+    background-image: url("../images/browsers.png") !important;
+    display: none;
+}
+.access-icon {
+    background-size: 16px !important;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 16px;
+    width: 16px !important;
+    height: 16px !important;
+    margin-right: 4px;
+    vertical-align: -3px !important;
 }
