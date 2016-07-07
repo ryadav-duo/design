@@ -242,6 +242,56 @@ $items: 6;
     border-style: solid;
   }
 }
+.c--icons {
+  list-style: none;
+  text-align: center;
+  margin:0;
+  padding: 0;
+  li {
+    margin-bottom: 40px;
+    i {
+      display: block;
+      width: 6vw;
+      height: 6vw;
+      background: map-get($gray, light);
+      border-radius: $border-radius;
+      margin: 0 auto 20px;
+      &:before {
+        text-align: center;
+        font-size: 2vw;
+        line-height: 3em;
+        height: 100%;
+        width: 100%
+      }
+      &.status-circle {
+        border-radius: 50%;
+        background: white;
+      }
+      &.filled-green {
+        background-color: $duo-green;
+      }
+      &.filled-red {
+        background-color: $error-red;
+      }
+    }
+    p {
+      width: 6vw;
+      height: 2vw;
+      margin: 0 auto;
+      overflow: hidden;
+      &:after {
+        content: "...";
+      }
+      &:hover {
+        width: 100%;
+        height: auto;
+        &:after {
+          content: "";
+        }
+      }
+    }
+  }
+}
 
 
 // 6 Admin stuff I've had to grab

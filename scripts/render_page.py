@@ -37,6 +37,7 @@ def main(input_path, base_path):
         active_page=page.get('active_page'),
         # variable for internal header
         snippet_title=page.get('snippet_title'),
+        snippet_descriptor=page.get('snippet_descriptor'),
         # variables for two col layout with code and Example
         notes=page.get('notes'),
         example=page.get('example'),
@@ -44,6 +45,8 @@ def main(input_path, base_path):
         color_name=page.get('color_name'),
         color_hex=page.get('color_hex'),
         color_var=page.get('color_var'),
+        # variable for icon Array
+        icons=page.get('icons'),
     ))
 
 

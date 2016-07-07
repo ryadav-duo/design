@@ -63,7 +63,9 @@ function snippetTabs (containers) {
 // Put things here that you want to executed when the document is ready
 var fa = function() {
   var codeContainers = document.querySelectorAll('.c-example-code');
-  snippetTabs(codeContainers);
+  if (codeContainers.length >= 1) {
+    snippetTabs(codeContainers);
+  }
 }
 
 // You know wait for page to be ready to do stuff

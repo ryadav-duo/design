@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+  {% block content %}
+    {% if snippet_title %}
+    <section class="col-6-6 c--snippet-title">
+      <h2>{{ snippet_title }}</h2>
+      {% if snippet_descriptor %}
+        <p class="box-header-info">{{snippet_descriptor}}</p>
+      {% endif %}
+      <hr />
+    </section>
+    {% endif %}
+    {% if icons %}
+      <ul class="l-grid c--icons">
+      {% for icon in icons %}
+        <li class="l-d-col-1">
+          <i class="{{ icon }}"></i>
+          <p>class="{{ icon }}"</p>
+        </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endblock content %}
