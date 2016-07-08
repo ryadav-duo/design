@@ -85,6 +85,7 @@ h1 {
 $breakpoints: (
   m: 30rem,
   d: 64rem,
+  lg: 94rem,
 );
 
 // media query mixin
@@ -112,7 +113,7 @@ $items: 6;
 @each $key, $value in $breakpoints {
   @for $i from 1 through $items {
     .l-#{$key}-col-#{$i} {
-      flex: 0 0 100%;
+      // flex: 0 0 100%;
       @include break($key) {
         flex: 0 0 #{$i / $items * 100%};
       }
@@ -251,15 +252,15 @@ $items: 6;
     margin-bottom: 40px;
     i {
       display: block;
-      width: 6vw;
-      height: 6vw;
+      width: 8vw;
+      height: 8vw;
       background: map-get($gray, light);
       border-radius: $border-radius;
       margin: 0 auto 20px;
       &:before {
         text-align: center;
-        font-size: 2vw;
-        line-height: 3em;
+        font-size: 3vw;
+        line-height: 2.75em;
         height: 100%;
         width: 100%
       }
@@ -275,7 +276,7 @@ $items: 6;
       }
     }
     p {
-      width: 6vw;
+      width: 12vw;
       // height: 2vw;
       margin: 0 auto;
       // overflow: hidden;
@@ -1508,15 +1509,23 @@ input[name="port"] {
 // browser icon from image styles
 .browser-icon-chrome:before {
     display: inline-block !important;
-    background-position: 0px -48px !important;
+    background-position: 0px -5.94vw !important;
 }
 .browser-icon-firefox:before {
     display: inline-block !important;
-    background-position: 0px -32px !important;
+    background-position: 0px -4vw !important;
 }
 .browser-icon-safari:before {
     display: inline-block !important;
-    background-position: 0px -16px !important;
+    background-position: 0px -2vw !important;
+}
+.browser-icon-ie:before {
+    display: inline-block !important;
+    background-position: 0px -12vw !important;
+}
+.browser-icon-opera:before {
+    display: inline-block !important;
+    background-position: 0px -10vw !important;
 }
 .browser-icon:before {
     background-image: url("../images/browsers.png") !important;
@@ -1527,36 +1536,36 @@ input[name="port"] {
 }
 
 .plugin-icon.plugin-icon-java:before {
-    background-position: 0px -16px !important;
+    background-position: 0px -18vw !important;
 }
 .plugin-icon:before {
     background-image: url("../images/plugins.png") !important;
 }
 .access-icon:before {
-    background-size: 16px !important;
+    background-size: 2vw !important;
     display: inline-block;
     overflow: hidden;
     font-size: 16px;
-    width: 16px !important;
-    height: 16px !important;
-    margin-right: 4px;
-    vertical-align: -3px !important;
+    width: 2vw !important;
+    height: 2vw !important;
+    margin-right: 0;
+    margin-top: 3vw;
     content: ' ';
 }
 .flag-US:before {
-    background-position: -5px -5829px !important;
+    background-position: -0.5vw -782vw !important;
 }
 .flag:before {
     display: inline-block;
     overflow: hidden;
-    width: 16px !important;
-    height: 16px !important;
+    width: 4vw !important;
+    height: 5vw !important;
     background-image: url("../images/flags.png") !important;
-    background-size: 26px 6760px !important;
+    background-size: 5vw 907vw !important;
     background-repeat: no-repeat !important;
     background-position: -5px -6713px;
     vertical-align: -3px;
-    margin-right: 3px;
+    margin-top: 3vw;
     content: ' ';
 }
 .result-cell.result-failure:before {
@@ -1566,12 +1575,11 @@ input[name="port"] {
     background-image: url("../images/success.png");
 }
 .result-cell:before {
-    width: 16px !important;
-    height: 16px !important;
-    background-size: 16px !important;
-    vertical-align: -3px;
-    margin-right: 4px;
+    width: 2vw !important;
+    height: 2vw !important;
+    background-size: 2vw !important;
     line-height: 12px;
+    margin-top: 3vw;
     content: ' ';
     display: inline-block;
 }

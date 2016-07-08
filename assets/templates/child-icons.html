@@ -12,9 +12,11 @@
     {% if icons %}
       <ul class="l-grid c--icons">
       {% for icon in icons %}
-        <li class="l-d-col-1">
+        <li class="l-lg-col-1 l-d-col-2 l-m-col-2">
           <i class="{{ icon }}"></i>
-          <p>class="{{ icon }}"</p>
+          <p>class=
+            "<code class="box-header-info">{{ icon }}</code>"
+          </p>
         </li>
       {% endfor %}
       </ul>

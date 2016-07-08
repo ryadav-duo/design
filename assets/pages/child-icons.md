@@ -84,6 +84,8 @@ icons : [
   access-icon browser-icon browser-icon-safari,
   access-icon browser-icon browser-icon-chrome,
   access-icon browser-icon browser-icon-firefox,
+  access-icon browser-icon browser-icon-ie,
+  access-icon browser-icon browser-icon-opera,
   validation valid ss-standard,
   badge badge-inactive,
   ]
