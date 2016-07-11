@@ -250,13 +250,15 @@ $items: 6;
   padding: 0;
   li {
     margin-bottom: 40px;
-    i {
+    position: relative;
+    > i {
       display: block;
       width: 8vw;
       height: 8vw;
       background: map-get($gray, light);
       border-radius: $border-radius;
       margin: 0 auto 20px;
+      position: relative;
       &:before {
         text-align: center;
         font-size: 3vw;
@@ -274,26 +276,60 @@ $items: 6;
       &.filled-red {
         background-color: $error-red;
       }
+      &:hover {
+        &:before {
+          opacity: 0.3;
+          z-index: 200;
+        }
+        &~.c--hidden--example {
+          display:block;
+        }
+      }
     }
     p {
       width: 12vw;
-      // height: 2vw;
       margin: 0 auto;
-      // overflow: hidden;
-      // &:after {
-      //   content: "...";
-      // }
-      // &:hover {
-      //   width: 100%;
-      //   height: auto;
-      //   &:after {
-      //     content: "";
-      //   }
-      // }
     }
   }
 }
-
+[class*="c--hidden"] {
+  display: none;
+}
+.c--hidden--example {
+  position: absolute;
+  top: 0;
+  left: 7.1vw;
+  width: 8vw;
+  height: 8vw;
+  z-index: 2000;
+  margin:0;
+  overflow: visible;
+  white-space: normal;
+}
+.c--click--key {
+  border:0;
+  display: inline;
+  width: auto;
+  padding:0;
+  text-align: center;
+  overflow: visible;
+  white-space: normal;
+  &:hover,
+  &:active,
+  &:focus {
+    transition-property: color,border-color,box-shadow;
+    transition-duration: .2s;
+    transition-timing-function: ease;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 3px;
+    color: #666;
+    padding: .5rem;
+    width: 100%;
+    outline: none;
+    display: block;
+  }
+}
 
 // 6 Admin stuff I've had to grab
 
@@ -1498,12 +1534,28 @@ input[name="port"] {
 // validation icons from ss library
 .validation.valid:before {
     content: '✓';
-    color: #e1e1e1;
 }
 
 .validation:before {
     display: inline-block;
     vertical-align: middle;
+}
+// table sorting class
+[class^="sorting"] {
+  font-style: normal;
+  font-size: 2vw;
+}
+.sorting::before {
+    content: "";
+    font-family: 'Duo Admin Icons';
+}
+.sorting_asc::before {
+    content: "";
+    font-family: 'Duo Admin Icons';
+}
+.sorting_desc::before {
+    content: "";
+    font-family: 'Duo Admin Icons';
 }
 
 // browser icon from image styles
@@ -1559,7 +1611,7 @@ input[name="port"] {
     display: inline-block;
     overflow: hidden;
     width: 4vw !important;
-    height: 5vw !important;
+    height: 3vw !important;
     background-image: url("../images/flags.png") !important;
     background-size: 5vw 907vw !important;
     background-repeat: no-repeat !important;
@@ -1574,6 +1626,9 @@ input[name="port"] {
 .result-cell.result-success:before {
     background-image: url("../images/success.png");
 }
+.result-cell.result-fraud:before {
+    background-image: url("../images/fraud.png");
+}
 .result-cell:before {
     width: 2vw !important;
     height: 2vw !important;
@@ -1582,4 +1637,65 @@ input[name="port"] {
     margin-top: 3vw;
     content: ' ';
     display: inline-block;
+}
+// OS circular dots
+.insight-key.ios:before {
+    background-color: #08C0E5;
+}
+.insight-key.windows:before, .insight-key.insight-access-key.ios:before {
+    background-color: #BEDA38;
+}
+.insight-key.android:before {
+    background-color: #1E896F;
+}
+.insight-key.blackberry:before, .insight-key.insight-access-key.android:before {
+    background-color: #FDDF19;
+}
+.insight-key.other:before {
+    background-color: #333;
+}
+.insight-key.positive:before, .insight-key.up-to-date:before {
+    background-color: #63B246;
+}
+.insight-key.negative:before, .insight-key.enabled:before, .insight-key.out-of-date:before {
+    background-color: #a13639;
+}
+.insight-key.unknown:before {
+    background-color: #888;
+}
+.insight-key.unsupported:before, .insight-key.uninstalled:before, .insight-key.disabled:before {
+    background-color: black;
+}
+
+.insight-key:before {
+    border-radius: 50%;
+    content: '';
+    display: inline-block;
+    margin-top: 3vw;
+    height: 2vw !important;
+    width: 2vw !important;
+}
+// Insight icons for devices
+.insight-security-chart-passcode:before {
+    content: '\e01a';
+}
+.insight-security-chart-rooted:before {
+    content: '\e009';
+}
+.insight-security-chart-touchid:before {
+    content: '\e1a7';
+}
+.insight-security-chart-encryption:before {
+    content: '\e19f';
+}
+
+.insight-security-chart-wrapper:before {
+
+    font-family: "Duo Admin Icons";
+    font-size: 3vw;
+    font-style: normal;
+}
+// SS standard Icons
+.ss-alert:before, .ss-alert.right:after {
+    content: '⚠';
 }
