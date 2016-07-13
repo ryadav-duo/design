@@ -292,42 +292,34 @@ $items: 6;
     }
   }
 }
-[class*="c--hidden"] {
-  display: none;
-}
+// [class*="c--hidden"] {
+//   display: none;
+// }
 .c--hidden--example {
   position: absolute;
   top: 0;
-  left: 7.1vw;
-  width: 8vw;
+  display: block;
+  // left: 7.1vw;
+  // width: 8vw;
+  left: 10%;
+  width: 80%;
   height: 8vw;
   z-index: 2000;
-  margin:0;
+  margin: 0;
+  padding-top: 1.5vw;
   overflow: visible;
   white-space: normal;
-}
-.c--click--key {
-  border:0;
-  display: inline;
-  width: auto;
-  padding:0;
-  text-align: center;
-  overflow: visible;
-  white-space: normal;
-  &:hover,
-  &:active,
-  &:focus {
-    transition-property: color,border-color,box-shadow;
-    transition-duration: .2s;
-    transition-timing-function: ease;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 3px;
-    color: #666;
-    padding: .5rem;
-    width: 100%;
-    outline: none;
-    display: block;
+  transition-property: color,border-color,box-shadow, width, padding, opacity;
+  transition-duration: .2s;
+  transition-timing-function: ease;
+  opacity: 0;
+  &:hover {
+    background-color: rgba(255,255,255,0.6);
+    opacity: 1;
+  }
+  textarea {
+    text-align: center;
+    height: auto;
   }
 }
 

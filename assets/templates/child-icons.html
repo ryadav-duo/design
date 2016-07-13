@@ -14,9 +14,9 @@
       {% for icon in icons %}
         <li class="l-lg-col-1 l-d-col-2 l-m-col-2">
           <i class="{{ icon }}"></i>
-          <pre class="c--hidden--example codehilite"><span class="p">&lt;</span><span class="nt">i class="{{ icon }}"</span><span class="p">&gt;&lt;</span><span class="nt">/</span><span class="nt">i</span><span class="p">&gt;</span></pre>
+          <pre class="c--hidden--example codehilite"><textarea readonly="read-only" class="click_to_select_all"><i class="{{ icon }}"></i></textarea></pre>
           <p>class=<br />
-            "<input readonly="readonly" class="c--click--key click_to_select_all" value="{{ icon }}" />"
+            "{{ icon }}"
           </p>
         </li>
       {% endfor %}
