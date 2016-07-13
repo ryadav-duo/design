@@ -5,7 +5,7 @@ active_page: navigation
 snippet_title: Navigation
 notes: 'A green background denotes the current page users are on. Green links below page titles also tell what page the user is currently on. Pages with a numberical amount of things get a number floated to the right (ie: 100 users = Users 100) For new pages we use the "new" tag floated to the right.'
 example: '<nav class="navigation">
-  <a class="current">
+  <a class="">
     <i class="icon-monitor"></i>
     <span class="label">Dashboard</span>
   </a>
@@ -25,11 +25,31 @@ example: '<nav class="navigation">
     <span class="label">Applications</span>
     <span class="count">316</span>
   </a>
-  <a class="">
+  <a class="current">
     <i class="icon-users"></i>
     <span class="label">Users</span>
     <span class="count">534</span>
   </a>
+  <div class="subnav">
+    <a class="">
+    <span class="label">New User</span>
+    </a>
+    <a class="">
+    <span class="label">Pending Enrollments</span>
+    </a>
+    <a class="">
+    <span class="label">Bulk Enroll Users</span>
+    </a>
+    <a class="">
+    <span class="label">Import Users</span>
+    </a>
+    <a class="">
+    <span class="label">Directory Sync</span>
+    </a>
+    <a class="">
+    <span class="label">Bypass Codes</span>
+    </a>
+  </div>
   <a class="">
     <i class="icon-endpoints"></i>
     <span class="label">Endpoints</span>
@@ -82,7 +102,7 @@ example: '<nav class="navigation">
 
 ```html
   <nav class="navigation">
-    <a href="/" class="current">
+    <a href="/" class="">
       <i class="icon-monitor"></i>
       <span class="label">Dashboard</span>
     </a>
@@ -102,11 +122,31 @@ example: '<nav class="navigation">
       <span class="label">Applications</span>
       <span class="count">316</span>
     </a>
-    <a href="/users" class="">
+    <a href="/users" class="current">
       <i class="icon-users"></i>
       <span class="label">Users</span>
       <span class="count">534</span>
     </a>
+    <div class="subnav">
+      <a href="/users/add" class="">
+      <span class="label">New User</span>
+      </a>
+      <a href="/users/enroll-codes" class="">
+      <span class="label">Pending Enrollments</span>
+      </a>
+      <a href="/users/bulkenroll" class="">
+      <span class="label">Bulk Enroll Users</span>
+      </a>
+      <a href="/users/import" class="">
+      <span class="label">Import Users</span>
+      </a>
+      <a href="/users/directorysync" class="">
+      <span class="label">Directory Sync</span>
+      </a>
+      <a href="/users/bypasscodes" class="">
+      <span class="label">Bypass Codes</span>
+      </a>
+    </div>
     <a href="/endpoints" class="">
       <i class="icon-endpoints"></i>
       <span class="label">Endpoints</span>
