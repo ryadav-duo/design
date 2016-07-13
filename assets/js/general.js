@@ -19,14 +19,14 @@ function makeActive(els, activeClass, index) {
 //  Create switchable code tabs
 function snippetTabs(containers) {
   Array.prototype.forEach.call(containers, function(container) {
-    const codeSnippets = container.querySelectorAll('.codehilite');
+    var codeSnippets = container.querySelectorAll('.codehilite');
 
-    const numOfTabs = codeSnippets.length;
-    let i = 0;
+    var numOfTabs = codeSnippets.length;
+    var i = 0;
 
     //  create toggle navigation
-    const toggleNav = container.querySelector('ul');
-    const toggleNavItem = toggleNav.querySelectorAll('li');
+    var toggleNav = container.querySelector('ul');
+    var toggleNavItem = toggleNav.querySelectorAll('li');
     toggleNav.classList.add('nav--snippet-toggle');
 
     //  Function to call to toggle classes
@@ -53,14 +53,23 @@ function snippetTabs(containers) {
     while (i < numOfTabs);
   });
 }
+// Make text in input field highlight
+function selectALlCodes() {
+  var codeSelects = document.querySelectorAll('.click_to_select_all');
+  Array.prototype.forEach.call(codeSelects, function(codeSelect) {
+    codeSelect.addEventListener('click',function(){this.select()})
+  })
+}
+
 
 
 // Put things here that you want to executed when the document is ready
-const fa = function() {
-  const codeContainers = document.querySelectorAll('.c-example-code');
+var fa = function() {
+  var codeContainers = document.querySelectorAll('.c-example-code');
   if (codeContainers.length >= 1) {
     snippetTabs(codeContainers);
   }
+  selectALlCodes();
 };
 
 // You know wait for page to be ready to do stuff
