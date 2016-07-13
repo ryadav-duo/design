@@ -1691,3 +1691,24 @@ input[name="port"] {
 .ss-alert:before, .ss-alert.right:after {
     content: '⚠';
 }
+// styles for frame navigation
+.help-links {
+  margin-top: 12px;
+  margin-left: 3px;
+    a {
+        display: block;
+
+            padding-bottom: 6px;
+            line-height: 1.4;
+    }
+
+    .help-url {
+        text-decoration: none;
+
+        span {
+            text-decoration: underline;
+        }
+    }
+
+
+}
