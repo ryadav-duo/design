@@ -85,6 +85,7 @@ h1 {
 $breakpoints: (
   m: 30rem,
   d: 64rem,
+  lg: 94rem,
 );
 
 // media query mixin
@@ -112,7 +113,7 @@ $items: 6;
 @each $key, $value in $breakpoints {
   @for $i from 1 through $items {
     .l-#{$key}-col-#{$i} {
-      flex: 0 0 100%;
+      // flex: 0 0 100%;
       @include break($key) {
         flex: 0 0 #{$i / $items * 100%};
       }
@@ -242,7 +243,85 @@ $items: 6;
     border-style: solid;
   }
 }
-
+.c--icons {
+  list-style: none;
+  text-align: center;
+  margin:0;
+  padding: 0;
+  li {
+    margin-bottom: 40px;
+    position: relative;
+    > i {
+      display: block;
+      width: 8vw;
+      height: 8vw;
+      background: map-get($gray, light);
+      border-radius: $border-radius;
+      margin: 0 auto 20px;
+      position: relative;
+      &:before {
+        text-align: center;
+        font-size: 3vw;
+        line-height: 2.75em;
+        height: 100%;
+        width: 100%
+      }
+      &.status-circle {
+        border-radius: 50%;
+        background: white;
+      }
+      &.filled-green {
+        background-color: $duo-green;
+      }
+      &.filled-red {
+        background-color: $error-red;
+      }
+      &:hover {
+        &:before {
+          opacity: 0.3;
+          z-index: 200;
+        }
+        &~.c--hidden--example {
+          display:block;
+        }
+      }
+    }
+    p {
+      width: 12vw;
+      margin: 0 auto;
+    }
+  }
+}
+// [class*="c--hidden"] {
+//   display: none;
+// }
+.c--hidden--example {
+  position: absolute;
+  top: 0;
+  display: block;
+  // left: 7.1vw;
+  // width: 8vw;
+  left: 10%;
+  width: 80%;
+  height: 8vw;
+  z-index: 2000;
+  margin: 0;
+  padding-top: 1.5vw;
+  overflow: visible;
+  white-space: normal;
+  transition-property: color,border-color,box-shadow, width, padding, opacity;
+  transition-duration: .2s;
+  transition-timing-function: ease;
+  opacity: 0;
+  &:hover {
+    background-color: rgba(255,255,255,0.6);
+    opacity: 1;
+  }
+  textarea {
+    text-align: center;
+    height: auto;
+  }
+}
 
 // 6 Admin stuff I've had to grab
 
@@ -648,7 +727,7 @@ $base-sidebar-width: 200px;
 }
 
 .base-sidebar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
@@ -1420,5 +1499,314 @@ input[name="port"] {
         text-align: right;
         padding: 0.25em;
         color: fade-out($duo-blue, 0.5);
+    }
+}
+// added for pagination styles
+.paginate_button.current {
+    background-color: #63B246 !important;
+    color: white !important;
+}
+.paginate_button {
+    transition-property: color, background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+.paginate_button, .paginate_active {
+    border: none;
+    border-radius: 50% !important;
+    cursor: pointer;
+    display: inline-block;
+    height: 30px;
+    line-height: 20px;
+    margin: 3px;
+    padding: 6px;
+    text-align: center;
+    width: 30px;
+}
+// validation icons from ss library
+.validation.valid:before {
+    content: '✓';
+}
+
+.validation:before {
+    display: inline-block;
+    vertical-align: middle;
+}
+// table sorting class
+[class^="sorting"] {
+  font-style: normal;
+  font-size: 2vw;
+}
+.sorting::before {
+    content: "";
+    font-family: 'Duo Admin Icons';
+}
+.sorting_asc::before {
+    content: "";
+    font-family: 'Duo Admin Icons';
+}
+.sorting_desc::before {
+    content: "";
+    font-family: 'Duo Admin Icons';
+}
+
+// browser icon from image styles
+.browser-icon-chrome:before {
+    display: inline-block !important;
+    background-position: 0px -5.94vw !important;
+}
+.browser-icon-firefox:before {
+    display: inline-block !important;
+    background-position: 0px -4vw !important;
+}
+.browser-icon-safari:before {
+    display: inline-block !important;
+    background-position: 0px -2vw !important;
+}
+.browser-icon-ie:before {
+    display: inline-block !important;
+    background-position: 0px -12vw !important;
+}
+.browser-icon-opera:before {
+    display: inline-block !important;
+    background-position: 0px -10vw !important;
+}
+.browser-icon:before {
+    background-image: url("../images/browsers.png") !important;
+    display: none;
+}
+.plugin-icon.plugin-icon-flash:before {
+    background-position: 0px 0px !important;
+}
+
+.plugin-icon.plugin-icon-java:before {
+    background-position: 0px -18vw !important;
+}
+.plugin-icon:before {
+    background-image: url("../images/plugins.png") !important;
+}
+.access-icon:before {
+    background-size: 2vw !important;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 16px;
+    width: 2vw !important;
+    height: 2vw !important;
+    margin-right: 0;
+    margin-top: 3vw;
+    content: ' ';
+}
+.flag-US:before {
+    background-position: -0.5vw -782vw !important;
+}
+.flag:before {
+    display: inline-block;
+    overflow: hidden;
+    width: 4vw !important;
+    height: 3vw !important;
+    background-image: url("../images/flags.png") !important;
+    background-size: 5vw 907vw !important;
+    background-repeat: no-repeat !important;
+    background-position: -5px -6713px;
+    vertical-align: -3px;
+    margin-top: 3vw;
+    content: ' ';
+}
+.result-cell.result-failure:before {
+    background-image: url("../images/failure.png");
+}
+.result-cell.result-success:before {
+    background-image: url("../images/success.png");
+}
+.result-cell.result-fraud:before {
+    background-image: url("../images/fraud.png");
+}
+.result-cell:before {
+    width: 2vw !important;
+    height: 2vw !important;
+    background-size: 2vw !important;
+    line-height: 12px;
+    margin-top: 3vw;
+    content: ' ';
+    display: inline-block;
+}
+// OS circular dots
+.insight-key.ios:before {
+    background-color: #08C0E5;
+}
+.insight-key.windows:before, .insight-key.insight-access-key.ios:before {
+    background-color: #BEDA38;
+}
+.insight-key.android:before {
+    background-color: #1E896F;
+}
+.insight-key.blackberry:before, .insight-key.insight-access-key.android:before {
+    background-color: #FDDF19;
+}
+.insight-key.other:before {
+    background-color: #333;
+}
+.insight-key.positive:before, .insight-key.up-to-date:before {
+    background-color: #63B246;
+}
+.insight-key.negative:before, .insight-key.enabled:before, .insight-key.out-of-date:before {
+    background-color: #a13639;
+}
+.insight-key.unknown:before {
+    background-color: #888;
+}
+.insight-key.unsupported:before, .insight-key.uninstalled:before, .insight-key.disabled:before {
+    background-color: black;
+}
+
+.insight-key:before {
+    border-radius: 50%;
+    content: '';
+    display: inline-block;
+    margin-top: 3vw;
+    height: 2vw !important;
+    width: 2vw !important;
+}
+// Insight icons for devices
+.insight-security-chart-passcode:before {
+    content: '\e01a';
+}
+.insight-security-chart-rooted:before {
+    content: '\e009';
+}
+.insight-security-chart-touchid:before {
+    content: '\e1a7';
+}
+.insight-security-chart-encryption:before {
+    content: '\e19f';
+}
+
+.insight-security-chart-wrapper:before {
+
+    font-family: "Duo Admin Icons";
+    font-size: 3vw;
+    font-style: normal;
+}
+// SS standard Icons
+.ss-alert:before, .ss-alert.right:after {
+    content: '⚠';
+}
+// styles for frame navigation
+.help-links {
+  margin-top: 12px;
+  margin-left: 3px;
+    a {
+        display: block;
+
+            padding-bottom: 6px;
+            line-height: 1.4;
+    }
+
+    .help-url {
+        text-decoration: none;
+
+        span {
+            text-decoration: underline;
+        }
+    }
+
+
+}
+.help-sidebar {
+  .branding-link {
+      margin-top: 1em;
+      font-size: 11px;
+      color: #666;
+      text-decoration: none;
+  }
+}
+// Code for dropdown
+button-style.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-toggle {
+    @include transition(background-color);
+
+    border-radius: $border-radius;
+    height: 40px;
+    padding: 0 8px;
+
+    &:not(.disabled):not(.button) {
+        cursor: pointer;
+        &:hover {
+            background-color: $grey-light;
+
+            @include low-res {
+                background-color: $grey-light-low-res;
+            }
+        }
+    }
+
+    &.dropdown-toggle-green {
+        background-color: $duo-green;
+        color: white;
+
+        &:hover {
+            background-color: $duo-green-dark;
+        }
+    }
+
+    img, span {
+        height: calc(100% - 8px);
+        line-height: calc(100% - 8px);
+        vertical-align: middle;
+        margin: 4px;
+    }
+
+    img {
+        border-radius: $border-radius;
+    }
+
+    span:first-child {
+        line-height: 40px;
+    }
+    i[class^="icon"] {
+        position: relative;
+    }
+    .icon-chevron-thick-down {
+        top: 2px;
+        left: -2px;
+    }
+}
+
+.dropdown-content {
+    background: $grey-darker;
+    border-radius: $border-radius;
+    display: none;
+    padding: 16px;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 10;
+
+    &::before {
+        position: absolute;
+        content: ' ';
+        width: 8px;
+        height: 8px;
+        border: 8px solid transparent;
+        border-bottom-color: $grey-darker;
+        bottom: 100%;
+        right: 8px;
+    }
+
+    a {
+        @include transition(color);
+
+        display: block;
+        padding: 4px 8px;
+        color: $grey-light;
+        text-decoration: none;
+
+        &:hover {
+            color: white;
+        }
     }
 }

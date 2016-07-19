@@ -37,6 +37,11 @@ gulp.task('scripts', () => (
     .pipe(gulp.dest('dist/js'))
 ))
 
+gulp.task('images', () => (
+   gulp.src('assets/images/*.*')
+    .pipe(gulp.dest('dist/images'))
+))
 
 
-gulp.task('build', ['pages', 'styles', 'scripts'])
+
+gulp.task('build', ['pages', 'styles', 'scripts', 'images'])
