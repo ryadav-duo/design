@@ -61,6 +61,52 @@ function selectALlCodes() {
   })
 }
 
+function findDropdowns() {
+  var dropObjects = document.querySelectorAll('.dropdown');
+  Array.prototype.forEach.call(dropObjects, function(dropObject) {
+    dropObject.addEventListener('click', function(e) {
+      // if there's an href or something on the toggle don't follow it
+      e.preventDefault(this);
+      // contain the click so the body doesn't react to it and close the dropdown
+      e.stopPropagation();
+      toggleDropdown(this)
+
+    }
+    , false);
+    })
+}
+
+//Dropdown code brought over from Application// clicking a dropdown's toggle should, yep, toggle it
+function toggleDropdown(e) {
+
+  //  closeAllDropdowns(e);
+   var thisDropDown = e.querySelector('.dropdown-content');
+     thisDropDown.style.display = (thisDropDown.style.display != 'block' ? 'block' : '' );
+       // clicks inside a dropdown's content should not escape
+     thisDropDown.addEventListener('click', function(e) {
+       e.stopPropagation(this);
+     });
+
+       // clicking on links inside dropdown will cause dropdown to close
+       var dropDownMenuItems = e.querySelectorAll('.dropdown-content > a');
+       Array.prototype.forEach.call(dropDownMenuItems, function(dropDownItem) {
+         dropDownItem.addEventListener('click', function(e) {
+             this.parentElement.style.display = '';
+         })
+       })
+      document.addEventListener('click', function() {
+        closeAllDropdowns();
+      })
+}
+function closeAllDropdowns(e) {
+  var allDropdowns = document
+      // close all dropdowns
+      .querySelectorAll('.dropdown');
+
+      Array.prototype.forEach.call(allDropdowns, function(dropdown) {
+            dropdown.querySelector('.dropdown-content').style.display = 'none';
+          })
+}
 
 
 // Put things here that you want to executed when the document is ready
@@ -70,6 +116,7 @@ var fa = function() {
     snippetTabs(codeContainers);
   }
   selectALlCodes();
+  findDropdowns();
 };
 
 // You know wait for page to be ready to do stuff
