@@ -1712,3 +1712,101 @@ input[name="port"] {
 
 
 }
+.help-sidebar {
+  .branding-link {
+      margin-top: 1em;
+      font-size: 11px;
+      color: #666;
+      text-decoration: none;
+  }
+}
+// Code for dropdown
+button-style.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-toggle {
+    @include transition(background-color);
+
+    border-radius: $border-radius;
+    height: 40px;
+    padding: 0 8px;
+
+    &:not(.disabled):not(.button) {
+        cursor: pointer;
+        &:hover {
+            background-color: $grey-light;
+
+            @include low-res {
+                background-color: $grey-light-low-res;
+            }
+        }
+    }
+
+    &.dropdown-toggle-green {
+        background-color: $duo-green;
+        color: white;
+
+        &:hover {
+            background-color: $duo-green-dark;
+        }
+    }
+
+    img, span {
+        height: calc(100% - 8px);
+        line-height: calc(100% - 8px);
+        vertical-align: middle;
+        margin: 4px;
+    }
+
+    img {
+        border-radius: $border-radius;
+    }
+
+    span:first-child {
+        line-height: 40px;
+    }
+    i[class^="icon"] {
+        position: relative;
+    }
+    .icon-chevron-thick-down {
+        top: 2px;
+        left: -2px;
+    }
+}
+
+.dropdown-content {
+    background: $grey-darker;
+    border-radius: $border-radius;
+    display: none;
+    padding: 16px;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 10;
+
+    &::before {
+        position: absolute;
+        content: ' ';
+        width: 8px;
+        height: 8px;
+        border: 8px solid transparent;
+        border-bottom-color: $grey-darker;
+        bottom: 100%;
+        right: 8px;
+    }
+
+    a {
+        @include transition(color);
+
+        display: block;
+        padding: 4px 8px;
+        color: $grey-light;
+        text-decoration: none;
+
+        &:hover {
+            color: white;
+        }
+    }
+}
