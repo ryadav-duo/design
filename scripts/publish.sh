@@ -31,7 +31,7 @@ else
     ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
     ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
     eval `ssh-agent -s`
-    ssh-add deploy_key
+    ssh-add ../deploy_key
 
     echo "Committing changes..."
     git commit -m "Rebuilt website from ${TRAVIS_COMMIT}"
