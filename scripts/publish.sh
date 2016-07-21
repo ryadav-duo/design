@@ -1,14 +1,16 @@
 #!/bin/bash
-set -e
 
 # Grab the gh-pages branch
+echo "Checking out the gh-pages branch..."
 git fetch origin gh-pages:refs/remotes/origin/gh-pages
 git branch gh-pages origin/gh-pages
 
 # Check out the gh-pages branch as a sibling directory of the repo
+echo "Copying the gh-pags branch..."
 git worktree add ../website gh-pages
 
 # Replace current website content with newly built website content
+echo "Replacing the website's content..."
 cp -r dist/* ../website
 cd ../website
 git rm -r --cached .
