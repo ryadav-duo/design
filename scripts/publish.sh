@@ -1,3 +1,6 @@
+#!/bin/bash
+set -e
+
 # Grab the gh-pages branch
 git fetch origin gh-pages:refs/remotes/origin/gh-pages
 git branch gh-pages origin/gh-pages
