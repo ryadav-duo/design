@@ -8,6 +8,8 @@ addons:
       - git-core
     packages:
       - git
+before_install:
+  - openssl aes-256-cbc -K $encrypted_a90f6951030a_key -iv $encrypted_a90f6951030a_iv -in deploy_key.enc -out deploy_key -d
 install:
   - npm install
   - pip install --user -r requirements.txt
@@ -16,4 +18,4 @@ script:
   - npm run publish
 env:
   global:
-    secure: OhHsHpdv2dU6HMQ89E/1RSbPn5/hQLiPR53I0eGnzZzbbbS3nAfMp+kcoS7xGh7WkPvIde6C7KK84/lG7SnbXzwtQBw9iUrqz0koxs0OcVvgnY5q3jCXXP0/dKZb1Eq6fJoJf43x5pze8dp4333GBNl1tPEsdvDbLIJ9DpgshDkvQ9EUlE2pvLMazmMveszFiO9tMpADz0tRxOzuczdvZcIdPlg/mNQNIpl/RqKyYxCK4WNplM/3KbSpIpFo7d63xA8Zg25sV8dgQkJcZ0h9spyqC9AAu252Falj9JWQ8/3SESiI2V9S0pvlG5IJJIK/qRxPRhl4YqntHpZOs5B30b8ijhSHLOYBuSNEex9TN2hZSuX7G7PSQjnoyRTrmK5aurbk8GkrgasASXrksbXIRzqmRY4K/rxXBv1KoKy5jQoYpox1YcDfoIGvIn8A9mbyFj7EPp5X7Te4/GyJmbBz7Md2p6NcEnJ57jNyfngXNu1CZLL607Px3IHCc+p4uXwSaqdMhgc720diN04q89IrMtuxceQfZYc+Bz02w8DaXPMdkiRJoSpxw/8SS+/N1X/mJg94PV6+eVQ7vtRO87V+lXvX39Qe2P57hkD0TfvAEkDF8LQWMbfdOmoCi1mJ0RcI+5KA7PqBOsbH5p/7GF3Qy9sLyuOCOT3facWKQDNQ5uA=
+    - ENCRYPTION_LABEL: "a90f6951030a"
