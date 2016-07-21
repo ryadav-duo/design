@@ -17,9 +17,21 @@ if [ $? -eq 0 ]
 then
     echo "Website is already up to date..."
 else
-    echo "Committing changes..."
+    echo "Configuring git..."
     git config --global user.name "Travis CI"
     git config --global user.email "bspoon+travis@duo.com"
+    ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
+    ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
+    ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
+    ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
+    eval `ssh-agent -s`
+    ssh-add deploy_key
+
+    echo "Committing changes..."
     git commit -m "Rebuilt website from ${TRAVIS_COMMIT}"
+
+    echo "Pushing changes..."
     git push origin gh-pages
+
+    echo "Done!"
 fi
