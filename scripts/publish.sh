@@ -23,6 +23,7 @@ then
     echo "Website is already up to date..."
 else
     echo "Configuring git..."
+    git remote add upstream ssh://git@github.com:duosecurity/design
     git config --global user.name "Travis CI"
     git config --global user.email "bspoon+travis@duo.com"
     ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
@@ -36,7 +37,7 @@ else
     git commit -m "Rebuilt website from ${TRAVIS_COMMIT}"
 
     echo "Pushing changes..."
-    git push origin gh-pages
+    git push upstream gh-pages
 
     echo "Done!"
 fi
