@@ -21,6 +21,22 @@ $duoMessage: (
   warnOrange: #df6a27
 );
 
+$newColors: (
+  blue: #2798d4,
+  dark-blue: #1c6e99,
+  navy: #363f44,
+  yellow: #e7c528,
+  red: #d4423b,
+  green: #6bbf4e,
+  dark-green: #579e40,
+  orange: #df6a27
+);
+@each $colorName, $colorVal in $newColors {
+  .btn-new-#{$colorName} {
+    @include button;
+    @include button-style($colorVal);
+  }
+}
 // 1.3 Padding & Margin
 $outside-padding: 35px 30px;
 $gutter: 20px;
@@ -50,6 +66,15 @@ h1 {
 
 }
 
+a[target="_blank"] {
+  i.icon-new-window {
+      display: inline-block;
+      text-decoration: none;
+      padding-left: 6px;
+      font-size: 75%;
+    }
+  }
+
 // 2.1 Atom
 .bold {
   font-weight: 500;
@@ -71,12 +96,18 @@ h1 {
 }
 .l-marg-right-50 {
   @media (min-width: 64rem) {
-    margin-left: calc(50% + 0.5rem);
+    margin-left: calc(50% + 1rem);
+  }
+}
+// this defaults to the 2rem gutter
+.l-marg-btm {
+  @media (min-width: 64rem) {
+    margin-bottom: $gutter;
   }
 }
 .l-pad-l-50 {
   @media (min-width: 64rem) {
-    padding-left: calc(50% + 0.5rem);
+    padding-left: calc(50% + 1rem);
   }
 }
 
@@ -1533,23 +1564,24 @@ input[name="port"] {
     vertical-align: middle;
 }
 // table sorting class
-[class^="sorting"] {
-  font-style: normal;
-  font-size: 2vw;
+.c--icons {
+  [class^="sorting"] {
+    font-style: normal;
+    font-size: 2vw;
+  }
+  .sorting::before {
+      content: "";
+      font-family: 'Duo Admin Icons';
+  }
+  .sorting_asc::before {
+      content: "";
+      font-family: 'Duo Admin Icons';
+  }
+  .sorting_desc::before {
+      content: "";
+      font-family: 'Duo Admin Icons';
+  }
 }
-.sorting::before {
-    content: "";
-    font-family: 'Duo Admin Icons';
-}
-.sorting_asc::before {
-    content: "";
-    font-family: 'Duo Admin Icons';
-}
-.sorting_desc::before {
-    content: "";
-    font-family: 'Duo Admin Icons';
-}
-
 // browser icon from image styles
 .browser-icon-chrome:before {
     display: inline-block !important;
@@ -1721,7 +1753,7 @@ input[name="port"] {
   }
 }
 // Code for dropdown
-button-style.dropdown {
+.dropdown {
     display: inline-block;
     position: relative;
 }
@@ -1809,4 +1841,57 @@ button-style.dropdown {
             color: white;
         }
     }
+}
+//policy class for small link
+.policy-link {
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 17px;
+}
+// dark link in message box-text
+.page-message {
+  background-color: $info-blue-light;
+  border-radius: $grey-dark;
+  color: $grey-dark;
+  padding: 1rem;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+  a {
+      color: darken($grey-dark, 10%);
+
+      &:hover { color: darken($grey-dark, 20%); }
+  }
+}
+// Form Styles
+// Narrow form
+#user-table_wrapper {
+    min-width: 745px;
+}
+
+.phone_count, .token_count {
+  min-width: 60px;
+}
+
+.groups-dropdown {
+  color: $grey-darker;
+  display: inline-block;
+  margin: -10px 0 0 10px;
+  text-align: center;
+
+  .dropdown-content li:only-child{
+    width: 140px;
+  }
+}
+
+.tipsy-inner {
+  text-align: center;
+}
+
+.activation-email-custom-image {
+  max-height: 90px;
+  max-width: 90px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }

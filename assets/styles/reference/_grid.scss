@@ -34,7 +34,7 @@
 @for $of from 1 through 8 {
     @for $span from 1 through $of {
         .col-#{$span}-#{$of} {
-            @include column($span, $of, 1rem);
+            @include column($span, $of, 2rem);
         }
     }
 }
