@@ -2,16 +2,22 @@
 title: Typography
 template: child-2col-coded.html
 active_page: typography
-snippet_title: Typography
+snippet_title: Body Copy
 example: '<p>Body copy</p>'
 ---
 
-* [html](0)
-* [css](1)
+* [HTML](0)
+* [SCSS](1)
 
 ```html
   <p>Body copy</p>
 ```
-```css
-  margin-top: 0;
+```scss
+  body {
+      color: $base-color;
+      font-family: $base-font-family;
+      font-size: $base-font-size;
+      font-weight: $base-font-weight;
+      line-height: $base-line-height;
+  }
 ```
