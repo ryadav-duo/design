@@ -1,3 +1,4 @@
+const browserSync = require('browser-sync').create()
 const cssnano = require('cssnano')
 const gulp = require('gulp')
 const htmlmin = require('gulp-htmlmin')
@@ -28,20 +29,35 @@ gulp.task('styles', () => (
             cssnano()
         ]))
         .pipe(gulp.dest('dist/styles'))
+        .pipe(browserSync.stream())
 ))
+
 
 gulp.task('scripts', () => (
-   gulp.src('assets/js/*.js')
-    .pipe(jsmin())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dist/js'))
+    gulp.src('assets/js/*.js')
+        .pipe(jsmin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('dist/js'))
 ))
+
 
 gulp.task('images', () => (
-   gulp.src('assets/images/*.*')
-    .pipe(gulp.dest('dist/images'))
+    gulp.src('assets/images/*.*')
+        .pipe(gulp.dest('dist/images'))
 ))
-
 
 
 gulp.task('build', ['pages', 'styles', 'scripts', 'images'])
+
+
+gulp.task('watch', ['build'], () => {
+    gulp.watch('assets/pages/**/*.md', ['pages']).on('change', browserSync.reload)
+    gulp.watch('assets/styles/**/*.scss', ['styles'])
+    gulp.watch('assets/js/**/*.js', ['scripts'])
+
+    browserSync.init({
+        server: {
+            baseDir: 'dist',
+        },
+    })
+})
