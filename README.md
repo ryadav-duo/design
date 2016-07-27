@@ -1,5 +1,7 @@
 # Duo Pattern Library
 Creating consistent UI/UX across all customer touch points through a referenceable user interface pattern library.
+### Github Pages url
+[https://duosecurity.github.io/design/]
 
 ## Dependencies
 To get started you'll need the following:
@@ -22,5 +24,3 @@ To get started you'll need the following:
 - When you’re ready for someone else to review your changes, click on "Pull Request" in Github Desktop
 - Name your pull request with what your changes are and then send it off!
 - Your changes are now ready for someone to review
-
-
