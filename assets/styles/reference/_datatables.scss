@@ -262,7 +262,7 @@
     border: 1px solid #ccc;
     border-radius: $border-radius;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    background: white url('/static/images/datatables/magnifying-glass.png') 3px center no-repeat;
+    background: white url('../images/magnifying-glass.png') 3px center no-repeat;
 
     &:focus {
       color: $grey-darker;
