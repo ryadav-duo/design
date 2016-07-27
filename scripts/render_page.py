@@ -42,9 +42,7 @@ def main(input_path, base_path):
         notes=page.get('notes'),
         example=page.get('example'),
         # variables I created for colors
-        color_name=page.get('color_name'),
-        color_hex=page.get('color_hex'),
-        color_var=page.get('color_var'),
+        colors=page.get('colors'),
         # variable for icon Array
         icons=page.get('icons'),
     ))
