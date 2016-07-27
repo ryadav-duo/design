@@ -1,7 +1,7 @@
 # Duo Pattern Library
 Creating consistent UI/UX across all customer touch points through a referenceable user interface pattern library.
 ### Github Pages url
-[https://duosecurity.github.io/design/]
+https://duosecurity.github.io/design/
 
 ## Dependencies
 To get started you'll need the following:
