@@ -6,16 +6,20 @@
       <hr />
     </section>
     {% endif %}
-    <section class="l-d-col-2">
-      <dl class="c-color-chip {{ color_var }}">
-        <dt>{{ color_name }}</dt>
-        <dd>#{{ color_hex }}</dd>
-        <dd>${{ color_var }}</dd>
-      </dl>
-      {% if notes %}
-        <h3>Notes</h3>
-        <p>{{ notes }}</p>
-      {% endif %}
-    </section>
+    {% if colors %}
+      {% for color in colors recursive %}
+        <section class="l-lg-col-1 l-d-col-2 l-m-col-2">
+          <dl class="c-color-chip {{ color.var }}">
+            <dt>{{ color.name }}</dt>
+            <dd>#{{ color.hex }}</dd>
+            <dd>${{ color.var }}</dd>
+          </dl>
+          {% if color.notes %}
+            <h3>Notes</h3>
+            <p>{{ color.notes }}</p>
+          {% endif %}
+        </section>
+      {% endfor %}
+    {% endif %}
     {{ content|markdown }}
   {% endblock content %}
