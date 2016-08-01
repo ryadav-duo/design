@@ -124,7 +124,7 @@ form.modal {
 }
 
 .modal-header {
-    border-bottom: solid 1px $grey-light;
+    padding-bottom: 0;
 
     h1 {
         font-size: 24px;
@@ -148,6 +148,9 @@ form.modal {
 }
 
 .modal-content {
+    border-top: solid 1px $grey-light;
+
+    margin-top: 20px;
     padding: 24px 32px;
     overflow-y: auto;
 }

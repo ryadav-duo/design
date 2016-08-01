@@ -37,6 +37,7 @@ $newColors: (
     @include button-style($colorVal);
   }
 }
+
 // 1.3 Padding & Margin
 $outside-padding: 35px 30px;
 $gutter: 20px;
@@ -45,6 +46,12 @@ $base-container-pad: 0px 50px;
 // 1.4 Borders
 $border-radius : 3px;
 
+@mixin border($color, $width) {
+  border-width: $width;
+  border-color: $color;
+  border-style: solid;
+  border-radius: $border-radius;
+}
 
 // Mixin - find a home for this later
 @function color($key) {
@@ -353,6 +360,38 @@ $items: 6;
     height: auto;
   }
 }
+//component for download button
+.c--file-download {
+  @include border(map-get($gray, light), 2px);
+  display: block;
+  width: 100%;
+  padding: 2vw;
+  text-decoration: none;
+
+  h5 {
+    color: map-get($duoBlue, light);
+    display: block;
+    vertical-align: baseline;
+    margin-bottom: 0;
+    font-weight: 600;
+  }
+  span {
+    color: map-get($gray, mid);
+    display: inline-block;
+  }
+  &:before {
+    content: '';
+    display: block;
+    float: left;
+    width: 3vw;
+    height: 3vw;
+    margin-right: 2vw;
+    background-image: url('../images/down-arrow.png');
+    background-size: cover;
+  }
+}
+
+////////////////////////////CSS to make patterns work below here////
 
 // 6 Admin stuff I've had to grab
 
@@ -622,6 +661,13 @@ select#billing_info_credit_card_month {
                 flex: 1;
             }
         }
+    }
+    // Override to make subnavs collapse
+    .subnav {
+      display: none;
+    }
+    .subnav.open {
+      display: block;
     }
 
     [class^="icon"] {
