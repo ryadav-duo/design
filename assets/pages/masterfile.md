@@ -1,20 +1,31 @@
 ---
 title: Pattern library
 template: base.html
-active_page: ['masterfile']
+active_page: ['Master File']
 ---
-# Pattern library
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-## Things and stuff
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-```js
-var foo = '12398749012734';
-
-function whatever() {
-  return 42;
-}
-```
+<section class="col-3-6">
+  <a href="" class="c--file-download" download="Duo Pattern Library">
+    <h5>duo-pattern-library</h5>
+    <span>25MB (.sketch)</span>
+  </a>
+</section>
+<section class="col-3-6">
+  <h5 class="bold">Notes</h5>
+  <p>
+    The pattern library master file is version controlled through Github. <a href="https://github.com/duosecurity/design" title="Duo Security github" target="_blank" rel="noreferrer">Learn more on duosec's Github</a>
+  </p>
+</section>
+</div>
+<div class="l-grid l-component-cluster">
+<section class="col-3-6">
+  <a href="" class="c--file-download" download="Duo Prompt Pattern Library">
+    <h5>duo-prompt-pattern-library</h5>
+    <span>16MB (.sketch)</span>
+  </a>
+</section>
+<section class="col-3-6">
+  <h5 class="bold">Notes</h5>
+  <p>
+    The Duo Prompt pattern library master file is a collection of patterns directly related to the Duo Prompt screen.
+  </p>
+</section>

@@ -1,7 +1,7 @@
 ---
 title: Typography
 template: child-2col-coded.html
-active_page: ['child-typography-body', 'tyography']
+active_page: ['Body Copy', 'Typography']
 snippet_title: Body Copy
 example: '<p>Body copy</p>'
 ---
@@ -14,10 +14,10 @@ example: '<p>Body copy</p>'
 ```
 ```scss
   body {
-      color: $base-color;
-      font-family: $base-font-family;
-      font-size: $base-font-size;
-      font-weight: $base-font-weight;
-      line-height: $base-line-height;
+    color: $base-color;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    font-weight: $base-font-weight;
+    line-height: $base-line-height;
   }
 ```

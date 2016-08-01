@@ -36,6 +36,14 @@ a {
         outline: 2px solid $duo-green;
     }
 }
+a[target="_blank"] {
+  i.icon-new-window {
+      display: inline-block;
+      text-decoration: none;
+      padding-left: 6px;
+      font-size: 75%;
+    }
+  }
 
 dl {
     margin-top: 0;

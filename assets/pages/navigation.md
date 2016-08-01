@@ -1,7 +1,7 @@
 ---
 title: Navigation
 template: child-2col-coded.html
-active_page: ['navigation', 'child-navigation']
+active_page: ['Navigation']
 snippet_title: Navigation
 notes: 'A green background denotes the current page users are on. Green links below page titles also tell what page the user is currently on. Pages with a numberical amount of things get a number floated to the right (ie: 100 users = Users 100) For new pages we use the "new" tag floated to the right.'
 example: '<nav class="navigation">
@@ -30,7 +30,7 @@ example: '<nav class="navigation">
     <span class="label">Users</span>
     <span class="count">534</span>
   </a>
-  <div class="subnav">
+  <div class="subnav open">
     <a class="">
     <span class="label">New User</span>
     </a>

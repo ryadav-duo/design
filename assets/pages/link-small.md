@@ -1,7 +1,7 @@
 ---
 title: Buttons & Links
 template: child-2col-coded.html
-active_page: ['buttons-links', 'child-link-small']
+active_page: ['Buttons & Links', 'Small Link']
 snippet_title: Default Link
 notes: 'These buttons appear on each row of certain tables. They are much smaller than the normal buttons.'
 example: '<a href="" title="" rel="" class="policy-link">Small Link</a>'

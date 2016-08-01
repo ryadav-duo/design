@@ -2,7 +2,7 @@
     ('masterfile', 'download the master sketch file', 'Master File', ''),
     ('logo', 'duo logo usage', 'Logos', ''),
     ('colors', 'duo colors', 'Color', ''),
-    ('typography', 'how to use duo typography', 'Typography', [
+    ('typography-heading', 'how to use duo typography', 'Typography', [
       ('typography-heading', 'H1 example', 'Main Heading', ''),
       ('typography-subtitle', 'subtitle h2 example', 'Subtitle', ''),
       ('typography-sectionheader', 'section header example', 'Section Header', ''),
@@ -21,7 +21,7 @@
       ('nav-newbadge', 'Nav badge on nav item', 'New Badge Nav Link', ''),
       ('nav-frame', 'duo prompt nav', 'Duo Prompt Nav', '')
     ]),
-    ('buttons-links', 'how to build buttons and links', 'Buttons & Links', [
+    ('btn-cancel', 'how to build buttons and links', 'Buttons & Links', [
       ('btn-cancel', 'cancel button example', 'Cancel Button', ''),
       ('btn-creation', 'creation button example', 'Creation Button', ''),
       ('btn-destructive', 'destructive button', 'Destructive Button', ''),
@@ -35,12 +35,12 @@
       ('link-small', 'a small link', 'Small Link', ''),
       ('link-breadcrumbs', 'breadcrumb styling', 'Breadcrumb Links', '')
     ]),
-    ('tables', 'how duo tables are built', 'Tables', [
+    ('table-narrow', 'how duo tables are built', 'Tables', [
       ('table-narrow', 'narrow table example', 'Narrow Table', ''),
       ('table-header', 'narrow table header', 'Table Header', ''),
       ('table-row', 'narrow table row', 'Table Row', ''),
       ('table-pagination', 'table pagination', 'Table Pagination', ''),
-      ('table-wide', 'wide table example', 'Wide Table', '')
+      ('table-wide', 'wide table example' , 'Wide Table', '')
     ]),
     ('forms', 'how duo forms get built', 'Forms', ''),
     ('modals-tooltips', 'how to use modals and tool tips', 'Modals & Tooltips', ''),
@@ -71,10 +71,10 @@
   </div>
   <nav class="navigation">
     {% for href, title, caption, children in navigation_bar recursive %}
-      <a {% if href in active_page %} class="current"{% endif
+      <a {% if caption in active_page %} class="current"{% endif
       %} href="{{ href|e }}.html" title="{{ title|e }}">{{ caption|e }}</a>
       {% if children %}
-      <div class="subnav">
+      <div {% if caption in active_page %} class="subnav open" {% else %} class="subnav" {% endif %}>
         {{ loop(children) }}
       </div>
       {% endif %}

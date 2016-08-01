@@ -1,17 +1,17 @@
 ---
 title: Buttons & Links
 template: child-2col-coded.html
-active_page: ['buttons-links', 'child-link-newwindow']
+active_page: ['Buttons & Links', 'New Window Link']
 snippet_title: New Window Link
 notes: 'Use this icon on a link that links outside of the duo site.'
-example: '<a href="" title="" rel="" class="help-url"><span>Open in a new window</span> <i class="icon-new-window "></i></a>'
+example: '<a href="" title="" rel="" target="_blank">Open in a new window <i class="icon-new-window "></i></a>'
 ---
 
 * [HTML](0)
 * [SCSS](1)
 
 ```html
-  <a href="" title="" rel="" class="help-url"><span>Open in a new window</span> <i class="icon-new-window "></i></a>
+  <a href="" title="" rel="" target="_blank">Open in a new window <i class="icon-new-window "></i></a>
 ```
 ```scss
   $font-family-name: "Duo Admin Icons";
@@ -53,5 +53,11 @@ example: '<a href="" title="" rel="" class="help-url"><span>Open in a new window
   }
   .icon-new-window:before {
     content: "\e01f";
+  }
+  a[target="_blank"] i.icon-new-window {
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 6px;
+    font-size: 75%;
   }
 ```

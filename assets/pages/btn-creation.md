@@ -1,7 +1,7 @@
 ---
 title: Buttons & Links
 template: child-2col-coded.html
-active_page: ['buttons-links', 'child-btn-creation']
+active_page: ['Buttons & Links', 'Creation Button']
 snippet_title: Creation Action Button
 notes: 'Clicking on a Green button will either create a new thing or take you to the beginning of the process of creating a new thing.'
 example: '<button type="submit" label="Creation Button" class="positive">Creation Button</button>'

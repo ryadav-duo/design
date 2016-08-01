@@ -1,7 +1,7 @@
 ---
 title: Navigation
 template: child-2col-coded.html
-active_page: ['navigation', 'child-nav-subpage']
+active_page: ['Navigation', 'Subpage']
 snippet_title: Sub Page Links
 notes: "Sub-pages and actions are listed below the 'current page' nav-item. If you're on the page of the sub-page it will appear green."
 example: '<nav class="navigation">
@@ -10,7 +10,7 @@ example: '<nav class="navigation">
     <span class="label">Users</span>
     <span class="count">534</span>
   </a>
-  <div class="subnav">
+  <div class="subnav open">
     <a class="">
     <span class="label current">Sub-Link 1</span>
     </a>

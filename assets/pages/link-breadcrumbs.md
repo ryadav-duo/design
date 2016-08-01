@@ -1,7 +1,7 @@
 ---
 title: Buttons & Links
 template: child-2col-coded.html
-active_page: ['buttons-links', 'child-link-breadcrumbs']
+active_page: ['Buttons & Links', 'Breadcrumb Links']
 snippet_title: New Window Link
 notes: 'Breadcrumb links navigate users to pages higher in the page hierarchy.'
 example: '<p class="breadcrumbs">
