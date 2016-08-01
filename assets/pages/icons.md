@@ -1,7 +1,7 @@
 ---
 title: Icons
 template: child-icons.html
-active_page: ['icons']
+active_page: ['Icons']
 snippet_title: Icons
 snippet_descriptor: We use fontastic to manage our icon font To request access to fontastic or to add new icons email creative@
 icons : [

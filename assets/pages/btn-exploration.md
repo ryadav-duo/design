@@ -1,7 +1,7 @@
 ---
 title: Buttons & Links
 template: child-2col-coded.html
-active_page: ['buttons-links', 'child-btn-exploration']
+active_page: ['Buttons & Links', 'btn-exploration']
 snippet_title: Creation Action Button
 notes: ''
 example: '<button type="" name="" class="btn-new-blue">Blue Button</button><br /><br />

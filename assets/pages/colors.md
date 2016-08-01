@@ -2,7 +2,7 @@
 title: Color
 snippet_title: Color
 template: child-colors.html
-active_page: ['colors']
+active_page: ['Color']
 colors:
   -
     name: Duo Blue

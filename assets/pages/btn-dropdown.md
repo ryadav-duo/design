@@ -1,7 +1,7 @@
 ---
 title: Buttons & Links
 template: child-2col-coded.html
-active_page: ['buttons-links', 'child-btn-dropdown']
+active_page: ['Buttons & Links', 'Dropdown Button']
 snippet_title: Dropdown Button
 notes: 'Clicking on this will cause a small dropdown menu to appear with options related to the dropdown button title.'
 example: '<div class="dropdown">

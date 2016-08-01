@@ -1,7 +1,7 @@
 ---
 title: Buttons & Links
 template: child-2col-coded.html
-active_page: ['buttons-links', 'child-btn-cancel']
+active_page: ['Buttons & Links', 'Cancel Button']
 snippet_title: Cancel Button
 notes: 'This is a harmless secondary action button that counteracts a destructive action.'
 example: '<button class="button">Cancel Button</button>'
