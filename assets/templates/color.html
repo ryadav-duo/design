@@ -1,5 +1,23 @@
 {% extends 'layouts/base.html' %}
 
+{% set colors = load_data('colors') %}
+
 {% block body %}
   <h1>Color</h1>
+
+  {% for color in colors %}
+    <section class="l-lg-col-1 l-d-col-2 l-m-col-6">
+      <dl class="c-color-chip {{ color.var }}">
+        <dt>{{ color.name }}</dt>
+        <dd>#{{ color.hex }}</dd>
+        <dd>${{ color.var }}</dd>
+      </dl>
+
+      {% if color.notes %}
+        <h3>Notes</h3>
+        
+        <p>{{ color.notes }}</p>
+      {% endif %}
+    </section>
+  {% endfor %}
 {% endblock %}
