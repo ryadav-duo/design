@@ -1,6 +1,6 @@
 ---
 title: Tables
-template: child-1col-coded.html
+template: child-1col-coded
 active_page: ['Tables', 'Table Pagination']
 snippet_title: Narrow Table
 notes: 'Allows for control of how many rows to display and for navigation to different pages of the data.'

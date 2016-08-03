@@ -1,6 +1,6 @@
 ---
 title: Navigation
-template: child-2col-coded.html
+template: child-2col-coded
 active_page: ['Navigation', 'New Badge Nav Link']
 snippet_title: Unselected Sidebar Page
 notes: "When there's a new feature/page we float to the right the 'NEW' tag."

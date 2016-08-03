@@ -1,6 +1,6 @@
 ---
 title: Navigation
-template: child-2col-coded.html
+template: child-2col-coded
 active_page: ['Navigation', 'Duo Prompt Nav']
 snippet_title: Frame Navigation
 notes: "Use the left link navigation for instances where the above navigation is too chunky or doesn't make sense. Currently in use on the Auth Prompt."

@@ -35,6 +35,25 @@ def load_data(name):
 env.globals['load_data'] = load_data
 
 
+def render_section(page_id, section_id):
+    section_file_path = path.join(
+        path.dirname(__file__),
+        '../assets/pages/{}/{}.md'.format(page_id, section_id),
+    )
+
+    with open(section_file_path) as section_file:
+        section = frontmatter.load(section_file)
+
+    section_template = env.get_template('layouts/{}.html'.format(section['template']))
+
+    return section_template.render(
+        content=section.content,
+        **section
+    )
+
+env.globals['render_section'] = render_section
+
+
 def main(input_path, base_path):
     env.loader = FileSystemLoader(base_path)
 

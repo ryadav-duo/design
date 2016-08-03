@@ -1,6 +1,6 @@
 ---
 title: Typography
-template: child-2col-coded.html
+template: child-2col-coded
 active_page: ['Typography', 'Button Label']
 snippet_title: Button Label
 notes: This is the correct default size and style for labels of buttons.

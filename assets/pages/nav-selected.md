@@ -1,6 +1,6 @@
 ---
 title: Navigation
-template: child-2col-coded.html
+template: child-2col-coded
 active_page: ['Navigation', 'Selected Nav Link']
 snippet_title: Selected Page
 notes: 'A nav-item with full green background indicates the current page the user is on.'

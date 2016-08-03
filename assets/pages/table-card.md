@@ -1,6 +1,6 @@
 ---
 title: Tables
-template: child-2col-coded.html
+template: child-2col-coded
 active_page: ['Tables', 'Table Card']
 snippet_title: Table Card
 notes: 'The intent of table in cards is to break down the data from a pie chart visualization or more visual chart. This way users can both data visualization and chart side by side.'

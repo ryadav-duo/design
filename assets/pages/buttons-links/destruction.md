@@ -1,6 +1,6 @@
 ---
 title: Buttons & Links
-template: child-2col-coded.html
+template: child-2col-coded
 active_page: ['Buttons & Links', 'Destructive Button']
 snippet_title: Destructive Action Button
 notes: 'Clicking on a Red button will do something dangerous. The first time you click it, it will give you a confirmation modal. Within a modal, it will be the final action.'

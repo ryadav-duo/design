@@ -1,6 +1,6 @@
 ---
 title: Typography
-template: child-2col-coded.html
+template: child-2col-coded
 active_page: ['Typography', 'Subtitle']
 snippet_title: Subtitle
 notes: Use subtitles to break up each section after the main heading.

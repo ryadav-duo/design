@@ -1,6 +1,6 @@
 ---
 title: Buttons & Links
-template: child-2col-coded.html
+template: child-2col-coded
 active_page: ['Buttons & Links', 'Small Link']
 snippet_title: Default Link
 notes: 'These buttons appear on each row of certain tables. They are much smaller than the normal buttons.'
