@@ -153,7 +153,12 @@ $items: 6;
     .l-#{$key}-col-#{$i} {
       // flex: 0 0 100%;
       @include break($key) {
-        flex: 1 1 #{$i / $items * 100%};
+        max-width: calc(( #{ 100% * $i / $items}) - (1rem * (1 - #{$i / $items})));
+        flex: 1 1 calc(( #{ 100% * $i / $items}) - (1rem * (1 - #{$i / $items})));
+        margin-right: calc(1rem * (1 - #{$i / $items}));
+      }
+      &:last-of-type {
+          margin-right: 0;
       }
     }
   }
@@ -206,7 +211,7 @@ $items: 6;
 }
 .nav--snippet-toggle {
   border-bottom: 2px solid map-get($gray, light);
-  padding: 0 0 0 17.5px;
+  padding: 0 0 0 1vw;
   margin: 0;
   li {
     display: inline-block;
@@ -389,23 +394,37 @@ $items: 6;
     background-image: url('../images/down-arrow.png');
     background-size: cover;
   }
+  &:hover {
+    h5, span {
+      text-decoration: underline;
+    }
+  }
 }
 
 ///Styles for code hilite
-.nv, .nt,.err {
-  color: map-get($message, alertRed);
-}
-.o,.p,.nd {
-  color: map-get($gray, mid);
-}
-.no {
-  color: map-get($duoBlue, light);
-}
-.mi {
-  color: $duo-green;
-}
-.kt {
-  color: map-get($message, warnOrange);
+.codehilite {
+  pre {
+    color: $duo-green;
+    padding: 0 2vw;
+  }
+  .nc,.nt {
+    color: map-get($message, alertRed);
+  }
+  .o,.p,.err {
+    color: map-get($gray, mid);
+  }
+  .nb,.na {
+    color: map-get($duoBlue, light);
+  }
+  .k,.nf,.nd {
+    color: map-get($duoBlue, duo);
+  }
+  .mi,.m,.n,.nv,.no,.mf,.ow,.s {
+    color: $duo-green;
+  }
+  .kt {
+    color: map-get($message, warnOrange);
+  }
 }
 
 ////////////////////////////CSS to make patterns work below here////

@@ -17,34 +17,34 @@ example: '<p class="breadcrumbs">
 * [SCSS](1)
 
 ```html
-  <p class="breadcrumbs">
-    <a href="#">Base Directory</a>
-    <i class="icon-chevron-thick-right"></i>
-    <a href="#">Previous Directory</a>
-    <i class="icon-chevron-thick-right"></i>
-    Current Directory
-  </p>
+<p class="breadcrumbs">
+  <a href="#">Base Directory</a>
+  <i class="icon-chevron-thick-right"></i>
+  <a href="#">Previous Directory</a>
+  <i class="icon-chevron-thick-right"></i>
+  Current Directory
+</p>
 ```
-```scss
-  .breadcrumbs {
-    font-size: small;
+```sass
+.breadcrumbs {
+  font-size: small;
 
-    a {
-        color: $grey;
+  a {
+      color: $grey;
 
-        &:hover {
-            color: $grey-dark;
-        }
-    }
-
-    i {
-        margin: 0 8px;
-    }
-
-    @include low-res {
-        a:hover {
-            color: $grey-dark-low-res;
-        }
-    }
+      &:hover {
+          color: $grey-dark;
+      }
   }
+
+  i {
+      margin: 0 8px;
+  }
+
+  @include low-res {
+      a:hover {
+          color: $grey-dark-low-res;
+      }
+  }
+}
 ```

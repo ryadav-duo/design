@@ -11,14 +11,14 @@ example: '<h4>Section Header</h4>'
 * [SCSS](1)
 
 ```html
-  <h4>Section Header</h4>
+<h4>Section Header</h4>
 ```
-```scss
-  $h4: (
-    color:       $heading-color,
-    font-family: $heading-font-family,
-    font-size:   18px,
-    font-weight: 300,
-    line-height: 26px,
-  );
+```sass
+$h4: (
+  color:       $heading-color,
+  font-family: $heading-font-family,
+  font-size:   18px,
+  font-weight: 300,
+  line-height: 26px,
+);
 ```

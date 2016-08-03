@@ -11,14 +11,14 @@ example: '<button class="primary">Positive Button</button>'
 * [SCSS](1)
 
 ```html
-  <button class="primary">Positive Action</button>
+<button class="primary">Positive Action</button>
 ```
-```scss
-  button, .button, input[type="submit"]:not(.link), input[type="reset"], input[type="button"] {
-    @include button;
-    @include button-style($grey);
-    &.primary {
-        @include button-style($info-blue);
-    }
+```sass
+button, .button, input[type="submit"]:not(.link), input[type="reset"], input[type="button"] {
+  @include button;
+  @include button-style($grey);
+  &.primary {
+      @include button-style($info-blue);
   }
+}
 ```

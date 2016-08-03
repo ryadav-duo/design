@@ -11,14 +11,14 @@ example: '<h2>Subtitle</h2>'
 * [SCSS](1)
 
 ```html
-  <h2>Subtitle</h2>
+<h2>Subtitle</h2>
 ```
-```scss
-  $h2: (
-    color:       $heading-color,
-    font-family: $heading-font-family,
-    font-size:   24px,
-    font-weight: 300,
-    line-height: 32px,
-  );
+```sass
+$h2: (
+  color:       $heading-color,
+  font-family: $heading-font-family,
+  font-size:   24px,
+  font-weight: 300,
+  line-height: 32px,
+);
 ```

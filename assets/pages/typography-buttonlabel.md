@@ -11,25 +11,25 @@ example: '<label class="subline">Button Label</label>'
 * [SCSS](1)
 
 ```html
-  <label class="subline">Button Label</label>
+<label class="subline">Button Label</label>
 ```
-```scss
-  label {
-    color: $grey;
+```sass
+label {
+  color: $grey;
 
-    [type=checkbox] + &, [type=radio] + & {
-      color: inherit;
-    }
-    span {
-      color: $grey-darker;
-    }
+  [type=checkbox] + &, [type=radio] + & {
+    color: inherit;
+  }
+  span {
+    color: $grey-darker;
+  }
 
-    @include low-res {
-      color: $grey-dark-low-res;
-    }
+  @include low-res {
+    color: $grey-dark-low-res;
   }
-  .subline {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
+}
+.subline {
+  display: block;
+  margin-bottom: 0.5rem;
+}
 ```
