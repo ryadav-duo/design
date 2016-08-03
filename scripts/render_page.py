@@ -35,10 +35,10 @@ def load_data(name):
 env.globals['load_data'] = load_data
 
 
-def render_section(page_id, section_id):
+def render_section(*path_parts):
     section_file_path = path.join(
         path.dirname(__file__),
-        '../assets/pages/{}/{}.md'.format(page_id, section_id),
+        '../assets/pages/{}.md'.format('/'.join(path_parts)),
     )
 
     with open(section_file_path) as section_file:
