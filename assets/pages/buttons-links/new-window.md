@@ -1,6 +1,6 @@
 ---
 title: Buttons & Links
-template: child-2col-coded.html
+template: child-2col-coded
 active_page: ['Buttons & Links', 'New Window Link']
 snippet_title: New Window Link
 notes: 'Use this icon on a link that links outside of the duo site.'

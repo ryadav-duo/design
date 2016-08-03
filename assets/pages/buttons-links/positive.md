@@ -1,6 +1,6 @@
 ---
 title: Buttons & Links
-template: child-2col-coded.html
+template: child-2col-coded
 active_page: ['Buttons & Links', 'Positive Button']
 snippet_title: Positive Action Button
 notes: "Clicking on a Blue button will do something positive on Duo's side. It will not take you to another page."

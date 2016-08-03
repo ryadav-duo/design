@@ -1,7 +1,7 @@
 ---
 title: Color
 snippet_title: Color
-template: child-colors.html
+template: child-colors
 active_page: ['Color']
 colors:
   -

@@ -1,6 +1,6 @@
 ---
 title: Buttons & Links
-template: child-2col-coded.html
+template: child-2col-coded
 active_page: ['Buttons & Links', 'btn-exploration']
 snippet_title: Creation Action Button
 notes: ''

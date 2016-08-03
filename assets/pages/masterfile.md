@@ -1,6 +1,6 @@
 ---
 title: Pattern library
-template: base.html
+template: base
 active_page: ['Master File']
 ---
 <section class="l-lg-col-3 l-d-col-3 l-m-col-6">

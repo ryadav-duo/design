@@ -1,25 +1,24 @@
-{% extends "base.html" %}
-  {% block content %}
-    {% if snippet_title %}
-    <section class="l-lg-col-6 l-d-col-6 l-m-col-6">
-      <h2>{{ snippet_title }}</h2>
-      <hr />
+{% if snippet_title %}
+  <section class="l-lg-col-6 l-d-col-6 l-m-col-6">
+    <h2>{{ snippet_title }}</h2>
+    <hr />
+  </section>
+{% endif %}
+
+{% if colors %}
+  {% for color in colors recursive %}
+    <section class="l-lg-col-1 l-d-col-2 l-m-col-6">
+      <dl class="c-color-chip {{ color.var }}">
+        <dt>{{ color.name }}</dt>
+        <dd>#{{ color.hex }}</dd>
+        <dd>${{ color.var }}</dd>
+      </dl>
+      {% if color.notes %}
+        <h3>Notes</h3>
+        <p>{{ color.notes }}</p>
+      {% endif %}
     </section>
-    {% endif %}
-    {% if colors %}
-      {% for color in colors recursive %}
-        <section class="l-lg-col-1 l-d-col-2 l-m-col-6">
-          <dl class="c-color-chip {{ color.var }}">
-            <dt>{{ color.name }}</dt>
-            <dd>#{{ color.hex }}</dd>
-            <dd>${{ color.var }}</dd>
-          </dl>
-          {% if color.notes %}
-            <h3>Notes</h3>
-            <p>{{ color.notes }}</p>
-          {% endif %}
-        </section>
-      {% endfor %}
-    {% endif %}
-    {{ content|markdown }}
-  {% endblock content %}
+  {% endfor %}
+{% endif %}
+
+{{ content|markdown }}

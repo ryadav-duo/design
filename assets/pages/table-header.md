@@ -1,6 +1,6 @@
 ---
 title: Tables
-template: child-1col-coded.html
+template: child-1col-coded
 active_page: ['Tables', 'Table Header']
 snippet_title: Narrow Table
 notes: 'Organizes and displays a large amount of related information.

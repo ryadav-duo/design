@@ -1,6 +1,6 @@
 ---
 title: Buttons & Links
-template: child-2col-coded.html
+template: child-2col-coded
 active_page: ['Buttons & Links', 'Secondary Button']
 snippet_title: Secondary Button
 notes: "This button isn't the main CTA on the page. Multiple may appear at a time on the same page."

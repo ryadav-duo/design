@@ -1,6 +1,6 @@
 ---
 title: Typography
-template: child-2col-coded.html
+template: child-2col-coded
 active_page: ['Body Copy', 'Typography']
 snippet_title: Body Copy
 example: '<p>Body copy</p>'

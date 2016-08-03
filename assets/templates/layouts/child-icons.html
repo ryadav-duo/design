@@ -1,25 +1,22 @@
-{% extends "base.html" %}
-  {% block content %}
-    {% if snippet_title %}
-    <section class="col-6-6 c--snippet-title">
-      <h2>{{ snippet_title }}</h2>
-      {% if snippet_descriptor %}
-        <p class="box-header-info">{{snippet_descriptor}}</p>
-      {% endif %}
-      <hr />
-    </section>
-    {% endif %}
-    {% if icons %}
-      <ul class="l-grid c--icons">
-      {% for icon in icons %}
-        <li class="l-lg-col-1 l-d-col-2 l-m-col-3">
-          <i class="{{ icon }}"></i>
-          <pre class="c--hidden--example codehilite"><textarea readonly="read-only" class="click_to_select_all"><i class="{{ icon }}"></i></textarea></pre>
-          <p>class=<br />
-            "{{ icon }}"
-          </p>
-        </li>
-      {% endfor %}
-      </ul>
-    {% endif %}
-  {% endblock content %}
+{% if snippet_title %}
+<section class="col-6-6 c--snippet-title">
+  <h2>{{ snippet_title }}</h2>
+  {% if snippet_descriptor %}
+    <p class="box-header-info">{{snippet_descriptor}}</p>
+  {% endif %}
+  <hr />
+</section>
+{% endif %}
+{% if icons %}
+  <ul class="l-grid c--icons">
+  {% for icon in icons %}
+    <li class="l-lg-col-1 l-d-col-2 l-m-col-3">
+      <i class="{{ icon }}"></i>
+      <pre class="c--hidden--example codehilite"><textarea readonly="read-only" class="click_to_select_all"><i class="{{ icon }}"></i></textarea></pre>
+      <p>class=<br />
+        "{{ icon }}"
+      </p>
+    </li>
+  {% endfor %}
+  </ul>
+{% endif %}

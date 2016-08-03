@@ -1,6 +1,6 @@
 ---
 title: Buttons & Links
-template: child-2col-coded.html
+template: child-2col-coded
 active_page: ['Buttons & Links', 'Inline Button']
 snippet_title: Inline Buttons
 notes: 'These buttons appear on each row of certain tables. They are much smaller than the normal buttons.'

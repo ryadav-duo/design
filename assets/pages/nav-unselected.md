@@ -1,6 +1,6 @@
 ---
 title: Navigation
-template: child-2col-coded.html
+template: child-2col-coded
 active_page: ['Navigation', 'Unselected Nav Link']
 snippet_title: Unselected Sidebar Page
 notes: 'This is a normal unactive navigation link. The numbers to the right indicate the amount of those that the user has (ie: 1,155 Applications, or 35 Devices, etc)'
