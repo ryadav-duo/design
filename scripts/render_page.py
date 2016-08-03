@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from argparse import ArgumentParser
+from os import path
 
 import frontmatter
 from jinja2 import Environment, FileSystemLoader
@@ -25,27 +26,11 @@ env.filters['markdown'] = markdown_filter
 def main(input_path, base_path):
     env.loader = FileSystemLoader(base_path)
 
-    with open(input_path) as input_file:
-        page = frontmatter.load(input_file)
+    template_path = path.relpath(input_path, base_path)
 
-    template = env.get_template(page.get('template', 'base.html'))
+    template = env.get_template(template_path)
 
-    print(template.render(
-        content=page.content,
-        title=page.get('title'),
-        # for toggling the active state of the menu
-        active_page=page.get('active_page'),
-        # variable for internal header
-        snippet_title=page.get('snippet_title'),
-        snippet_descriptor=page.get('snippet_descriptor'),
-        # variables for two col layout with code and Example
-        notes=page.get('notes'),
-        example=page.get('example'),
-        # variables I created for colors
-        colors=page.get('colors'),
-        # variable for icon Array
-        icons=page.get('icons'),
-    ))
+    print(template.render())
 
 
 if __name__ == '__main__':
