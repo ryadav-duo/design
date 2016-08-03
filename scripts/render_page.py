@@ -1,14 +1,15 @@
 #!/usr/bin/env python
 from argparse import ArgumentParser
 from os import path
+import re
 
 import frontmatter
 from jinja2 import Environment, FileSystemLoader
 from markdown import markdown
+import yaml
 
 
 env = Environment()
-
 
 def markdown_filter(content):
     return markdown(
@@ -19,8 +20,19 @@ def markdown_filter(content):
         ],
     )
 
-
 env.filters['markdown'] = markdown_filter
+
+
+def load_data(name):
+    data_file_path = path.join(
+        path.dirname(__file__),
+        '../assets/data/{}.yml'.format(name),
+    )
+
+    with open(data_file_path) as data_file:
+        return yaml.load(data_file)
+
+env.globals['load_data'] = load_data
 
 
 def main(input_path, base_path):
@@ -30,7 +42,21 @@ def main(input_path, base_path):
 
     template = env.get_template(template_path)
 
-    print(template.render())
+    page_id = re.sub(r'\.html$', '', template_path)
+
+    site_data = load_data('site')
+
+    try:
+        page_data = next(page for page in site_data if page['id'] == page_id)
+    except StopIteration:
+        if page_id != 'index':  # home page gets a pass
+            raise Exception("Page '{}' not defined in site.yml.".format(template_path))
+        page_data = None
+
+    print(template.render(
+        site=site_data,
+        page=page_data,
+    ))
 
 
 if __name__ == '__main__':

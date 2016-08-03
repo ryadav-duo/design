@@ -12,8 +12,10 @@
 <body class="flexbox">
   <div class="base-container l-pad--base-container">
     {% include 'includes/nav-sidebar.html' %}
+
     <main class="base-main">
       {% include 'includes/header.html' %}
+
       <div class="l-grid l-component-cluster">
         {% block body %}{% endblock %}
       </div>

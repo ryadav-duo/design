@@ -1,56 +1,3 @@
-{% set navigation_bar = [
-    ('masterfile', 'download the master sketch file', 'Master File', ''),
-    ('logo', 'duo logo usage', 'Logos', ''),
-    ('colors', 'duo colors', 'Color', ''),
-    ('typography-heading', 'how to use duo typography', 'Typography', [
-      ('typography-heading', 'H1 example', 'Main Heading', ''),
-      ('typography-subtitle', 'subtitle h2 example', 'Subtitle', ''),
-      ('typography-sectionheader', 'section header example', 'Section Header', ''),
-      ('typography-subsectionheader', 'subsection header example', 'SubSection Header', ''),
-      ('typography-body', 'body copy example', 'Body Copy', ''),
-      ('typography-instructional', 'instructional copy example', 'Instructional', ''),
-      ('typography-tablecolumntitle', 'table column title example', 'Table Column Title', ''),
-      ('typography-buttonlabel', 'button label example', 'Button Label', '')
-    ]),
-    ('icons', 'duo iconography', 'Icons', ''),
-    ('navigation', 'how to build a duo navigation', 'Navigation', [
-      ('navigation', 'whole nav example', 'Main Navigation', ''),
-      ('nav-subpage', 'Subnav example', 'Subpage', ''),
-      ('nav-selected', 'select nav item', 'Selected Nav Link', ''),
-      ('nav-unselected', 'unselected nav item', 'Unselected Nav Link', ''),
-      ('nav-newbadge', 'Nav badge on nav item', 'New Badge Nav Link', ''),
-      ('nav-frame', 'duo prompt nav', 'Duo Prompt Nav', '')
-    ]),
-    ('btn-cancel', 'how to build buttons and links', 'Buttons & Links', [
-      ('btn-cancel', 'cancel button example', 'Cancel Button', ''),
-      ('btn-creation', 'creation button example', 'Creation Button', ''),
-      ('btn-destructive', 'destructive button', 'Destructive Button', ''),
-      ('btn-dropdown', 'dropdown button', 'Dropdown Button', ''),
-      ('btn-inline', 'inline button exmpale', 'Inline Button', ''),
-      ('btn-positive', 'positive action button', 'Positive Button', ''),
-      ('btn-secondary', 'secondary button example', 'Secondary Button', ''),
-      ('link-default', 'default link example', 'Default Link', ''),
-      ('link-dark', 'dark link styling', 'Dark Link', ''),
-      ('link-newwindow', 'open in a new window', 'New Window Link', ''),
-      ('link-small', 'a small link', 'Small Link', ''),
-      ('link-breadcrumbs', 'breadcrumb styling', 'Breadcrumb Links', '')
-    ]),
-    ('table-narrow', 'how duo tables are built', 'Tables', [
-      ('table-narrow', 'narrow table example', 'Narrow Table', ''),
-      ('table-header', 'narrow table header', 'Table Header', ''),
-      ('table-row', 'narrow table row', 'Table Row', ''),
-      ('table-pagination', 'table pagination', 'Table Pagination', ''),
-      ('table-wide', 'wide table example' , 'Wide Table', ''),
-      ('table-card', 'table card organism', 'Table Card', ''),
-      ('table-filter', 'filter example used in tables', 'Table Filter', '')
-    ]),
-    ('form-basic-input', 'how duo forms get built', 'Forms', [
-      ('form-basic-input', 'basic input field', 'Basic Input Field', '')
-    ]),
-    ('modals-tooltips', 'how to use modals and tool tips', 'Modals & Tooltips', ''),
-    ('data-viz', 'how duo builds data visualization', 'Data Visualizations', '')
-] -%}
-{% set active_page = active_page|default('masterfile') -%}
 <div class="base-sidebar">
   <div class="base-header">
     <header class="base-header">
@@ -73,16 +20,31 @@
       </a>
     </header>
   </div>
+
   <nav class="navigation">
-    {% for href, title, caption, children in navigation_bar recursive %}
-      <a {% if caption in active_page %} class="current"{% endif
-      %} href="{{ href|e }}.html" title="{{ title|e }}">{{ caption|e }}</a>
-      {% if children %}
-      <div {% if caption in active_page %} class="subnav open" {% else %} class="subnav" {% endif %}>
-        {{ loop(children) }}
-      </div>
+    {% for nav_item in site %}
+      <a
+        {% if nav_item.id == page.id %}class="active"{% endif %}
+        href="{{ nav_item.id }}.html"
+        title="{{ nav_item.description }}"
+        >
+        {{ nav_item.name }}
+      </a>
+
+      {% if nav_item.sections %}
+        <div
+          class="subnav{% if nav_item.id == page.id %} active{% endif %}"
+          >
+          {% for subnav_item in nav_item.sections %}
+            <a
+              href="{{ nav_item.id }}.html#{{ subnav_item.id }}"
+              title="{{ subnav_item.description }}"
+              >
+              {{ subnav_item.name }}
+            </a>
+          {% endfor %}
+        </div>
       {% endif %}
     {% endfor %}
-
   </nav>
 </div>

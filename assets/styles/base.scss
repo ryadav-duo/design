@@ -217,7 +217,7 @@ $items: 6;
     display: inline-block;
     margin: 0;
 
-    &.current {
+    &.active {
       border-top: 6px solid $duo-green;
     }
     a {
@@ -675,7 +675,7 @@ select#billing_info_credit_card_month {
             color: $duo-green;
         }
 
-        &.current {
+        &.active {
             background: $duo-green;
             color: white;
 
@@ -702,7 +702,7 @@ select#billing_info_credit_card_month {
     .subnav {
       display: none;
     }
-    .subnav.open {
+    .subnav.active {
       display: block;
     }
 
@@ -773,7 +773,7 @@ select#billing_info_credit_card_month {
             color: $duo-green-dark;
         }
 
-        &.current {
+        &.active {
             color: $duo-green;
         }
 
@@ -1617,7 +1617,7 @@ input[name="port"] {
     }
 }
 // added for pagination styles
-.paginate_button.current {
+.paginate_button.active {
     background-color: #63B246 !important;
     color: white !important;
 }

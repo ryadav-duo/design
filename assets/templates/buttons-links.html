@@ -2,4 +2,8 @@
 
 {% block body %}
   <h1>Buttons &amp; Links</h1>
+
+  {% for section in page.sections %}
+    {{ section.id }}
+  {% endfor %}
 {% endblock %}
