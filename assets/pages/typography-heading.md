@@ -11,14 +11,14 @@ example: '<h1>Main Heading</h1>'
 * [SCSS](1)
 
 ```html
-  <h1>Main Heading</h1>
+<h1>Main Heading</h1>
 ```
-```scss
-  $h1: (
-    color:       $heading-color,
-    font-family: $heading-font-family,
-    font-size:   32px,
-    font-weight: 300,
-    line-height: 44px,
-  );
+```sass
+$h1: (
+  color:       $heading-color,
+  font-family: $heading-font-family,
+  font-size:   32px,
+  font-weight: 300,
+  line-height: 44px,
+);
 ```

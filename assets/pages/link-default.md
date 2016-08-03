@@ -11,19 +11,19 @@ example: '<a href="" title="" rel="">Default Link</a>'
 * [SCSS](1)
 
 ```html
-  <a href="" title="" rel="">Default Link</a>
+<a href="" title="" rel="">Default Link</a>
 ```
-```scss
-  a {
-    @include transition(color);
-    color: $info-blue;
+```sass
+a {
+  @include transition(color);
+  color: $info-blue;
 
-    &:hover {
-        color: darken($info-blue, 15%);
-    }
-
-    &:focus {
-        outline: 2px solid $duo-green;
-    }
+  &:hover {
+      color: darken($info-blue, 15%);
   }
+
+  &:focus {
+      outline: 2px solid $duo-green;
+  }
+}
 ```

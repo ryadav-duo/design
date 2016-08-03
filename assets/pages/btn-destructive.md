@@ -11,14 +11,14 @@ example: '<button class="danger">Destructive Button</button>'
 * [SCSS](1)
 
 ```html
-  <button class="negative">Destructive Button</button>
+<button class="negative">Destructive Button</button>
 ```
-```scss
-  button, .button, input[type="submit"]:not(.link), input[type="reset"], input[type="button"] {
-    @include button;
-    @include button-style($grey);
-    &.danger {
-        @include button-style($error-red);
-    }
+```sass
+button, .button, input[type="submit"]:not(.link), input[type="reset"], input[type="button"] {
+  @include button;
+  @include button-style($grey);
+  &.danger {
+      @include button-style($error-red);
   }
+}
 ```

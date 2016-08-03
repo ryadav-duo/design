@@ -11,11 +11,11 @@ example: '<p class="box-header-info">Instructional text</p>'
 * [SCSS](1)
 
 ```html
-  <p class="box-header-info">Instructional text</p>
+<p class="box-header-info">Instructional text</p>
 ```
-```scss
-  .box-header-info {
-    color: $grey;
-    display: block;
-  }
+```sass
+.box-header-info {
+  color: $grey;
+  display: block;
+}
 ```

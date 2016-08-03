@@ -11,24 +11,24 @@ example: '<a href="" title="" rel="" class="policy-link">Small Link</a>'
 * [SCSS](1)
 
 ```html
-  <a href="" title="" rel="" class="policy-link">Small Link</a>
+<a href="" title="" rel="" class="policy-link">Small Link</a>
 ```
-```scss
-  a {
-    @include transition(color);
-    color: $info-blue;
+```sass
+a {
+  @include transition(color);
+  color: $info-blue;
 
-    &:hover {
-        color: darken($info-blue, 15%);
-    }
+  &:hover {
+      color: darken($info-blue, 15%);
+  }
 
-    &:focus {
-        outline: 2px solid $duo-green;
-    }
+  &:focus {
+      outline: 2px solid $duo-green;
   }
-  .policy-link {
-    margin-top: 5px;
-    font-size: 12px;
-    line-height: 17px;
-  }
+}
+.policy-link {
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 17px;
+}
 ```

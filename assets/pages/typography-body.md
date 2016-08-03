@@ -10,14 +10,14 @@ example: '<p>Body copy</p>'
 * [SCSS](1)
 
 ```html
-  <p>Body copy</p>
+<p>Body copy</p>
 ```
-```scss
-  body {
-    color: $base-color;
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    font-weight: $base-font-weight;
-    line-height: $base-line-height;
-  }
+```sass
+body {
+  color: $base-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+}
 ```

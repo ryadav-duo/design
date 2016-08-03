@@ -422,77 +422,77 @@ example: '
   </div>
 </div>
 ```
-```scss
-  @import 'datatables';
-  .dataTables_wrapper {
-      tr {
-          vertical-align: top;
-      }
+```sass
+@import 'datatables';
+.dataTables_wrapper {
+    tr {
+        vertical-align: top;
+    }
 
-      .plugin-version {
-          color: $grey;
-          font-size: $base-font-size - 1px;
-      }
-  }
+    .plugin-version {
+        color: $grey;
+        font-size: $base-font-size - 1px;
+    }
+}
 
 
-  #endpoints-filter {
-      .main-section {
-          & > label {
-          font-weight: normal;
-          }
-          .out-of-date-header {
-              font-size: .95em;
-              & + label {
-                  margin-top: 0;
-              }
-          }
-      }
-  }
-  $browsers: unknown, safari, firefox, chrome, ie, opera, edge;
+#endpoints-filter {
+    .main-section {
+        & > label {
+        font-weight: normal;
+        }
+        .out-of-date-header {
+            font-size: .95em;
+            & + label {
+                margin-top: 0;
+            }
+        }
+    }
+}
+$browsers: unknown, safari, firefox, chrome, ie, opera, edge;
 
-  .access-icon {
-    background-size: 16px;
+.access-icon {
+  background-size: 16px;
+  display: inline-block;
+  overflow: hidden;
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  vertical-align: -3px;
+}
+
+.browser-icon {
+  background-image: url('../images/browsers.png');
+  display: none;
+}
+
+@for $i from 1 through length($browsers) {
+  $offset: -16px * ($i - 1);
+  .browser-icon-#{nth($browsers, $i)} {
     display: inline-block;
-    overflow: hidden;
-    font-size: 16px;
-    width: 16px;
-    height: 16px;
-    margin-right: 4px;
-    vertical-align: -3px;
+    background-position: 0px $offset;
   }
+}
 
+@include retina {
   .browser-icon {
-    background-image: url('../images/browsers.png');
-    display: none;
+    background-image: url('../images/browsers@2x.png');
   }
+}
 
-  @for $i from 1 through length($browsers) {
-    $offset: -16px * ($i - 1);
-    .browser-icon-#{nth($browsers, $i)} {
-      display: inline-block;
-      background-position: 0px $offset;
-    }
+.plugin-icon {
+  background-image: url('../images/plugins.png');
+
+  &.plugin-icon-flash {
+    background-position: 0px 0px;
   }
-
-  @include retina {
-    .browser-icon {
-      background-image: url('../images/browsers@2x.png');
-    }
+  &.plugin-icon-java {
+    background-position: 0px -16px;
   }
+}
 
-  .plugin-icon {
-    background-image: url('../images/plugins.png');
-
-    &.plugin-icon-flash {
-      background-position: 0px 0px;
-    }
-    &.plugin-icon-java {
-      background-position: 0px -16px;
-    }
-  }
-
-  .os-icon-unknown {
-    display: none;
-  }
+.os-icon-unknown {
+  display: none;
+}
 ```
