@@ -2,4 +2,8 @@
 
 {% block body %}
   <h1>Typography</h1>
+
+  {% for section in page.sections %}
+    {{ render_section(page.id, section.id) }}
+  {% endfor %}
 {% endblock %}
