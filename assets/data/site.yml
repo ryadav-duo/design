@@ -1,0 +1,230 @@
+-
+  name: Master File
+  id: master-file
+  description: |
+    download the master sketch file
+-
+  name: Logos
+  id: logos
+  description: |
+    duo logo usage
+-
+  name: Color
+  id: color
+  description: |
+    duo colors
+-
+  name: Typography
+  id: typography
+  description: |
+    how to use duo typography
+  sections:
+    -
+      name: Main Heading
+      id: heading
+      description: |
+        h1 example
+    -
+      name: Subtitle
+      id: subtitle
+      description: |
+        subtitle h2 example
+    -
+      name: Section Header
+      id: section-header
+      description: |
+        section header h3 example
+    -
+      name: Subsection Header
+      id: subsection-header
+      description: |
+        subsection header h4 example
+    -
+      name: Body Copy
+      id: body-copy
+      description: |
+        body copy example
+    -
+      name: Instructional
+      id: instructional
+      description: |
+        instructional copy example
+    -
+      name: Table Column Title
+      id: table-column-title
+      description: |
+        table column title example
+    -
+      name: Button Label
+      id: button-label
+      description: |
+        button label example
+-
+  name: Icons
+  id: icons
+  description: |
+    duo iconography
+-
+  name: Navigation
+  id: navigation
+  description: |
+    how to build a duo navigation
+  sections:
+    -
+      name: Main Navigation
+      id: main
+      description: |
+        whole nav example
+    -
+      name: Subpage
+      id: subpage
+      description: |
+        subnav example
+    -
+      name: Selected Nav Link
+      id: selected
+      description: |
+        select nav item
+    -
+      name: Unselected Nav Link
+      id: unselected
+      description: |
+        unselected nav item
+    -
+      name: New Badge Nav Link
+      id: new-badge
+      description: |
+        nav badge on nav item
+    -
+      name: Duo Prompt Nav
+      id: duo-prompt
+      description: |
+        duo prompt nav
+-
+  name: Buttons & Links
+  id: buttons-links
+  description: |
+    how to build buttons and links
+  sections:
+    -
+      name: Cancel Button
+      id: cancel
+      description: |
+        cancel button example
+    -
+      name: Creation Button
+      id: creation
+      description: |
+        creation button example
+    -
+      name: Destruction Button
+      id: destruction
+      description: |
+        destruction button example
+    -
+      name: Dropdown Button
+      id: dropdown
+      description: |
+        dropdown button example
+    -
+      name: Inline Button
+      id: inline
+      description: |
+        inline button example
+    -
+      name: Positive Button
+      id: positive
+      description: |
+        positive button example
+    -
+      name: Secondary Button
+      id: secondary
+      description: |
+        secondary button example
+    -
+      name: Default Link
+      id: default-link
+      description: |
+        default link example
+    -
+      name: Dark Link
+      id: dark-link
+      description: |
+        dark link styling
+    -
+      name: New Window Link
+      id: new-window
+      description: |
+        open in a new window
+    -
+      name: Small Link
+      id: small-link
+      description: |
+        a small link
+    -
+      name: Breadcrumb Links
+      id: breadcrumb-links
+      description: |
+        breadcrumb styling
+-
+  name: Tables
+  id: tables
+  description: |
+    how duo tables are built
+  sections:
+    -
+      name: Narrow Table
+      id: narrow
+      description: |
+        narrow table example
+    -
+      name: Table Header
+      id: header
+      description: |
+        narrow table header
+    -
+      name: Table Row
+      id: row
+      description: |
+        narrow table row
+    -
+      name: Table Pagination
+      id: pagination
+      description: |
+        table pagination
+    -
+      name: Wide Table
+      id: wide
+      description: |
+        wide table example
+    -
+      name: Table Card
+      id: card
+      description: |
+        table card organism
+    -
+      name: Table Filter
+      id: filter
+      description: |
+        filter example used in tables
+-
+  name: Forms
+  id: forms
+  description: |
+    how duo forms get built
+  sections:
+    -
+      name: Basic Input Field
+      id: basic-input
+      description: |
+        basic input field
+-
+  name: Modals & Tooltips
+  id: modals-tooltips
+  description: |
+    how to use modals and tooltips
+-
+  name: Data Visualization
+  id: data-visualization
+  description: |
+    how duo build data visualization
