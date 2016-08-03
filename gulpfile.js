@@ -12,7 +12,7 @@ const page = require('./scripts/render_page')
 
 
 gulp.task('pages', () => (
-    gulp.src('assets/pages/**/*.md')
+    gulp.src('assets/templates/*.html')
         .pipe(page('assets/templates'))
         .pipe(htmlmin({
             collapseWhitespace: true,
@@ -51,7 +51,11 @@ gulp.task('build', ['pages', 'styles', 'scripts', 'images'])
 
 
 gulp.task('watch', ['build'], () => {
-    gulp.watch('assets/pages/**/*.md', ['pages']).on('change', browserSync.reload)
+    gulp.watch([
+        'assets/pages/**/*.md',
+        'assets/templates/**/*.html',
+    ], ['pages']).on('change', browserSync.reload)
+
     gulp.watch('assets/styles/**/*.scss', ['styles'])
     gulp.watch('assets/js/**/*.js', ['scripts'])
 
