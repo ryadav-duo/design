@@ -46,8 +46,13 @@ gulp.task('images', () => (
         .pipe(gulp.dest('dist/images'))
 ))
 
+gulp.task('fonts', () => (
+    gulp.src('fonts/**/*.*')
+        .pipe(gulp.dest('dist/fonts'))
+))
 
-gulp.task('build', ['pages', 'styles', 'scripts', 'images'])
+
+gulp.task('build', ['pages', 'styles', 'scripts', 'images', 'fonts'])
 
 
 gulp.task('watch', ['build'], () => {
