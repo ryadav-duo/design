@@ -191,6 +191,9 @@ $items: 6;
   position: relative;
   border-radius: 3px;
   border: 2px solid map-get($gray, light);
+  max-height: 400px;
+  overflow-y: hidden;
+  @include animation(max-height);
   .codehilite {
     // position: absolute;
     background-color: white;
@@ -199,6 +202,11 @@ $items: 6;
     &.active {
       display: block;
     }
+  }
+  &:focus {
+    max-height: none;
+    overflow: auto;
+    outline: none;
   }
 }
 [class*=".nav--"] {
@@ -217,7 +225,11 @@ $items: 6;
     display: inline-block;
     margin: 0;
 
+<<<<<<< HEAD
+    &.active, &.current {
+=======
     &.active {
+>>>>>>> c71461f3a3b7a5912ef9055e85fa804bec707a7c
       border-top: 6px solid $duo-green;
     }
     a {
@@ -653,8 +665,6 @@ select#billing_info_credit_card_month {
 
 .navigation {
     margin-bottom: 0;
-    overflow-y: auto;
-    height: 92%;
 
     > a {
         @include transition(background, color);
@@ -675,7 +685,11 @@ select#billing_info_credit_card_month {
             color: $duo-green;
         }
 
+<<<<<<< HEAD
+        &.active, &.current {
+=======
         &.active {
+>>>>>>> c71461f3a3b7a5912ef9055e85fa804bec707a7c
             background: $duo-green;
             color: white;
 
@@ -702,7 +716,11 @@ select#billing_info_credit_card_month {
     .subnav {
       display: none;
     }
+<<<<<<< HEAD
+    .subnav.active, .subnav.open {
+=======
     .subnav.active {
+>>>>>>> c71461f3a3b7a5912ef9055e85fa804bec707a7c
       display: block;
     }
 
@@ -748,6 +766,12 @@ select#billing_info_credit_card_month {
             display: block;
         }
     }
+}
+.base-sidebar {
+  .navigation {
+    overflow-y: auto;
+    height: 92%;
+  }
 }
 
 .subnav {
