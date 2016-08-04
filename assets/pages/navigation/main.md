@@ -2,7 +2,11 @@
 title: Navigation
 template: child-2col-coded
 active_page: ['Navigation', 'Main Navigation']
+<<<<<<< HEAD
 snippet_title: Main Navigation
+=======
+snippet_title: Navigation
+>>>>>>> c71461f3a3b7a5912ef9055e85fa804bec707a7c
 notes: 'A green background denotes the current page users are on. Green links below page titles also tell what page the user is currently on. Pages with a numberical amount of things get a number floated to the right (ie: 100 users = Users 100) For new pages we use the "new" tag floated to the right.'
 example: '<nav class="navigation">
   <a class="">
