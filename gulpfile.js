@@ -42,12 +42,12 @@ gulp.task('scripts', () => (
 
 
 gulp.task('images', () => (
-    gulp.src('assets/images/*.*')
+    gulp.src('assets/images/*')
         .pipe(gulp.dest('dist/images'))
 ))
 
 gulp.task('fonts', () => (
-    gulp.src('fonts/**/*.*')
+    gulp.src('assets/fonts/**/*')
         .pipe(gulp.dest('dist/fonts'))
 ))
 
