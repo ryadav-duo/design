@@ -17,7 +17,7 @@ git rm -r --cached .
 git add -A
 
 # Are there any changes?  If so, commit and push the website
-git diff --cached --exit-code
+git diff --cached --exit-code >/dev/null 2>&1
 if [ $? -eq 0 ]
 then
     echo "Website is already up to date..."
