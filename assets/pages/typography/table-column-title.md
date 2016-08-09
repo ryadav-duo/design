@@ -2,7 +2,7 @@
 title: Typography
 template: child-2col-coded
 active_page: ['Typography', 'Table Column Title']
-snippet_title: Table Column Title
+snippet_title:
 notes: Table Column Titles are used as table headers.
 example: '<h6>Table Column Title</h6>'
 ---
