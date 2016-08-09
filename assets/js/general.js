@@ -19,7 +19,7 @@ function makeActive(els, activeClass, index) {
 //  Create switchable code tabs
 function snippetTabs(containers) {
   Array.prototype.forEach.call(containers, function(container) {
-    var codeSnippets = container.querySelectorAll('.codehilite');
+    var codeSnippets = container.querySelectorAll('table.codehilite');
 
     var numOfTabs = codeSnippets.length;
     var i = 0;
@@ -58,6 +58,27 @@ function selectALlCodes() {
   var codeSelects = document.querySelectorAll('.click_to_select_all');
   Array.prototype.forEach.call(codeSelects, function(codeSelect) {
     codeSelect.addEventListener('click',function(){this.select()})
+  })
+}
+// make codehilite areas one click highlight
+function selectText( containerid ) {
+  var node =  containerid ;
+  if ( document.selection ) {
+    var range = document.body.createTextRange();
+    range.moveToElementText( node  );
+    range.select();
+  } else if ( window.getSelection ) {
+    var rangeW = document.createRange();
+    rangeW.selectNodeContents( node );
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange( rangeW );
+  }
+}
+//fine all code hilite sections
+function findCodeHiite() {
+  var codeSelectDivs = document.querySelectorAll('div.click_to_select_div');
+  Array.prototype.forEach.call(codeSelectDivs, function(codeSelectDiv) {
+    codeSelectDiv.addEventListener('click', function() {selectText(codeSelectDiv)})
   })
 }
 
@@ -114,6 +135,7 @@ var fa = function() {
   var codeContainers = document.querySelectorAll('.c-example-code');
   if (codeContainers.length >= 1) {
     snippetTabs(codeContainers);
+    findCodeHiite(codeContainers);
   }
   selectALlCodes();
   findDropdowns();

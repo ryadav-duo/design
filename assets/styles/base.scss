@@ -191,20 +191,22 @@ $items: 6;
   position: relative;
   border-radius: 3px;
   border: 2px solid map-get($gray, light);
-  max-height: 400px;
-  overflow-y: hidden;
-  @include animation(max-height);
-  .codehilite {
+  max-height: 900px;
+  overflow-y: auto;
+  -webkit-transition: max-height ease 0.8s;
+	-moz-transition:  max-height ease 0.8s;
+	transition: max-height ease 0.8s;
+  table.codehilite {
     // position: absolute;
     background-color: white;
-    width: 100%;
+    width: 99%; //this looks weird but it fixes compound scroll bars
     display: none;
     &.active {
       display: block;
     }
   }
   &:focus {
-    max-height: none;
+    max-height: 2000vh;
     overflow: auto;
     outline: none;
   }
@@ -225,11 +227,7 @@ $items: 6;
     display: inline-block;
     margin: 0;
 
-<<<<<<< HEAD
     &.active, &.current {
-=======
-    &.active {
->>>>>>> c71461f3a3b7a5912ef9055e85fa804bec707a7c
       border-top: 6px solid $duo-green;
     }
     a {
@@ -414,10 +412,16 @@ $items: 6;
 }
 
 ///Styles for code hilite
-.codehilite {
+.linenos {
+  padding: 0 1vw;
+  border-right: 2px solid map-get($gray, light);
+  color: map-get($gray, mid);
+  text-align: center;
+}
+.code {
   pre {
     color: $duo-green;
-    padding: 0 2vw;
+    padding-left: 1vw;
   }
   .nc,.nt {
     color: map-get($message, alertRed);
@@ -685,11 +689,7 @@ select#billing_info_credit_card_month {
             color: $duo-green;
         }
 
-<<<<<<< HEAD
         &.active, &.current {
-=======
-        &.active {
->>>>>>> c71461f3a3b7a5912ef9055e85fa804bec707a7c
             background: $duo-green;
             color: white;
 
@@ -716,11 +716,7 @@ select#billing_info_credit_card_month {
     .subnav {
       display: none;
     }
-<<<<<<< HEAD
     .subnav.active, .subnav.open {
-=======
-    .subnav.active {
->>>>>>> c71461f3a3b7a5912ef9055e85fa804bec707a7c
       display: block;
     }
 

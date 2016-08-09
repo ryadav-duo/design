@@ -16,8 +16,14 @@ def markdown_filter(content):
         content,
         extensions=[
             'markdown.extensions.extra',
-            'markdown.extensions.codehilite',
+            'markdown.extensions.codehilite'
         ],
+        extension_configs = {
+            'markdown.extensions.codehilite' : {
+                'linenums': 'true',
+                'css_class': 'click_to_select_div codehilite '
+            }
+        },
     )
 
 env.filters['markdown'] = markdown_filter
