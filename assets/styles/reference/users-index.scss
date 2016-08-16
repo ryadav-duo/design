@@ -1,0 +1,32 @@
+@import "duo/variables";
+
+#user-table_wrapper {
+    min-width: 745px;
+}
+
+.phone_count, .token_count {
+  min-width: 60px;
+}
+
+.groups-dropdown {
+  color: $grey-darker;
+  display: inline-block;
+  margin: -10px 0 0 10px;
+  text-align: center;
+
+  .dropdown-content li:only-child{
+    width: 140px;
+  }
+}
+
+.tipsy-inner {
+  text-align: center;
+}
+
+.activation-email-custom-image {
+  max-height: 90px;
+  max-width: 90px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+

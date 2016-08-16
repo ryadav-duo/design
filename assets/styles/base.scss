@@ -94,6 +94,9 @@ a[target="_blank"] {
   background: white;
   padding: $outside-padding;
   border-radius: $border-radius;
+  > h1 {
+    width: 100%;
+  }
 }
 .l-pad--base-container {
   padding: $base-container-pad;
@@ -196,6 +199,9 @@ $items: 6;
   -webkit-transition: max-height ease 0.8s;
 	-moz-transition:  max-height ease 0.8s;
 	transition: max-height ease 0.8s;
+  @media (max-width: 63.99rem) {
+    margin-top: 2vw;
+  }
   table.codehilite {
     // position: absolute;
     background-color: white;
@@ -294,6 +300,9 @@ $items: 6;
   hr {
     border-color: map-get($gray, light);
     border-style: solid;
+  }
+  &:not(:first-child) {
+    margin-top: 80px;
   }
 }
 .c--icons {
@@ -3375,4 +3384,21 @@ $browsers: unknown, safari, firefox, chrome, ie, opera, edge;
             }
         }
     }
+}
+// form style for application/integrations input
+.key {
+    font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+
+    &.placeholder {
+        color: #999;
+    }
+}
+.key_holder input {
+    padding: 4px 4px 2px 4px;
+    width: 300px;
+    font-size: 12px;
+    background-color: #f7f7f7;
+    color: #555;
+    border: 1px dotted #ccc;
+    outline: none;
 }

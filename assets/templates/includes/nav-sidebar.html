@@ -37,7 +37,7 @@
           >
           {% for subnav_item in nav_item.sections %}
             <a
-              href="{{ nav_item.id }}.html#{{ subnav_item.id }}"
+              href="{{ nav_item.id }}.html#{{ subnav_item.id|urlencode }}"
               title="{{ subnav_item.description }}"
               >
               {{ subnav_item.name }}
