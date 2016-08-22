@@ -1,6 +1,15 @@
+"use strict";
 // Global Variables
 
 // Functioning Functions
+  //This function adds event listeners
+function addEars(els, et, f) {
+  Array.prototype.forEach.call(els, function(e) {
+    e.addEventListener(et, f, false)
+    }
+  )
+}
+
 function makeActive(els, activeClass, index) {
   Array.prototype.forEach.call(els, function(el) {
     if (el.classList) {
@@ -128,17 +137,33 @@ function closeAllDropdowns(e) {
             dropdown.querySelector('.dropdown-content').style.display = 'none';
           })
 }
+function fakeTypeAhead() {
+  var focused = document.activeElement;
+  if(this === focused) {
+    this.addEventListener('keydown', function() {
+      this.nextElementSibling.style.display = "block"
+    }, false)
+  }
+}
+function closeTypeAhead() {
+    this.nextElementSibling.style.display = "none"
+}
 
 
 // Put things here that you want to executed when the document is ready
 var fa = function() {
-  var codeContainers = document.querySelectorAll('.c-example-code');
+  // Gobal vars
+  let codeContainers = document.querySelectorAll('.c-example-code');
+  let wonkaBar = document.querySelectorAll('.wonka-bar input');
+
   if (codeContainers.length >= 1) {
     snippetTabs(codeContainers);
     findCodeHiite(codeContainers);
   }
-  selectALlCodes();
-  findDropdowns();
+  addEars(wonkaBar, 'focus', fakeTypeAhead)
+  addEars(wonkaBar, 'blur', closeTypeAhead)
+  selectALlCodes()
+  findDropdowns()
 };
 
 // You know wait for page to be ready to do stuff

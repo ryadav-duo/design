@@ -72,7 +72,7 @@
   sections:
     -
       name: Main Navigation
-      id: main
+      id: Main Navigation
       description: |
         whole nav example
     -
@@ -218,13 +218,65 @@
       id: basic-input
       description: |
         basic input field
+    -
+      name: Configuration Input
+      id: configuration-input
+      description: |
+        Application configuration input field
+    -
+      name: Radio Input List
+      id: radio-input
+      description: |
+        Organism of UI elements making a list of radio input fields
+    -
+      name: Radio & Textarea List
+      id: radio-text-input
+      description: |
+        Ogranisms of textareas and radio buttons
+    -
+      name: Checkbox Input List
+      id: checkbox-input
+      description: |
+        List of checkboxes
+    -
+      name: Phone Input
+      id: phone-input
+      description: |
+        Input field with international phone numbers
+    -
+      name: Dropdown Field
+      id: dropdown-field
+      description: |
+        Dropdown input field in a form
+    -
+      name: Search Field
+      id: search-field
+      description: |
+        Auto complete search field
+    -
+      name: Multi Input Field
+      id: multi-input-field
+      description: |
+        used to assign multiple tag like values to an input field
 -
   name: Modals & Tooltips
   id: modals-tooltips
   description: |
     how to use modals and tooltips
+  sections:
+    -
+      name: Hover Tooltip
+      id: hover-tooltip
+      description: |
+        tooltip that gives helpful information upon hover
 -
   name: Data Visualization
   id: data-visualization
   description: |
     how duo build data visualization
+  sections:
+    -
+      name: Dashboard Statistics
+      id: dashboard-stats
+      descrtiption: |
+        clickable stat blocks

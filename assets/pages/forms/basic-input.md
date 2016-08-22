@@ -1,7 +1,7 @@
 ---
 title: Forms
 template: child-2col-coded
-active_page: ['Forms', 'Basic Input Field']
+active_page: ['basic-input']
 snippet_title: Basic Input Field
 notes: 'Basic input field for text. The green outline indicates focus. The gray outline lacks focus. User-entered text is black.'
 example: '

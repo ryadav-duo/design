@@ -32,6 +32,15 @@ gulp.task('styles', () => (
         .pipe(browserSync.stream())
 ))
 
+gulp.task('referenceFiles', () => {
+  gulp.src('assets/styles/**/*.css')
+      .pipe(gulp.dest('dist/styles'))
+      .pipe(browserSync.stream())
+  gulp.src('assets/js/reference/**/**/*.js')
+      .pipe(jsmin())
+      .pipe(rename({suffix: '.min'}))
+      .pipe(gulp.dest('dist/js'))
+})
 
 gulp.task('scripts', () => (
     gulp.src('assets/js/*.js')
@@ -52,12 +61,12 @@ gulp.task('fonts', () => (
 ))
 
 
-gulp.task('build', ['pages', 'styles', 'scripts', 'images', 'fonts'])
+gulp.task('build', ['pages', 'styles', 'scripts', 'images', 'fonts', 'referenceFiles'])
+
+gulp.task('refresh', ['pages', 'styles', 'scripts'])
 
 
-
-
-gulp.task('watch', ['build'], () => {
+gulp.task('watch', ['refresh'], () => {
     gulp.watch([
         'assets/pages/**/*.md',
         'assets/templates/**/*.html',
@@ -70,5 +79,6 @@ gulp.task('watch', ['build'], () => {
         server: {
             baseDir: 'dist',
         },
+        open: false,
     })
 })

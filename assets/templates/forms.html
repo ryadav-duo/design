@@ -1,9 +1,21 @@
 {% extends 'layouts/base.html' %}
-
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="styles/reference/intl-tel-input/intlTelInput.css">
+  <link rel="stylesheet" href="styles/reference/select2.css">
+{% endblock %}
 {% block body %}
   <h1>Forms</h1>
 
   {% for section in page.sections %}
     {{ render_section(page.id, section.id) }}
   {% endfor %}
+{% endblock %}
+{% block scripts %}
+  {{ super() }}
+  <script src="js/jquery/jquery.min.js"></script>
+
+  <!-- <script src="js/reference/users-phone-add.min.js"></script> -->
+  <!-- <script src="js/reference/intl-tel-input/intlTelInput.min.js"></script> -->
+  <script src="js/intl-tel-input/utils.min.js"></script>
 {% endblock %}
