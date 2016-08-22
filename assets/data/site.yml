@@ -258,14 +258,25 @@
       id: multi-input-field
       description: |
         used to assign multiple tag like values to an input field
-
 -
   name: Modals & Tooltips
   id: modals-tooltips
   description: |
     how to use modals and tooltips
+  sections:
+    -
+      name: Hover Tooltip
+      id: hover-tooltip
+      description: |
+        tooltip that gives helpful information upon hover
 -
   name: Data Visualization
   id: data-visualization
   description: |
     how duo build data visualization
+  sections:
+    -
+      name: Dashboard Statistics
+      id: dashboard-stats
+      descrtiption: |
+        clickable stat blocks
