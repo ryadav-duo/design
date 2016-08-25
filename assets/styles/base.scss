@@ -858,12 +858,12 @@ select#billing_info_credit_card_month {
 $base-sidebar-width: 200px;
 
 .base-container {
-    // background: $grey-lighter;
-    // box-shadow: 0 0 20px 0 rgba(0,0,0,0.5);
+    background: white;
+    box-shadow: none;
     margin: 0 auto;
     min-height: 100vh;
-    // min-width: 1024px;
-    // max-width: 1400px;
+    min-width: none;
+    max-width: none;
     position: relative;
     overflow: overlay;
 
