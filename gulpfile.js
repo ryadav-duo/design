@@ -43,7 +43,7 @@ gulp.task('referenceFiles', () => {
 })
 
 gulp.task('scripts', () => (
-    gulp.src('assets/js/*.js')
+    gulp.src('assets/js/general.js')
         .pipe(jsmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dist/js'))

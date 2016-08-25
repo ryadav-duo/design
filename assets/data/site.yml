@@ -100,6 +100,16 @@
       id: duo-prompt
       description: |
         duo prompt nav
+    -
+      name: Pagination
+      id: pagination
+      description: |
+        Pagination used when there is more content to be displayed than can fit on page.
+    -
+      name: Progress Bar
+      id: progress-bar
+      description: |
+        Progress bar wizard seen by admins upon new installation
 -
   name: Buttons & Links
   id: buttons-links
@@ -188,20 +198,15 @@
       description: |
         narrow table row
     -
-      name: Table Pagination
-      id: pagination
-      description: |
-        table pagination
-    -
       name: Wide Table
       id: wide
       description: |
         wide table example
     -
-      name: Table Card
-      id: card
+      name: Data List Table
+      id: data-details-list
       description: |
-        table card organism
+        A list of details from a single data set to go with pie chart
     -
       name: Table Filter
       id: filter
@@ -269,6 +274,16 @@
       id: hover-tooltip
       description: |
         tooltip that gives helpful information upon hover
+    -
+      name: Confirmation
+      id: confirmation-modal
+      description: |
+        Informational modal with multiple CTAs
+    -
+      name: Policy
+      id: policy
+      description: |
+        Modal that opens when creating or attaching a Policy
 -
   name: Data Visualization
   id: data-visualization
@@ -280,3 +295,28 @@
       id: dashboard-stats
       descrtiption: |
         clickable stat blocks
+    -
+      name: Multiple Data Sets
+      id: multi-data-sets
+      description: |
+        Use when displaying a graph of muliptle sets of data
+    -
+      name: Singular Data Set
+      id: single-data-set
+      description: |
+        Use when showcasing a specific data set in pie chart
+    -
+      name: Bar Graph
+      id: bar-graph
+      description: |
+        Display a breakdown of two categories (out-of-date vs up-to-date devices).
+    -
+      name: Visual Statistics
+      id: visual-stats
+      description: |
+        Display in a visual way statistical data (a breakdown of laptops and desktops vs mobile devices).
+    -
+      name: Area Graph
+      id: area-graph
+      description: |
+        Display changes of data over time using area graph.

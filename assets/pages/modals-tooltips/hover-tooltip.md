@@ -3,7 +3,7 @@ title: Tooltip
 template: child-2col-coded
 active_page: ['hover-tooltip']
 snippet_title: Hover Tool Tip
-notes: 'Provide helper text when he clicks on the blue ‘Get Info’ blob next to text.'
+notes: 'Provide helper text when he clicks on the blue "Get Info" blob next to text.'
 example: '
 <i class="info icon-information-filled" original-title="Trusted devices settings do not apply to LastPass applications."></i>
 '
@@ -17,5 +17,7 @@ example: '
 
 ```
 ```sass
-
+.info {
+    @include policy-item-icon($info-blue);
+}
 ```

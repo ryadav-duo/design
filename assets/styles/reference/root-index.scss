@@ -1,0 +1,217 @@
+@import "duo/variables";
+@import "duo/mixins";
+
+$update-feed-width: 220px;
+
+.dashboard {
+    @include clearfix;
+    white-space: nowrap;
+}
+
+.dashboard-body {
+    @include clearfix;
+    display: inline-block;
+    width: calc(100% - #{$update-feed-width} - 2rem);
+    min-width: 594px;
+    white-space: normal;
+    margin-right: 4%;
+}
+
+#update-feed {
+    display: inline-block;
+    width: $update-feed-width;
+    white-space: normal;
+    vertical-align: top;
+
+    .feed-section {
+        margin: 16px 0;
+
+        h4 {
+            margin-bottom: 0;
+        }
+
+        &.title {
+            margin-bottom: 5px;
+        }
+    }
+
+    .date {
+        font-size: 11px;
+        color: $duo-green;
+        text-transform: uppercase;
+
+        & + .feed-section {
+            margin-top: 0;
+        }
+    }
+}
+
+.at-a-glance {
+    margin-bottom: 20px;
+
+    .flexbox & {
+        display: flex;
+    }
+}
+
+.number-link {
+    display: inline-block;
+    margin-right: 10px;
+    min-width: 120px;
+
+    .flexbox & {
+        flex: 1;
+    }
+
+    a {
+        background: white;
+        display: block;
+        text-decoration: none;
+        padding: 1rem;
+        text-align: center;
+
+        &[href]:hover {
+            background: darken(white, 1%);
+        }
+
+        .number {
+            display: block;
+            font-size: 2.5vw;
+            line-height: 48px;
+            margin-bottom: 8px;
+            color: $duo-blue;
+            font-weight: 300;
+        }
+
+        .what {
+            text-transform: uppercase;
+            font-size: 12px;
+            color: $grey;
+
+            @include low-res {
+                color: $grey-dark-low-res;
+            }
+        }
+
+        @media screen and (max-width: 1060px) {
+            .number {
+                font-size: 24px;
+                line-height: 36px;
+            }
+
+            .what {
+                font-size: 10px;
+            }
+        }
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+ul.user-actions {
+  margin-bottom: 15px;
+
+  li {
+    margin-bottom: 1px;
+  }
+}
+
+.field.status {
+  font-weight: bold;
+}
+
+#map {
+  height: 480px;
+  border: solid 1px #aaa;
+  border-radius: $border-radius;
+  margin-bottom: 1em;
+  position: relative;
+  z-index: 99;
+
+  .empty {
+    display: none;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgb(192,192,192);
+    background: rgba(0,0,0,0.25);
+    z-index: 1000;
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 240px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.dashboard-body {
+    table {
+        table-layout: fixed;
+
+        td, .subcell {
+            @include ellipsis(100%);
+        }
+
+        .username, .integration, .timestamp {
+            width: 15%;
+        }
+
+        .result {
+            width: 20%;
+        }
+
+        .ator-device {
+            width: 17%;
+        }
+    }
+}
+
+.dataTables_wrapper {
+
+    .header {
+        font-weight:bold;
+        margin-bottom: 7px
+    }
+  
+    tr {
+        vertical-align: top;
+          
+        ul {
+            text-align:center;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        td {
+            border-right:none;
+            border-left:none;
+        }
+    }
+
+    .reason-cell {
+      margin-left: 21px;
+    }
+}
+
+#modal-platform-spock {
+    max-width: 600px;
+    max-height: 100%;
+    overflow: auto;
+
+    .modal-image {
+        max-width: 100%;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    ul {
+        margin: 0 0 0 -15px;
+    }
+}

@@ -3,6 +3,8 @@
 @import "normalize/normalize.scss";
 
 @import "duo-base";
+@import "base";
+@import "progress";
 @import "fonts/duo-admin";
 @import "fonts/ss-standard";
 @import "typography";
@@ -10,6 +12,7 @@
 @import "forms";
 @import "messages";
 @import "modals";
+@import "confirm";
 @import "buttons";
 @import "header";
 @import "grid";

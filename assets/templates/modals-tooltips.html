@@ -5,9 +5,19 @@
 {% endblock %}
 {% block body %}
   <h1>Modals &amp; Tooltips</h1>
+  {% for section in page.sections %}
+    {{ render_section(page.id, section.id) }}
+  {% endfor %}
 {% endblock %}
 {% block scripts %}
-  {{ super() }}
   <script src="js/jquery/jquery.min.js"></script>
-  <script src="js/jquery.tipsy.min.js"></script>
+  <script src="js/jquery/jquery.tipsy.min.js"></script>
+  {{ super() }}
+  <script type="text/javascript">
+    $(".info").tipsy({
+                gravity: "s",
+                live: !0,
+                html: !0
+            });
+  </script>
   {% endblock %}
