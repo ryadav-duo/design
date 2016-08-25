@@ -1,5 +1,18 @@
 {% extends 'layouts/base.html' %}
-
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="styles/reference/root-index.css">
+{% endblock %}
 {% block body %}
   <h1>Data Visualizations</h1>
+  {% for section in page.sections %}
+    {{ render_section(page.id, section.id) }}
+  {% endfor %}
 {% endblock %}
+{% block scripts %}
+  <script src="js/jquery/jquery.min.js"></script>
+  <script src="js/highcharts/highcharts.min.js"></script>
+  {{ super() }}
+  <script type="text/javascript">
+  </script>
+  {% endblock %}

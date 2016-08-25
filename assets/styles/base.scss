@@ -1805,15 +1805,16 @@ input[name="port"] {
 .insight-key.unsupported:before, .insight-key.uninstalled:before, .insight-key.disabled:before {
     background-color: black;
 }
+.c--icons {
+  .insight-key:before {
+      border-radius: 50%;
+      content: '';
+      display: inline-block;
+      margin-top: 2vw;
+      height: 2vw !important;
+      width: 2vw !important;
+  }
 
-.insight-key:before {
-    border-radius: 50%;
-    content: '';
-    display: inline-block;
-    margin-top: 3vw;
-    height: 2vw !important;
-    width: 2vw !important;
-}
 // Insight icons for devices
 .insight-security-chart-passcode:before {
     content: '\e01a';
@@ -1833,6 +1834,7 @@ input[name="port"] {
     font-family: "Duo Admin Icons";
     font-size: 3vw;
     font-style: normal;
+}
 }
 // SS standard Icons
 .ss-alert:before, .ss-alert.right:after {
@@ -2461,22 +2463,24 @@ $browsers: unknown, safari, firefox, chrome, ie, opera, edge;
         top: 70px;
     }
 }
-.insight-security-chart {
-    display: inline-block;
-    position: relative;
-    right: 16px;
-}
-.insight-security-chart-rooted:after {
-    content: '\e009';
-}
-.insight-security-chart-passcode:after {
-    content: '\e01a';
-}
-.insight-security-chart-touchid:after {
-    content: '\e1a7';
-}
-.insight-security-chart-encryption:after {
-    content: '\e19f';
+.c-example-render {
+  .insight-security-chart {
+      display: inline-block;
+      position: relative;
+      right: 16px;
+  }
+  .insight-security-chart-rooted:after {
+      content: '\e009';
+  }
+  .insight-security-chart-passcode:after {
+      content: '\e01a';
+  }
+  .insight-security-chart-touchid:after {
+      content: '\e1a7';
+  }
+  .insight-security-chart-encryption:after {
+      content: '\e19f';
+  }
 }
 
 .insight-no-devices {
@@ -3403,4 +3407,21 @@ $browsers: unknown, safari, firefox, chrome, ie, opera, edge;
     color: #555;
     border: 1px dotted #ccc;
     outline: none;
+}
+
+//Info modal style
+@mixin policy-item-icon($color) {
+    color: $color;
+    font-size: 18px;
+    vertical-align: middle;
+}
+.info {
+    @include policy-item-icon($info-blue);
+}
+
+/// Data Viz Overrides
+.flexbox {
+  .at-a-glance {
+    flex-wrap: wrap;
+  }
 }

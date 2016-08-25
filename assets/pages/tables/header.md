@@ -1,8 +1,8 @@
 ---
-title: Tables
+title: Table Header
 template: child-1col-coded
-active_page: ['Tables', 'Table Header']
-snippet_title: Narrow Table
+active_page: ['Table Header']
+snippet_title: Table Header
 notes: 'Organizes and displays a large amount of related information.
 Sort arrows, checkboxes, search bar, and the Add to Group dropdown provide tools to work with the data more easily.'
 example: '  <div id="user-table_wrapper" class="dataTables_wrapper">

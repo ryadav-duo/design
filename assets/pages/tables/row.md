@@ -1,8 +1,8 @@
 ---
-title: Tables
+title: Table Row
 template: child-1col-coded
-active_page: ['Tables', 'Table Row']
-snippet_title: Narrow Table
+active_page: ['Table Row']
+snippet_title: Table Row
 notes: 'Organizes and displays a large amount of related information.
 Sort arrows, checkboxes, search bar, and the Add to Group dropdown provide tools to work with the data more easily.'
 example: '  <div id="user-table_wrapper" class="dataTables_wrapper">
