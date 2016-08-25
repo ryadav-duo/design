@@ -72,7 +72,7 @@
   sections:
     -
       name: Main Navigation
-      id: Main Navigation
+      id: main-navigation
       description: |
         whole nav example
     -
