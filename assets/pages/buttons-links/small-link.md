@@ -2,7 +2,7 @@
 title: Buttons & Links
 template: child-2col-coded
 active_page: 'small-link'
-snippet_title: Default Link
+snippet_title: Small Link
 notes: 'These buttons appear on each row of certain tables. They are much smaller than the normal buttons.'
 example: '<a href="" title="" rel="" class="policy-link">Small Link</a>'
 ---

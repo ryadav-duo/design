@@ -2,7 +2,7 @@
 title: Search
 template: child-2col-coded
 active_page: 'multi-input-field'
-snippet_title: Search Field
+snippet_title: Multi Input Field
 notes: ''
 example: '
 <div class="field ">
