@@ -1,7 +1,7 @@
 ---
 title: Typography
 template: child-2col-coded
-active_page: ['Typography', 'Section Header']
+active_page: 'section-header'
 snippet_title:
 notes: Use section headers when there are sections to break down further within each subtitle.
 example: '<h4>Section Header</h4>'

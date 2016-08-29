@@ -1,7 +1,7 @@
 ---
 title: Data Set Details List
 template: child-2col-coded
-active_page: ['data-details-list']
+active_page: 'data-details-list'
 snippet_title: Data Set Details List
 notes: 'The intent of table in cards is to break down the data from a pie chart visualization or more visual chart. This way users can both data visualization and chart side by side.'
 example: '

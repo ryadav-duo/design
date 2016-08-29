@@ -44,6 +44,7 @@ $newColors: (
 $outside-padding: 35px 30px;
 $gutter: 20px;
 $base-container-pad: 0px 50px;
+$mobile-base-conatiner-pad: 0px 15px;
 
 // 1.4 Borders
 $border-radius : 3px;
@@ -99,9 +100,15 @@ a[target="_blank"] {
   > h1 {
     width: 100%;
   }
+  &:last-of-type {
+    margin-bottom: 78vh;
+  }
 }
 .l-pad--base-container {
   padding: $base-container-pad;
+  @media (max-width: 30rem) {
+    padding: $mobile-base-conatiner-pad;
+  }
 }
 .l-marg--pattern-header {
   margin: 40px 0;
@@ -304,7 +311,8 @@ $items: 6;
     border-style: solid;
   }
   &:not(:first-child) {
-    margin-top: 80px;
+    margin-top: 60px;
+    padding-top: 20px;
   }
 }
 .c--icons {
@@ -862,7 +870,7 @@ $base-sidebar-width: 200px;
     box-shadow: none;
     margin: 0 auto;
     min-height: 100vh;
-    min-width: none;
+    min-width: auto;
     max-width: none;
     position: relative;
     overflow: overlay;
@@ -879,6 +887,10 @@ $base-sidebar-width: 200px;
     bottom: 0;
     background: white;
     min-width: $base-sidebar-width;
+
+    @media (max-width: 30rem) {
+      left: -$base-sidebar-width;
+    }
 }
 
 .base-header {
@@ -919,6 +931,9 @@ $base-sidebar-width: 200px;
 
 .base-main {
     margin-left: $base-sidebar-width;
+    @media (max-width: 30rem) {
+      margin-left: 0;
+    }
 }
 
 .base-actions {
@@ -928,9 +943,19 @@ $base-sidebar-width: 200px;
     margin: 0 -50px 40px;
     position: relative;
     z-index: 100;
+    @media (max-width: 30rem) {
+      margin: 0 0 40px;
+      width: 13vw;
+    }
 
     .wonka-bar {
         float: left;
+        .twitter-typeahead {
+          @media (max-width: 30rem) {
+            visibility: hidden;
+            width: 0;
+          }
+        }
     }
 
     .dropdown {

@@ -1,7 +1,7 @@
 ---
 title: Tables
 template: child-1col-coded
-active_page: ['Tables', 'Wide Table']
+active_page: 'wide'
 snippet_title: Wide Table
 notes: 'Organizes and displays a large amount of related information.
 Sort arrows, checkboxes, search bar, and the Add to Group dropdown provide tools to work with the data more easily.'

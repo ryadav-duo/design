@@ -1,7 +1,7 @@
 ---
 title: Table Header
 template: child-1col-coded
-active_page: ['Table Header']
+active_page: 'header'
 snippet_title: Table Header
 notes: 'Organizes and displays a large amount of related information.
 Sort arrows, checkboxes, search bar, and the Add to Group dropdown provide tools to work with the data more easily.'

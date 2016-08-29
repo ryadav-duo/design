@@ -1,7 +1,7 @@
 ---
 title: Forms
 template: child-2col-coded
-active_page: ['radio-input']
+active_page: 'radio-input'
 snippet_title: List of Radio Inputs
 notes: ''
 example: '

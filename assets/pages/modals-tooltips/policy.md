@@ -1,7 +1,7 @@
 ---
 title: Policy Modal
 template: child-1col-coded
-active_page: ['policy']
+active_page: 'policy'
 snippet_title: policy
 notes: ''
 example: '

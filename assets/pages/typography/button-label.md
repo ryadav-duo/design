@@ -1,7 +1,7 @@
 ---
 title: Typography
 template: child-2col-coded
-active_page: ['Typography', 'Button Label']
+active_page: 'button-label'
 snippet_title:
 notes: This is the correct default size and style for labels of buttons.
 example: '<label class="subline">Button Label</label>'

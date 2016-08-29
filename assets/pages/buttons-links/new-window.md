@@ -1,7 +1,7 @@
 ---
 title: Buttons & Links
 template: child-2col-coded
-active_page: ['Buttons & Links', 'New Window Link']
+active_page: 'new-window'
 snippet_title: New Window Link
 notes: 'Use this icon on a link that links outside of the duo site.'
 example: '<a href="" title="" rel="" target="_blank">Open in a new window <i class="icon-new-window "></i></a>'

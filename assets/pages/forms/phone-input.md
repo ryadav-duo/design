@@ -1,7 +1,7 @@
 ---
 title: Forms
 template: child-2col-coded
-active_page: ['phone-input']
+active_page: 'phone-input'
 snippet_title: Phone Input with International Dropdown
 notes: 'Illustrates phone entry field that includes country code, based on flag selected in drop-down.'
 example: '

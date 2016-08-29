@@ -1,7 +1,7 @@
 ---
 title: Multiple Data Sets
 template: child-1col-coded
-active_page: ['multi-data-sets']
+active_page: 'multi-data-sets'
 snippet_title: Multiple Data Sets
 notes: 'Break-down of multiple sets of data.'
 example: '

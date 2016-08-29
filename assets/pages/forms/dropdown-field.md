@@ -1,7 +1,7 @@
 ---
 title: Dropdown
 template: child-2col-coded
-active_page: ['dropdown-field']
+active_page: 'dropdown-field'
 snippet_title: Dropdown Field
 notes: ''
 example: '

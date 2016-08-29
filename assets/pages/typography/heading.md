@@ -1,7 +1,7 @@
 ---
 title: Typography
 template: child-2col-coded
-active_page: ['Typography', 'Main Heading']
+active_page: 'heading'
 snippet_title:
 notes: Main headings should only exist once on each page. Use them to title the entire page.
 example: '<h1>Main Heading</h1>'

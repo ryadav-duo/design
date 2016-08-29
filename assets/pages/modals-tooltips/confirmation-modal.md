@@ -1,8 +1,8 @@
 ---
 title: Confirmation Modal
 template: child-1col-coded
-active_page: ['confirmation-modal']
-snippet_title: confirmation-modal
+active_page: 'confirmation-modal'
+snippet_title: Confirmation Modal
 notes: ''
 example: '
 <div id="modal-confirm" class="modal modal-auto modal-confirm" style="position: relative; transform: none; left: auto; top: auto; margin: 0 auto;">

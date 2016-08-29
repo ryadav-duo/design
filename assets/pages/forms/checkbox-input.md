@@ -1,7 +1,7 @@
 ---
 title: Forms
 template: child-2col-coded
-active_page: ['checkbox-input']
+active_page: 'checkbox-input'
 snippet_title: Checkbox Input List
 notes: ''
 example: '

@@ -1,7 +1,7 @@
 ---
 title: Signular Data Set
 template: child-1col-coded
-active_page: ['single-data-set']
+active_page: 'single-data-set'
 snippet_title: Singular Data Set
 notes: '
 Break-down of a specific feature (fingerprint, jailbroken, encryption) or specific software (Safari, Chrome, Flash, Java, etc.) on a device. Another examples are rooted phones, screen locks, fingerprint.

@@ -1,7 +1,7 @@
 ---
 title: Buttons & Links
 template: child-2col-coded
-active_page: ['Buttons & Links', 'Dark Link']
+active_page: 'dark-link'
 snippet_title: Dark Link
 notes: 'These buttons appear on each row of certain tables. They are much smaller than the normal buttons.'
 example: '<div class="page-message">

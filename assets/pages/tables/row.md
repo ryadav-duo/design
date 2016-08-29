@@ -1,7 +1,7 @@
 ---
 title: Table Row
 template: child-1col-coded
-active_page: ['Table Row']
+active_page: 'row'
 snippet_title: Table Row
 notes: 'Organizes and displays a large amount of related information.
 Sort arrows, checkboxes, search bar, and the Add to Group dropdown provide tools to work with the data more easily.'

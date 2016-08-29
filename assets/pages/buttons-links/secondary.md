@@ -1,7 +1,7 @@
 ---
 title: Buttons & Links
 template: child-2col-coded
-active_page: ['Buttons & Links', 'Secondary Button']
+active_page: 'secondary'
 snippet_title: Secondary Button
 notes: "This button isn't the main CTA on the page. Multiple may appear at a time on the same page."
 example: '<button class="secondary">Secondary Action Button</button>'
