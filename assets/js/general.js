@@ -158,7 +158,7 @@ function jumpToActive() {
   const nav = document.querySelector('.base-sidebar .navigation .subnav.active')
 
   window.addEventListener('scroll', function() {
-    let currentPos = scrollY
+    let currentPos = (scrollY + 150)
 
     Array.prototype.forEach.call(anchors, function(anchor) {
       if(currentPos >= anchor.offsetTop) {
