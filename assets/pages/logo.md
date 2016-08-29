@@ -1,7 +1,7 @@
 ---
 title: Logo Code Example
 template: child-2col-coded
-active_page: ['Logos']
+active_page: 'logo'
 snippet_title:
 notes: The Duo logo is used to orient users to each channel, when they see the logo they have a good clue that they've made it to the right place. It also provides a quick link back to the home page. Learn more about how to use the Duo logo.
 example: '<div class="base-header">

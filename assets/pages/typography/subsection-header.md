@@ -1,7 +1,7 @@
 ---
 title: Typography
 template: child-2col-coded
-active_page: ['Typography', 'SubSection Header']
+active_page: 'subsection-header'
 snippet_title:
 notes: Use Subsection headers when there are sections to break down further within each Section area.
 example: '<h5>Subsection Header</h5>'

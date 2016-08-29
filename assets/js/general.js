@@ -149,6 +149,30 @@ function closeTypeAhead() {
     this.nextElementSibling.style.display = "none"
 }
 
+function include(arr,obj) {
+    return (arr.indexOf(obj) != -1);
+}
+
+function jumpToActive() {
+  const anchors = document.querySelectorAll('.c--snippet-title')
+  const nav = document.querySelector('.base-sidebar .navigation .subnav.active')
+
+  window.addEventListener('scroll', function() {
+    let currentPos = scrollY
+
+    Array.prototype.forEach.call(anchors, function(anchor) {
+      if(currentPos >= anchor.offsetTop) {
+        // nav.querySelector('a').classList.remove('active')
+        let navItems = nav.querySelectorAll('a.active:not([data-goto="'+anchor.getAttribute('id')+'"])')
+          Array.prototype.forEach.call(navItems, function(navItem) {
+            navItem.classList.remove('active')
+          })
+        nav.querySelector('a[data-goto="'+anchor.getAttribute('id')+'"]').classList.add('active')
+      }
+    })
+  })
+}
+
 
 // Put things here that you want to executed when the document is ready
 var fa = function() {
@@ -164,6 +188,7 @@ var fa = function() {
   addEars(wonkaBar, 'blur', closeTypeAhead)
   selectALlCodes()
   findDropdowns()
+  jumpToActive()
 };
 
 // You know wait for page to be ready to do stuff

@@ -1,7 +1,7 @@
 ---
 title: Typography
 template: child-2col-coded
-active_page: ['Typography', 'Instructional']
+active_page: 'instructional'
 snippet_title:
 notes: Use instructional text for supporting context to help our users, for inline labels in forms, and for table headers.
 example: '<p class="box-header-info">Instructional text</p>'

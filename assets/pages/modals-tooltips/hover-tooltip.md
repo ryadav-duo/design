@@ -1,7 +1,7 @@
 ---
 title: Tooltip
 template: child-2col-coded
-active_page: ['hover-tooltip']
+active_page: 'hover-tooltip'
 snippet_title: Hover Tool Tip
 notes: 'Provide helper text when he clicks on the blue "Get Info" blob next to text.'
 example: '

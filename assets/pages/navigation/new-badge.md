@@ -1,7 +1,7 @@
 ---
 title: New Badge Nav Link
 template: child-2col-coded
-active_page: ['new-badge']
+active_page: 'new-badge'
 snippet_title: New Badge Nav Link
 notes: "When there's a new feature/page we float to the right the 'NEW' tag."
 example: '<nav class="navigation">

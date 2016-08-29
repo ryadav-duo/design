@@ -1,7 +1,7 @@
 ---
 title: Progress Bar
 template: child-1col-coded
-active_page: ['progress-bar']
+active_page: 'progress-bar'
 snippet_title: Progress Bar
 notes: 'Indicates via highlighting the complete vs. incomplete steps in a multi-step process. Green checkmarked elements indicate completed steps. White, numbered steps indicate incomplete steps.
 

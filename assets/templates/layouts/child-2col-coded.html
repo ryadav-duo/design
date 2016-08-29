@@ -1,12 +1,12 @@
 
-  <section class="col-6-6 c--snippet-title">
+  <section class="col-6-6 c--snippet-title" id="{{ active_page|urlencode }}">
     {% if snippet_title %}<h2>{{ snippet_title }}</h2>{% endif %}
     <hr />
   </section>
 
 
 {% if example %}
-  <div class="l-lg-col-3 l-d-col-3 l-m-col-6 c-example-render" id="{{ snippet_title|urlencode }}">
+  <div class="l-lg-col-3 l-d-col-3 l-m-col-6 c-example-render">
     {{ example }}
   </div>
 {% endif %}

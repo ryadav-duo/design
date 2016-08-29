@@ -1,7 +1,7 @@
 ---
 title: Typography
 template: child-2col-coded
-active_page: ['Body Copy', 'Typography']
+active_page: 'body-copy'
 snippet_title:
 example: '<p>Body copy</p>'
 ---

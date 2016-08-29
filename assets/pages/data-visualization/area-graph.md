@@ -1,7 +1,7 @@
 ---
 title: Area Graph
 template: child-1col-coded
-active_page: ['area-graph']
+active_page: 'area-graph'
 snippet_title: Area Graph
 notes: 'Display changes of data over time using area graph.'
 example: '

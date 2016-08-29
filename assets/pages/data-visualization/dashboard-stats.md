@@ -1,7 +1,7 @@
 ---
 title: Dashboard Statistics
 template: child-2col-coded
-active_page: ['dasboard-stats']
+active_page: 'dasboard-stats'
 snippet_title: Dashboard Stats
 notes: ''
 example: '

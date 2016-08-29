@@ -1,7 +1,7 @@
 ---
 title: Bar Graph
 template: child-1col-coded
-active_page: ['bar-graph']
+active_page: 'bar-graph'
 snippet_title: Bar Graph
 notes: 'Display a breakdown of two categories (out-of-date vs up-to-date devices).'
 example: '

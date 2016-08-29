@@ -1,7 +1,7 @@
 ---
 title: Visual Statistics
 template: child-1col-coded
-active_page: ['visual-stats']
+active_page: 'visual-stats'
 snippet_title: Visual Statistics
 notes: 'Display in a visual way statistical data (a breakdown of laptops and desktops vs mobile devices).'
 example: '

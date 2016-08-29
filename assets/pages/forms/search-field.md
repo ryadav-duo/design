@@ -1,7 +1,7 @@
 ---
 title: Search
 template: child-2col-coded
-active_page: ['search-field']
+active_page: 'search-field'
 snippet_title: Search Field
 notes: ''
 example: '

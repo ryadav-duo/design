@@ -1,7 +1,7 @@
 ---
 title: Buttons & Links
 template: child-2col-coded
-active_page: ['Buttons & Links', 'Inline Button']
+active_page: 'inline'
 snippet_title: Inline Buttons
 notes: 'These buttons appear on each row of certain tables. They are much smaller than the normal buttons.'
 example: '<button class="tiny danger remove">Inline Destructive Button</button><button class="tiny positive">Inline Positive Button</button>'
