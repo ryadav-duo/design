@@ -1,8 +1,8 @@
 {% extends 'layouts/base.html' %}
-
+{% block title %}
+  <h1 class="l-marg--pattern-header">Buttons &amp; Links</h1>
+{% endblock %}
 {% block body %}
-  <h1>Buttons &amp; Links</h1>
-
   {% for section in page.sections %}
     {{ render_section(page.id, section.id) }}
   {% endfor %}

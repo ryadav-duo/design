@@ -15,7 +15,7 @@
 
     <main class="base-main">
       {% include 'includes/header.html' %}
-
+      {% block title %}{% endblock %}
       <div class="l-grid l-component-cluster">
         {% block body %}{% endblock %}
       </div>

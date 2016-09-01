@@ -1,22 +1,45 @@
 {% extends 'layouts/base.html' %}
-
+{% block title %}
+  <h1 class="l-marg--pattern-header">Design @ Duo</h1>
+{% endblock %}
 {% block body %}
-  <main>
-    <h2>Weclome to the wonderful world of Duo Design!</h2>
+  <main id="about">
+    <h2>What is a pattern library</h2>
+      <p>For Duo it's a foundation of visual patterns and their matching code necessary, use cases, and best practices for implementing a pattern.</p>
+      <p>If you're looking for our brand guidelines then you should be <a href="http://brand.duosec.org/" title="duo branding guidelines" target="_blank" rel="noreferrer">looking here <i class="icon-new-window"></i></a>.</p>
+    <h2>Why a pattern library?</h2>
+    <p>We do this so the pattern library can become a living breathing document that serves it's users by accomplishing the following goals:</p>
+    <ul>
+      <li>Fostering cross department <strong>collaboration</strong>.</li>
+      <li>Creating consitency in how we build and design Duo products.</li>
+      <li>Allowing our designers and engineers to spend more time crafting <strong>delightful and thoughtful experiences</strong> for users.</li>
+      <li>Encouraging the use of the patterns <strong>reusable code</strong>.</li>
+      <li>Getting all our <strong>patterns into one place</strong> to help identify and solve problem areas.</li>
+    </ul>
+    <p>Now we're certainly not the first to do this and a lot of the principles we employee have been pioneered by others though we believe them to be best practices. Though we intend our pattern library to evolve and grow to fill the needs of it's users as the company grows in step.</p>
+    <p>If you have any questions, feedback, or ideas you can contact us at <a href="mailto:pdl@duo.com" title="email duo's pattern design library team">dpl[at]duo.com</a></p>
     <hr />
-    <h4>Why a pattern library?</h4>
-    <p>asdlfkjasdfjkl;asdlkjfas asdlfkja asdfljka some special copy talking about our pattern design library, why we have it, what it does, who it's for, and what's inside it.</p>
-    <hr />
-    <h3>Visual Patterns</h3>
-    <h3>Code Patterns</h3>
+    <h3>The Design Pattern Library currently contains</h3>
+    <h4>Visual Patterns</h4>
+    <ul>
+      <li>Sketch files</li>
+      <li>Logo</li>
+      <li>Color</li>
+      <li>Typography</li>
+      <li>Iconography</li>
+      <li>Navigation</li>
+      <li>Buttons</li>
+      <li>Links</li>
+      <li>Tables</li>
+      <li>Forms</li>
+      <li>Modals</li>
+      <li>Tooltips</li>
+      <li>Data Visualization</li>
+    </ul>
+    <h4>Code Patterns</h4>
     <ul>
       <li>HTML</li>
       <li>SCSS</li>
-      <li>JS (coming soon...)</li>
-      <li>Python (coming soon...)</li>
     </ul>
-    <hr />
-    <h4>Duo Speak (coming soonish...)</h4>
-    <h4>Animations (coming soonish...)</h4>
   </main>
 {% endblock %}
