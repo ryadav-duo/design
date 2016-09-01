@@ -60,8 +60,12 @@ gulp.task('fonts', () => (
         .pipe(gulp.dest('dist/fonts'))
 ))
 
+gulp.task('json', () => (
+  gulp.src('json/*.*')
+    .pipe(gulp.dest('dist/json'))
+))
 
-gulp.task('build', ['pages', 'styles', 'scripts', 'images', 'fonts', 'referenceFiles'])
+gulp.task('build', ['pages', 'styles', 'scripts', 'images', 'fonts', 'referenceFiles', 'json'])
 
 gulp.task('refresh', ['pages', 'styles', 'scripts'])
 

@@ -1,10 +1,10 @@
 {% extends 'layouts/base.html' %}
 
 {% set icons = load_data('icons') %}
-
+{% block title %}
+  <h1 class="l-marg--pattern-header">Icons</h1>
+{% endblock %}
 {% block body %}
-  <h1>Icons</h1>
-
   <ul class="l-grid c--icons">
     {% for icon in icons %}
       <li class="l-lg-col-1 l-d-col-2 l-m-col-3">

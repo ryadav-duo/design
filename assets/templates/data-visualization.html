@@ -3,6 +3,9 @@
   {{ super() }}
   <link rel="stylesheet" href="styles/reference/root-index.css">
 {% endblock %}
+{% block title %}
+  <h1 class="l-marg--pattern-header">Data Visualization</h1>
+{% endblock %}
 {% block body %}
   <h1>Data Visualizations</h1>
   {% for section in page.sections %}
