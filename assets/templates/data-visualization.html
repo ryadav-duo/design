@@ -7,7 +7,6 @@
   <h1 class="l-marg--pattern-header">Data Visualization</h1>
 {% endblock %}
 {% block body %}
-  <h1>Data Visualizations</h1>
   {% for section in page.sections %}
     {{ render_section(page.id, section.id) }}
   {% endfor %}
