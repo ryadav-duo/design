@@ -3,7 +3,7 @@ title: Logo Code Example
 template: child-2col-coded
 active_page: 'logo'
 snippet_title:
-notes: The Duo logo is used to orient users to each channel, when they see the logo they have a good clue that they've made it to the right place. It also provides a quick link back to the home page. Learn more about how to use the Duo logo.
+notes: The Duo logo is used to orient users to each channel, when they see the logo they have a good clue that they've made it to the right place. It also provides a quick link back to the home page.
 example: '<div class="base-header">
 <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320">
   <g>

@@ -15,7 +15,8 @@ $gray: (
 
 $duoBlue: (
   duo: #405665,
-  light: #2798D4
+  light: #2798D4,
+  info: #2c7da8
 );
 
 $message: (
@@ -24,7 +25,7 @@ $message: (
 );
 
 $newColors: (
-  blue: #2798d4,
+  blue: #2c7da8,
   dark-blue: #1c6e99,
   navy: #363f44,
   yellow: #e7c528,
@@ -185,7 +186,7 @@ $items: 6;
   margin: 0;
 }
 .c-modal--info {
-  background-color: $info-blue;
+  background-color: map-get($duoBlue, info);
   p {
     color: white;
   }
@@ -715,7 +716,7 @@ select#billing_info_credit_card_month {
             transition-duration: 0s;
         }
 
-        &:hover, &:focus {
+        &:focus {
             color: $duo-green;
         }
 
@@ -859,8 +860,14 @@ select#billing_info_credit_card_month {
         margin: 0;
         padding: 0;
 
-        a {
-            display: block;
+        dd, dt {
+          margin-left: 0;
+          display: block;
+          font-weight: normal;
+
+        }
+        dt {
+          margin-top: 0.875rem;
         }
     }
 }

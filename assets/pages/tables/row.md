@@ -3,8 +3,7 @@ title: Table Row
 template: child-1col-coded
 active_page: 'row'
 snippet_title: Table Row
-notes: 'Organizes and displays a large amount of related information.
-Sort arrows, checkboxes, search bar, and the Add to Group dropdown provide tools to work with the data more easily.'
+notes: 'A single table row element displaying a set of data horizontally across columns.'
 example: '  <div id="user-table_wrapper" class="dataTables_wrapper">
     <table id="user-table" class="dataTable" data-permission-read="true" data-csv-link="/users/export/csv" data-json-link="/users/export/json" role="grid" aria-describedby="user-table_info" style="width: 887px;">
       <tbody>

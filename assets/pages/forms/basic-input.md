@@ -3,7 +3,7 @@ title: Forms
 template: child-2col-coded
 active_page: 'basic-input'
 snippet_title: Basic Input Field
-notes: 'Basic input field for text. The green outline indicates focus. The gray outline lacks focus. User-entered text is black.'
+notes: 'Basic input field for text. The green outline indicates focus. The gray outline lacks focus. User-entered text is black. Placeholder text offers instruction, disappears on user engagement.'
 example: '
 <label for="pname">Field Label</label>
 <input class="" type="text" name="pname" id="pname" value="" placeholder="text describing what to do">

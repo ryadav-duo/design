@@ -154,16 +154,16 @@ function include(arr,obj) {
 }
 
 function jumpToActive() {
-  const anchors = document.querySelectorAll('.c--snippet-title')
-  const nav = document.querySelector('.base-sidebar .navigation .subnav.active')
+  var anchors = document.querySelectorAll('.c--snippet-title')
+  var nav = document.querySelector('.base-sidebar .navigation .subnav.active')
 
   window.addEventListener('scroll', function() {
-    let currentPos = (scrollY + 150)
+    var currentPos = (scrollY + 300)
 
     Array.prototype.forEach.call(anchors, function(anchor) {
       if(currentPos >= anchor.offsetTop) {
         // nav.querySelector('a').classList.remove('active')
-        let navItems = nav.querySelectorAll('a.active:not([data-goto="'+anchor.getAttribute('id')+'"])')
+        var navItems = nav.querySelectorAll('a.active:not([data-goto="'+anchor.getAttribute('id')+'"])')
           Array.prototype.forEach.call(navItems, function(navItem) {
             navItem.classList.remove('active')
           })
@@ -173,12 +173,48 @@ function jumpToActive() {
   })
 }
 
+// Search the DPL
+var dplSearch = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  identify: function(obj) {return obj.name;},
+  prefetch: {
+    url: ['../json/search.json'],
+    // transform: [
+    //   name
+    //  ]
+  }
+});
+// passing in `null` for the `options` arguments will result in the default options being used
+var topts = {
+  displayKey: 'name',
+  highlight: true,
+  hint: true,
+  sorter: true,
+  templates: {
+    header: '<h2>something?</h2>',
+    notFound: [
+      '<div class="empty-message">',
+        'unable to find any Best Picture winners that match the current query',
+      '</div>'
+    ].join('\n'),
+    suggestion: [
+      '<div>{{name.name}}</div>'
+    ]
+  }
+}
+var tsrc = {
+  name: 'page-name',
+  source: dplSearch,
+}
+
+jQuery('#dpl-search').typeahead(topts, tsrc);
 
 // Put things here that you want to executed when the document is ready
 var fa = function() {
   // Gobal vars
-  let codeContainers = document.querySelectorAll('.c-example-code');
-  let wonkaBar = document.querySelectorAll('.wonka-bar input');
+  var codeContainers = document.querySelectorAll('.c-example-code');
+  var wonkaBar = document.querySelectorAll('.l-component-cluster .wonka-bar input');
 
   if (codeContainers.length >= 1) {
     snippetTabs(codeContainers);
