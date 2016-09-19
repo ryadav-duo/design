@@ -431,6 +431,51 @@ $items: 6;
   }
 }
 
+///Search results styles
+#prefetch {
+  .tt-menu {
+    width: 102%;
+    background: $white;
+    padding: 1em;
+    border-radius: $border-radius;
+    border: 1px solid map-get($gray, mid);
+    margin-top: 0em;
+    margin-left: -0.6em;
+    box-shadow: 2px 2px 4px -2px map-get($gray, dark);
+
+    &:before {
+      content: '\e108';
+      font-family: 'Duo Admin Icons';
+      position: absolute;
+      background-color: #fff;
+      top: -14px;
+      left: 3%;
+    }
+
+    .tt-dataset .dpl-s-result {
+      border: 0px;
+      width: 100%;
+      display: block;
+      i {
+        color: map-get($gray, dark);
+        font-style: normal;
+        text-decoration: none;
+        font-size: 0.8em;
+        line-height: 1.5em;
+        display: inline-block;
+      }
+      &:before, &:after {
+        content: none;
+        display: none;
+      }
+      &.tt-cursor, &:hover {
+        background-color: map-get($gray, light);
+        color: map-get($duoBlue, duo);
+      }
+    }
+  }
+}
+
 ///Styles for code hilite
 .linenos {
   padding: 0 1vw;
@@ -923,7 +968,7 @@ $base-sidebar-width: 200px;
 
     .logo {
         display: block;
-        margin: 0 auto;
+        margin: 0 12px;
         height: 40px;
         max-width: 100px;
     }

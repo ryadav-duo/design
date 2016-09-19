@@ -174,41 +174,88 @@ function jumpToActive() {
 }
 
 // Search the DPL
+  //create an object to push these items to in order to create actionable addresses outside of the typeahead
+var dplPages = []
+  //create, retrieve and format json feed for searching through
 var dplSearch = new Bloodhound({
-  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name', 'description'),
   queryTokenizer: Bloodhound.tokenizers.whitespace,
-  identify: function(obj) {return obj.name;},
   prefetch: {
     url: ['../json/search.json'],
-    // transform: [
-    //   name
-    //  ]
-  }
+    transform: function(response) {
+      //all of this is to reformat the json feed to allow searching of child sections inside of a parent page
+      jQuery.each(response, function(i, page) {
+        if(page.sections) {
+          jQuery.each(page.sections, function(i, section) {
+            section['parent']= page.id
+            response.push(section)
+          })
+        }
+      })
+      return response
+    },
+    cache: false
+  },
+  limit: 20
 });
+
 // passing in `null` for the `options` arguments will result in the default options being used
-var topts = {
-  displayKey: 'name',
+var tParent = {
+  name: 'page',
+  display: function(item) {
+    return item.name
+  },
   highlight: true,
-  hint: true,
-  sorter: true,
+  hint: false,
+  minLength: 2,
+  source: dplSearch.ttAdapter(),
   templates: {
-    header: '<h2>something?</h2>',
-    notFound: [
-      '<div class="empty-message">',
-        'unable to find any Best Picture winners that match the current query',
-      '</div>'
-    ].join('\n'),
-    suggestion: [
-      '<div>{{name.name}}</div>'
-    ]
+    empty: function(page) {
+      return '<div class="empty-message"> Your search for <strong>'
+        + page.query +
+      '</strong> has returned 0 results.</div>'
+    },
+    suggestion: function(page) {
+      // change the url if the page is a child section of a parent url
+      var searchAddress = new Object();
+      searchAddress['name'] = page.name
+      var searchResult = '<a class="dpl-s-result" href="'
+      if(page.parent) {
+        searchResult += page.parent
+        searchAddress['base'] = page.parent
+      } else {
+        searchResult += page.id
+        searchAddress['base'] = page.id
+      }
+      searchResult += '.html'
+      if(page.parent) {
+        searchResult += '#' + page.id
+        searchAddress['child'] = page.id
+      }
+      searchResult += '">' + page.name + '<br /> <i>' + page.description + '</i></a>'
+      dplPages.push(searchAddress)
+      return searchResult
+    }
   }
 }
-var tsrc = {
-  name: 'page-name',
-  source: dplSearch,
+// I'm not sure how hacky this is but it's a work around to make the search results keyboard accessable
+function goToPage(searchItem) {
+  var selected = searchItem.currentTarget.value
+  // loop through array of objects for matching name
+  var selectedAddress = dplPages.filter(function(s) {
+    return s.name == selected
+  })
+  var searchAddress = selectedAddress[0].base + '.html'
+  if(selectedAddress[0].child) {
+    searchAddress += '#' + selectedAddress[0].child
+  }
+  console.log('window location should redirect to ' + searchAddress)
+  window.location.replace(searchAddress)
 }
 
-jQuery('#dpl-search').typeahead(topts, tsrc);
+jQuery('#dpl-search').typeahead(null, tParent)
+  .on('typeahead:selected', goToPage)
+  .on('typeahead:autocompleted', goToPage);
 
 // Put things here that you want to executed when the document is ready
 var fa = function() {

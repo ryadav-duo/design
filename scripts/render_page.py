@@ -7,7 +7,6 @@ import frontmatter
 from jinja2 import Environment, FileSystemLoader
 from markdown import markdown
 import yaml
-import json
 
 
 env = Environment()
@@ -83,14 +82,6 @@ def main(input_path, base_path):
         site=site_data,
         page=page_data,
     ))
-    
-    search_json = path.join(
-        path.dirname(__file__),
-        '../assets/json/search.json')
-    json_feed =json.dumps(site_data, sort_keys=True, indent=2)
-    j = open(search_json, 'w')
-    j.write(json_feed)
-    j.close
 
 if __name__ == '__main__':
     parser = ArgumentParser()
