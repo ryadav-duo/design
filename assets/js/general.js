@@ -180,8 +180,9 @@ var dplPages = []
 var dplSearch = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name', 'description'),
   queryTokenizer: Bloodhound.tokenizers.whitespace,
+  limit: 60,
   prefetch: {
-    url: ['../json/search.json'],
+    url: ['/json/search.json'],
     transform: function(response) {
       //all of this is to reformat the json feed to allow searching of child sections inside of a parent page
       jQuery.each(response, function(i, page) {
@@ -193,10 +194,8 @@ var dplSearch = new Bloodhound({
         }
       })
       return response
-    },
-    cache: false
+    }
   },
-  limit: 60
 });
 
 // passing in `null` for the `options` arguments will result in the default options being used
