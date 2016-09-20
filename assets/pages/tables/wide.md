@@ -3,8 +3,7 @@ title: Tables
 template: child-1col-coded
 active_page: 'wide'
 snippet_title: Wide Table
-notes: 'Organizes and displays a large amount of related information.
-Sort arrows, checkboxes, search bar, and the Add to Group dropdown provide tools to work with the data more easily.'
+notes: 'Use this table when displaying information that requires the use of multiple lines of data in a single row.'
 example: '
 <div class="filter-table">
   <div id="endpoints-table_wrapper" class="dataTables_wrapper">

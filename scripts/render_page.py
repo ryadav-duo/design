@@ -83,7 +83,6 @@ def main(input_path, base_path):
         page=page_data,
     ))
 
-
 if __name__ == '__main__':
     parser = ArgumentParser()
 

@@ -3,7 +3,7 @@ title: Buttons & Links
 template: child-2col-coded
 active_page: 'new-window'
 snippet_title: New Window Link
-notes: 'Use this icon on a link that links outside of the duo site.'
+notes: 'Use this link type when sending the user anywhere outside of the current website or application.'
 example: '<a href="" title="" rel="" target="_blank">Open in a new window <i class="icon-new-window "></i></a>'
 ---
 

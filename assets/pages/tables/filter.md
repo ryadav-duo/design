@@ -3,7 +3,7 @@ title: Tables
 template: child-2col-coded
 active_page: 'filter'
 snippet_title: Table Filter
-notes: 'The intent of table in cards is to break down the data from a pie chart visualization or more visual chart. This way users can both data visualization and chart side by side.'
+notes: 'The filter is used in coordination with a data table to allow the user to narrow the data displayed on page with predetermined search variables.'
 example: '
 <div id="endpoints-filter" class="filter-container">
   <h4>Filter</h4>

@@ -1,322 +1,259 @@
 -
   name: Master File
   id: master-file
-  description: |
-    download the master sketch file
+  description: download the master sketch file
 -
   name: Logos
   id: logos
-  description: |
-    duo logo usage
+  description: duo logo usage
 -
   name: Color
   id: color
-  description: |
-    duo colors
+  description: duo colors
 -
   name: Typography
   id: typography
-  description: |
-    how to use duo typography
+  description: how to use duo typography
   sections:
     -
       name: Main Heading
       id: heading
-      description: |
-        h1 example
+      description: h1 example
     -
       name: Subtitle
       id: subtitle
-      description: |
-        subtitle h2 example
+      description: subtitle h2 example
     -
       name: Section Header
       id: section-header
-      description: |
-        section header h3 example
+      description: section header h3 example
     -
       name: Subsection Header
       id: subsection-header
-      description: |
-        subsection header h4 example
+      description: subsection header h4 example
     -
       name: Body Copy
       id: body-copy
-      description: |
-        body copy example
+      description: body copy example
     -
       name: Instructional
       id: instructional
-      description: |
-        instructional copy example
+      description: instructional copy example
     -
       name: Table Column Title
       id: table-column-title
-      description: |
-        table column title example
+      description: table column title example
     -
       name: Button Label
       id: button-label
-      description: |
-        button label example
+      description: button label example
 -
   name: Icons
   id: icons
-  description: |
-    duo iconography
+  description: duo iconography
 -
   name: Navigation
   id: navigation
-  description: |
-    how to build a duo navigation
+  description: how to build a duo navigation
   sections:
     -
       name: Main Navigation
       id: main-navigation
-      description: |
-        whole nav example
+      description: whole nav example
     -
       name: Subpage
       id: subpage
-      description: |
-        subnav example
+      description: subnav example
     -
       name: Selected Nav Link
       id: selected
-      description: |
-        select nav item
+      description: select nav item
     -
       name: Unselected Nav Link
       id: unselected
-      description: |
-        unselected nav item
+      description: unselected nav item
     -
       name: New Badge Nav Link
       id: new-badge
-      description: |
-        nav badge on nav item
+      description: nav badge on nav item
     -
       name: Duo Prompt Nav
       id: duo-prompt
-      description: |
-        duo prompt nav
+      description: duo prompt nav
     -
       name: Pagination
       id: pagination
-      description: |
-        Pagination used when there is more content to be displayed than can fit on page.
+      description: Pagination used when there is more content to be displayed than can fit on page.
     -
       name: Progress Bar
       id: progress-bar
-      description: |
-        Progress bar wizard seen by admins upon new installation
+      description: Progress bar wizard seen by admins upon new installation
 -
   name: Buttons & Links
   id: buttons-links
-  description: |
-    how to build buttons and links
+  description: how to build buttons and links
   sections:
     -
       name: Cancel Button
       id: cancel
-      description: |
-        cancel button example
+      description: cancel button example
     -
       name: Creation Button
       id: creation
-      description: |
-        creation button example
+      description: creation button example
     -
       name: Destruction Button
       id: destruction
-      description: |
-        destruction button example
+      description: destruction button example
     -
       name: Dropdown Button
       id: dropdown
-      description: |
-        dropdown button example
+      description: dropdown button example
     -
       name: Inline Button
       id: inline
-      description: |
-        inline button example
+      description: inline button example
     -
       name: Positive Button
       id: positive
-      description: |
-        positive button example
+      description: positive button example
     -
       name: Secondary Button
       id: secondary
-      description: |
-        secondary button example
+      description: secondary button example
     -
       name: Default Link
       id: default-link
-      description: |
-        default link example
+      description: default link example
     -
       name: Dark Link
       id: dark-link
-      description: |
-        dark link styling
+      description: dark link styling
     -
       name: New Window Link
       id: new-window
-      description: |
-        open in a new window
+      description: open in a new window
     -
       name: Small Link
       id: small-link
-      description: |
-        a small link
+      description: a small link
     -
       name: Breadcrumb Links
       id: breadcrumb-links
-      description: |
-        breadcrumb styling
+      description: breadcrumb styling
 -
   name: Tables
   id: tables
-  description: |
-    how duo tables are built
+  description: how duo tables are built
   sections:
     -
       name: Narrow Table
       id: narrow
-      description: |
-        narrow table example
+      description: narrow table example
     -
       name: Table Header
       id: header
-      description: |
-        narrow table header
+      description: narrow table header
     -
       name: Table Row
       id: row
-      description: |
-        narrow table row
+      description: narrow table row
     -
       name: Wide Table
       id: wide
-      description: |
-        wide table example
+      description: wide table example
     -
       name: Data List Table
       id: data-details-list
-      description: |
-        A list of details from a single data set to go with pie chart
+      description: A list of details from a single data set to go with pie chart
     -
       name: Table Filter
       id: filter
-      description: |
-        filter example used in tables
+      description: filter example used in tables
 -
   name: Forms
   id: forms
-  description: |
-    how duo forms get built
+  description: how duo forms get built
   sections:
     -
       name: Basic Input Field
       id: basic-input
-      description: |
-        basic input field
+      description: basic input field
     -
       name: Configuration Input
       id: configuration-input
-      description: |
-        Application configuration input field
+      description: Application configuration input field
     -
       name: Radio Input List
       id: radio-input
-      description: |
-        Organism of UI elements making a list of radio input fields
+      description: Organism of UI elements making a list of radio input fields
     -
       name: Radio & Textarea List
       id: radio-text-input
-      description: |
-        Ogranisms of textareas and radio buttons
+      description: Ogranisms of textareas and radio buttons
     -
       name: Checkbox Input List
       id: checkbox-input
-      description: |
-        List of checkboxes
+      description: List of checkboxes
     -
       name: Phone Input
       id: phone-input
-      description: |
-        Input field with international phone numbers
+      description: Input field with international phone numbers
     -
       name: Dropdown Field
       id: dropdown-field
-      description: |
-        Dropdown input field in a form
+      description: Dropdown input field in a form
     -
       name: Search Field
       id: search-field
-      description: |
-        Auto complete search field
+      description: Auto complete search field
     -
       name: Multi Input Field
       id: multi-input-field
-      description: |
-        used to assign multiple tag like values to an input field
+      description: used to assign multiple tag like values to an input field
 -
   name: Modals & Tooltips
   id: modals-tooltips
-  description: |
-    how to use modals and tooltips
+  description: how to use modals and tooltips
   sections:
     -
       name: Hover Tooltip
       id: hover-tooltip
-      description: |
-        tooltip that gives helpful information upon hover
+      description: tooltip that gives helpful information upon hover
     -
       name: Confirmation
       id: confirmation-modal
-      description: |
-        Informational modal with multiple CTAs
+      description: Informational modal with multiple CTAs
     -
       name: Policy
       id: policy
-      description: |
-        Modal that opens when creating or attaching a Policy
+      description: Modal that opens when creating or attaching a Policy
 -
   name: Data Visualization
   id: data-visualization
-  description: |
-    how duo build data visualization
+  description: how duo build data visualization
   sections:
     -
       name: Dashboard Statistics
       id: dashboard-stats
-      descrtiption: |
-        clickable stat blocks
+      descrtiption: clickable stat blocks
     -
       name: Multiple Data Sets
       id: multi-data-sets
-      description: |
-        Use when displaying a graph of muliptle sets of data
+      description: Use when displaying a graph of muliptle sets of data
     -
       name: Singular Data Set
       id: single-data-set
-      description: |
-        Use when showcasing a specific data set in pie chart
+      description: Use when showcasing a specific data set in pie chart
     -
       name: Bar Graph
       id: bar-graph
-      description: |
-        Display a breakdown of two categories (out-of-date vs up-to-date devices).
+      description: Display a breakdown of two categories (out-of-date vs up-to-date devices)
     -
       name: Visual Statistics
       id: visual-stats
-      description: |
-        Display in a visual way statistical data (a breakdown of laptops and desktops vs mobile devices).
+      description: Display in a visual way statistical data (a breakdown of laptops and desktops vs mobile devices).
     -
       name: Area Graph
       id: area-graph
-      description: |
-        Display changes of data over time using area graph.
+      description: Display changes of data over time using area graph.

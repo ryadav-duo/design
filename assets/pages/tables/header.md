@@ -3,8 +3,7 @@ title: Table Header
 template: child-1col-coded
 active_page: 'header'
 snippet_title: Table Header
-notes: 'Organizes and displays a large amount of related information.
-Sort arrows, checkboxes, search bar, and the Add to Group dropdown provide tools to work with the data more easily.'
+notes: 'Table Header element of a table. With sortable column headings described with either text labels or iconography.'
 example: '  <div id="user-table_wrapper" class="dataTables_wrapper">
     <table id="user-table" class="dataTable" data-permission-read="true" data-csv-link="/users/export/csv" data-json-link="/users/export/json" role="grid" aria-describedby="user-table_info" style="width: 100%">
       <thead>

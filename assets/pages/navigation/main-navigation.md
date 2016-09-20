@@ -79,22 +79,22 @@ example: '<nav class="navigation">
     <span class="label">Settings</span>
   </a>
   <div class="support">
-    <h2>Support</h2>
-    <p>
-      Get help via <a href="mailto:support@duosecurity.com">email</a>
-      or phone (1-855-386-2884).
-    </p>
-    <h3>Account ID</h3>
-    <p>#[real-account-id-goes-here]#</p>
-    <h3>Deployment ID</h3>
-    <p><a>DUOALPHA</a></p>
-    <h3>Helpful Links</h3>
-    <ul class="helpful-links">
-      <a>Documentation</a>
-      <a>User Guide</a>
-      <a>Knowledge Base</a>
-    </ul>
-  </div>
+  <dl class="helpful-links">
+    <dt><h2>Support</h2></dt>
+    <dd>
+      Need help? <a href="mailto:support@duosecurity.com" title="launch email addressed to duo">Email Support</a><br> or call 1-855-386-2884.
+    </dd>
+    <dt><h3>Account ID</h3></dt>
+    <dd>[account id goes here]</dd>
+    <dt><h3>Deployment ID</h3></dt>
+    <dd><a href="https://status.duo.com" target="_blank">DUOALPHA<i class="icon-new-window"></i></a></dd>
+    <dt><h3>Helpful Links</h3></dt>
+    <dd><a href="https://duo.com/docs" target="_blank">Documentation<i class="icon-new-window"></i></a></dd>
+    <dd><a href="https://guide.duo.com" target="_blank">User Guide<i class="icon-new-window"></i></a></dd>
+    <dd><a href="https://kb.duo.com" target="_blank">Knowledge Base<i class="icon-new-window"></i></a></dd>
+    <dd>
+    </dd>
+  </dl></div>
 </nav>'
 ---
 
@@ -177,21 +177,22 @@ example: '<nav class="navigation">
     <span class="label">Settings</span>
   </a>
   <div class="support">
-    <h2>Support</h2>
-    <p>
-      Get help via <a href="mailto:support@duosecurity.com">email</a>
-      or phone (1-855-386-2884).
-    </p>
-    <h3>Account ID</h3>
-    <p>#[real-account-id-goes-here]#</p>
-    <h3>Deployment ID</h3>
-    <p><a href="https://status.duo.com" target="_blank">DUOALPHA</a></p>
-    <h3>Helpful Links</h3>
-    <ul class="helpful-links">
-      <a href="https://duo.com/docs">Documentation</a>
-      <a href="https://guide.duo.com" target="_blank">User Guide</a>
-      <a href="https://kb.duo.com" target="_blank">Knowledge Base</a>
-    </ul>
+    <dl class="helpful-links">
+      <dt><h2>Support</h2></dt>
+      <dd>
+        Need help? <a href="mailto:support@duosecurity.com" title="launch email addressed to duo">Email Support</a><br> or call 1-855-386-2884.
+      </dd>
+      <dt><h3>Account ID</h3></dt>
+      <dd>[account id goes here]</dd>
+      <dt><h3>Deployment ID</h3></dt>
+      <dd><a href="https://status.duo.com" target="_blank">DUOALPHA<i class="icon-new-window"></i></a></dd>
+      <dt><h3>Helpful Links</h3></dt>
+      <dd><a href="https://duo.com/docs" target="_blank">Documentation<i class="icon-new-window"></i></a></dd>
+      <dd><a href="https://guide.duo.com" target="_blank">User Guide<i class="icon-new-window"></i></a></dd>
+      <dd><a href="https://kb.duo.com" target="_blank">Knowledge Base<i class="icon-new-window"></i></a></dd>
+      <dd>
+      </dd>
+    </dl>
   </div>
 </nav>
 ```
@@ -340,22 +341,20 @@ example: '<nav class="navigation">
       margin-bottom: 0.25rem;
   }
 
-  .helpful-links {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    .helpful-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
 
-      dd, dt {
-        margin-left: 0;
-        display: block;
-        font-weight: normal;
-        i[class*="icon-"] {
-          color: $info-blue;
+        dd, dt {
+          margin-left: 0;
+          display: block;
+          font-weight: normal;
+
         }
-      }
-      dt {
-        margin-top: 0.875rem;
-      }
-  }
+        dt {
+          margin-top: 0.875rem;
+        }
+    }
 }
 ```

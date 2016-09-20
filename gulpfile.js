@@ -7,7 +7,7 @@ const postcss = require('gulp-postcss')
 const jsmin = require('gulp-jsmin')
 const rename = require('gulp-rename')
 
-
+const json = require('./scripts/render_json')
 const page = require('./scripts/render_page')
 
 
@@ -61,7 +61,8 @@ gulp.task('fonts', () => (
 ))
 
 gulp.task('json', () => (
-  gulp.src('json/*.*')
+  gulp.src('assets/json/*.*')
+    // .pipe(json('assets/json/'))
     .pipe(gulp.dest('dist/json'))
 ))
 

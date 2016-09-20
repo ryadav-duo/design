@@ -154,16 +154,16 @@ function include(arr,obj) {
 }
 
 function jumpToActive() {
-  const anchors = document.querySelectorAll('.c--snippet-title')
-  const nav = document.querySelector('.base-sidebar .navigation .subnav.active')
+  var anchors = document.querySelectorAll('.c--snippet-title')
+  var nav = document.querySelector('.base-sidebar .navigation .subnav.active')
 
   window.addEventListener('scroll', function() {
-    let currentPos = (scrollY + 150)
+    var currentPos = (scrollY + 300)
 
     Array.prototype.forEach.call(anchors, function(anchor) {
       if(currentPos >= anchor.offsetTop) {
         // nav.querySelector('a').classList.remove('active')
-        let navItems = nav.querySelectorAll('a.active:not([data-goto="'+anchor.getAttribute('id')+'"])')
+        var navItems = nav.querySelectorAll('a.active:not([data-goto="'+anchor.getAttribute('id')+'"])')
           Array.prototype.forEach.call(navItems, function(navItem) {
             navItem.classList.remove('active')
           })
@@ -173,12 +173,95 @@ function jumpToActive() {
   })
 }
 
+// Search the DPL
+  //create an object to push these items to in order to create actionable addresses outside of the typeahead
+var dplPages = []
+  //create, retrieve and format json feed for searching through
+var dplSearch = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name', 'description'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  prefetch: {
+    url: ['../json/search.json'],
+    transform: function(response) {
+      //all of this is to reformat the json feed to allow searching of child sections inside of a parent page
+      jQuery.each(response, function(i, page) {
+        if(page.sections) {
+          jQuery.each(page.sections, function(i, section) {
+            section['parent']= page.id
+            response.push(section)
+          })
+        }
+      })
+      return response
+    },
+    cache: false
+  },
+  limit: 20
+});
+
+// passing in `null` for the `options` arguments will result in the default options being used
+var tParent = {
+  name: 'page',
+  display: function(item) {
+    return item.name
+  },
+  highlight: true,
+  hint: false,
+  minLength: 2,
+  source: dplSearch.ttAdapter(),
+  templates: {
+    empty: function(page) {
+      return '<div class="empty-message"> Your search for <strong>'
+        + page.query +
+      '</strong> has returned 0 results.</div>'
+    },
+    suggestion: function(page) {
+      // change the url if the page is a child section of a parent url
+      var searchAddress = new Object();
+      searchAddress['name'] = page.name
+      var searchResult = '<a class="dpl-s-result" href="'
+      if(page.parent) {
+        searchResult += page.parent
+        searchAddress['base'] = page.parent
+      } else {
+        searchResult += page.id
+        searchAddress['base'] = page.id
+      }
+      searchResult += '.html'
+      if(page.parent) {
+        searchResult += '#' + page.id
+        searchAddress['child'] = page.id
+      }
+      searchResult += '">' + page.name + '<br /> <i>' + page.description + '</i></a>'
+      dplPages.push(searchAddress)
+      return searchResult
+    }
+  }
+}
+// I'm not sure how hacky this is but it's a work around to make the search results keyboard accessable
+function goToPage(searchItem) {
+  var selected = searchItem.currentTarget.value
+  // loop through array of objects for matching name
+  var selectedAddress = dplPages.filter(function(s) {
+    return s.name == selected
+  })
+  var searchAddress = selectedAddress[0].base + '.html'
+  if(selectedAddress[0].child) {
+    searchAddress += '#' + selectedAddress[0].child
+  }
+  console.log('window location should redirect to ' + searchAddress)
+  window.location.replace(searchAddress)
+}
+
+jQuery('#dpl-search').typeahead(null, tParent)
+  .on('typeahead:selected', goToPage)
+  .on('typeahead:autocompleted', goToPage);
 
 // Put things here that you want to executed when the document is ready
 var fa = function() {
   // Gobal vars
-  let codeContainers = document.querySelectorAll('.c-example-code');
-  let wonkaBar = document.querySelectorAll('.wonka-bar input');
+  var codeContainers = document.querySelectorAll('.c-example-code');
+  var wonkaBar = document.querySelectorAll('.l-component-cluster .wonka-bar input');
 
   if (codeContainers.length >= 1) {
     snippetTabs(codeContainers);

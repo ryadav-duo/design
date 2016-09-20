@@ -3,7 +3,7 @@ title: Forms
 template: child-2col-coded
 active_page: 'radio-input'
 snippet_title: List of Radio Inputs
-notes: ''
+notes: 'This component is used when needing two radio options. It has optional elements to display text which is used to give the user more context about their choices.'
 example: '
 <div class="line">
 <label>Username normalization</label>
