@@ -61,12 +61,12 @@ gulp.task('fonts', () => (
 ))
 
 gulp.task('json', () => (
-  gulp.src('assets/json/*.*')
-    // .pipe(json('assets/json/'))
+  gulp.src('assets/json/*.json')
+    .pipe(json('assets/json/'))
     .pipe(gulp.dest('dist/json'))
 ))
 
-gulp.task('build', ['pages', 'styles', 'scripts', 'images', 'fonts', 'referenceFiles', 'json'])
+gulp.task('build', ['pages', 'json', 'styles', 'scripts', 'images', 'fonts', 'referenceFiles'])
 
 gulp.task('refresh', ['pages', 'styles', 'scripts'])
 

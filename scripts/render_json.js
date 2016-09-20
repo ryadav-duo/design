@@ -30,7 +30,7 @@ module.exports = base => stream((file, _, done) => {
 
     render.on('close', code => {
         if (code) {
-            return done(new PluginError('render_page', stderr))
+            return done(new PluginError('render_json', stderr))
         }
 
         file.path = file.path.replace(/\.md$/, '.json')
