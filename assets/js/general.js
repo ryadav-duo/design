@@ -182,7 +182,7 @@ var dplSearch = new Bloodhound({
   queryTokenizer: Bloodhound.tokenizers.whitespace,
   limit: 60,
   prefetch: {
-    url: ['/json/search.json'],
+    url: ['json/search.json'],
     transform: function(response) {
       //all of this is to reformat the json feed to allow searching of child sections inside of a parent page
       jQuery.each(response, function(i, page) {
