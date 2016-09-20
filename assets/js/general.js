@@ -196,7 +196,7 @@ var dplSearch = new Bloodhound({
     },
     cache: false
   },
-  limit: 20
+  limit: 60
 });
 
 // passing in `null` for the `options` arguments will result in the default options being used

@@ -17,9 +17,9 @@ module.exports = base => stream((file, _, done) => {
     let stdout = ''
     let stderr = ''
 
-    const render = spawn(
-        './scripts/render_json.py',
+    const render = spawn('python',
         [
+            './scripts/render_json.py',
             '-i', file.path,
             '-b', path.resolve(base),
         ]

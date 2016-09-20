@@ -62,7 +62,7 @@ gulp.task('fonts', () => (
 
 gulp.task('json', () => (
   gulp.src('assets/json/*.json')
-    .pipe(json('assets/json/'))
+    // .pipe(json('assets/json/'))
     .pipe(gulp.dest('dist/json'))
 ))
 
