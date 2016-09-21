@@ -12,11 +12,10 @@
   {% endfor %}
 {% endblock %}
 {% block scripts %}
-  <script src="js/jquery/jquery.min.js"></script>
-  <script src="js/jquery/jquery.tipsy.min.js"></script>
   {{ super() }}
+  <script src="js/jquery/jquery.tipsy.min.js"></script>
   <script type="text/javascript">
-    $(".info").tipsy({
+    jQuery(".info").tipsy({
                 gravity: "s",
                 live: !0,
                 html: !0
