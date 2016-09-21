@@ -3,7 +3,7 @@ title: Navigation
 template: child-2col-coded
 active_page: 'selected'
 snippet_title: Selected Page
-notes: 'A nav-item with full green background indicates the current page the user is on.'
+notes: 'A nav-item with full green background indicates the current page that the user is on.'
 example: '<nav class="navigation">
   <a class="current">
     <i class="icon-users"></i>

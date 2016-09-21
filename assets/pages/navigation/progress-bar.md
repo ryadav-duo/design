@@ -3,9 +3,9 @@ title: Progress Bar
 template: child-1col-coded
 active_page: 'progress-bar'
 snippet_title: Progress Bar
-notes: 'Indicates via highlighting the complete vs. incomplete steps in a multi-step process. Green checkmarked elements indicate completed steps. White, numbered steps indicate incomplete steps.
+notes: 'Indicates complete vs. incomplete steps in a multi-step process. Green checkmarked elements indicate completed steps. White, numbered steps indicate incomplete steps.
 
-A dropdown menu explicitly identifies with text, checkmark symbols, and strike-through text which steps are completed.'
+The dropdown menu details which steps are completed.'
 example: '
 <div class="base-progress visible" data-expire-name="welcome-progress" data-expire-count="1">
   <p class="progress-welcome">

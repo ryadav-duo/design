@@ -2,8 +2,9 @@
 title: Data Set Details List
 template: child-2col-coded
 active_page: 'data-details-list'
-snippet_title: Data Set Details List
-notes: 'The intent of table in cards is to break down the data from a pie chart visualization or more visual chart. This way users can both data visualization and chart side by side.'
+snippet_title: Data List Table
+notes: '
+This data list table provides a detailed breakdown of information represented elsewhere through a visual representation, such as a pie chart.'
 example: '
 <div class="box insight-section">
   <h2 class="insight-security-header">List Title</h2>

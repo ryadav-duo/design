@@ -4,7 +4,7 @@ template: child-1col-coded
 active_page: 'narrow'
 snippet_title: Narrow Table
 notes: 'Organizes and displays a large amount of related information.
-Sort arrows, checkboxes, search bar, and the Add to Group dropdown provide tools to work with the data more easily.'
+Sort arrows, checkboxes, search bar, and the &quot;Add to Group&quot; dropdown provide tools to work with the data more easily.'
 example: '  <div id="user-table_wrapper" class="dataTables_wrapper">
     <div class="top-control-wrapper" style="">
       <div class="loading" style="display: none;">

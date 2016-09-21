@@ -3,7 +3,7 @@ title: Duo Prompt Nav
 template: child-2col-coded
 active_page: 'duo-prompt'
 snippet_title: Duo Prompt Navigation
-notes: "Use the left link navigation for instances where the above navigation is too chunky or doesn't make sense. Currently in use on the Auth Prompt."
+notes: "Use the left link navigation for instances where the above navigation is too chunky or doesn't make sense. Currently in use on the Duo Prompt."
 example: '<div class="help-sidebar"><div class="help-links">
   <nav role="navigation">
     <a class="help-url" target="_blank">

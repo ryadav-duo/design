@@ -3,7 +3,7 @@ title: Buttons & Links
 template: child-2col-coded
 active_page: 'destruction'
 snippet_title: Destructive Action Button
-notes: 'Clicking on a Red button will do something dangerous. The first time you click it, it will give you a confirmation modal. Within a modal, it will be the final action.'
+notes: "Clicking on a Red button will do something dangerous, often permanently destructive. Clicking it will give you a confirmation modal where you'll have the chance to confirm or deny said action."
 example: '<button class="danger">Destructive Button</button>'
 ---
 

@@ -3,7 +3,7 @@ title: Pagination
 template: child-1col-coded
 active_page: 'pagination'
 snippet_title: Pagination
-notes: 'Allows for control of how many rows to display and for navigation to different pages of the data.'
+notes: 'Allows the user to navigate through large sets of data.'
 example: '  <table class="dataTable fixedHeader-floating" data-permission-read="true" data-csv-link="/users/export/csv" data-json-link="/users/export/json" role="grid" aria-describedby="user-table_info" style="width: 100%;">
     <tfoot class="bottom-control-wrapper">
       <tr>

@@ -3,7 +3,7 @@ title: Buttons & Links
 template: child-2col-coded
 active_page: 'new-window'
 snippet_title: New Window Link
-notes: 'Use this link type when sending the user anywhere outside of the current website or application.'
+notes: 'Use this link type when sending the user anywhere outside of the current website or application &mdash; typically when navigation away from the current domain.'
 example: '<a href="" title="" rel="" target="_blank">Open in a new window <i class="icon-new-window "></i></a>'
 ---
 

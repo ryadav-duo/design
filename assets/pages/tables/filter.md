@@ -3,7 +3,7 @@ title: Tables
 template: child-2col-coded
 active_page: 'filter'
 snippet_title: Table Filter
-notes: 'The filter is used in coordination with a data table to allow the user to narrow the data displayed on page with predetermined search variables.'
+notes: 'The filter is used in coordination with a data table to apply mutliple filters to the data set. This is also referred to as faceted search.'
 example: '
 <div id="endpoints-filter" class="filter-container">
   <h4>Filter</h4>
