@@ -6,7 +6,7 @@ snippet_title: Configuration Input Field
 notes: 'Configuration input field for text, is used rarely. Generally seen in settings pannel or to display obscured user data.'
 example: '
 <span class="key key_holder">
-  <input type="text" readonly="readonly" class="key click_to_select_all" value="">
+  <input type="text" readonly="readonly" class="key click_to_select_all" value="#KEYVALUEHERE#">
 </span>
 '
 ---
