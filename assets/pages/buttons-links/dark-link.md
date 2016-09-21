@@ -3,9 +3,9 @@ title: Buttons & Links
 template: child-2col-coded
 active_page: 'dark-link'
 snippet_title: Dark Link
-notes: 'This dark link is used when a link is placed on top of a light colored background, usually inside of a modal.'
+notes: 'When a link appears on a light, non-white, colored background we use a dark link.'
 example: '<div class="page-message">
-<p>See the <a href="" class="" rel="">Dark Link</a> as a continuation of body copy inside of modal.</p>
+<p>See the <a href="" class="" rel="">Dark Link</a> as a continuation of body copy.</p>
 </div>'
 ---
 

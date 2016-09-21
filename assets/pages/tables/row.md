@@ -3,7 +3,7 @@ title: Table Row
 template: child-1col-coded
 active_page: 'row'
 snippet_title: Table Row
-notes: 'A single table row element displaying a set of data horizontally across columns.'
+notes: 'A single row of data displayed horizontally across columns.'
 example: '  <div id="user-table_wrapper" class="dataTables_wrapper">
     <table id="user-table" class="dataTable" data-permission-read="true" data-csv-link="/users/export/csv" data-json-link="/users/export/json" role="grid" aria-describedby="user-table_info" style="width: 887px;">
       <tbody>

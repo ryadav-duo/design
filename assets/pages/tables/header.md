@@ -3,7 +3,7 @@ title: Table Header
 template: child-1col-coded
 active_page: 'header'
 snippet_title: Table Header
-notes: 'Table Header element of a table. With sortable column headings described with either text labels or iconography.'
+notes: 'The table header contains sortable column headings. These headings may be represented by either text or iconography.'
 example: '  <div id="user-table_wrapper" class="dataTables_wrapper">
     <table id="user-table" class="dataTable" data-permission-read="true" data-csv-link="/users/export/csv" data-json-link="/users/export/json" role="grid" aria-describedby="user-table_info" style="width: 100%">
       <thead>

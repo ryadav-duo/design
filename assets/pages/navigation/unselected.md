@@ -3,7 +3,7 @@ title: Navigation
 template: child-2col-coded
 active_page: 'unselected'
 snippet_title: Unselected Sidebar Page
-notes: 'This is a normal unactive navigation link. The numbers to the right indicate the amount of those that the user has (ie: 1,155 Applications, or 35 Devices, etc)'
+notes: 'This is a normal inactive navigation link.'
 example: '<nav class="navigation">
   <a class="">
     <i class="icon-users"></i>
