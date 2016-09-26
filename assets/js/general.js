@@ -11,17 +11,25 @@ function addEars(els, et, f) {
 }
 
 function makeActive(els, activeClass, index) {
-  Array.prototype.forEach.call(els, function(el) {
-    if (el.classList) {
-      el.classList.remove(activeClass);
-    } else {
-      el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+  if(els.length >= 1) {
+    Array.prototype.forEach.call(els, function(el) {
+      if (el.classList) {
+        el.classList.remove(activeClass);
+      } else {
+        el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+      }
+    });
+    if (index && els[index].classList) {
+      els[index].classList.add(activeClass);
+    } else if (index) {
+      els[index].className += ' ' + activeClass;
     }
-  });
-  if (els[index].classList) {
-    els[index].classList.add(activeClass);
   } else {
-    els[index].className += ' ' + activeClass;
+    if (els.classList) {
+      els.classList.add(activeClass);
+    } else {
+      els.className += ' ' + activeClass;
+    }
   }
 }
 
@@ -153,25 +161,74 @@ function include(arr,obj) {
     return (arr.indexOf(obj) != -1);
 }
 
-function jumpToActive() {
+var nav = document.querySelector('.base-sidebar .navigation .subnav.active');
+var anchorPos = new Array
+
+  var i = 0
   var anchors = document.querySelectorAll('.c--snippet-title')
+
+  Array.prototype.forEach.call(anchors, function (anchor) {
+    anchorPos[i] = {'eTop': anchor.offsetTop, 'eBottom': (anchor.offsetHeight + anchor.offsetTop), 'eId': anchor.getAttribute('id')}
+    i++
+  })
+
+
+// var activeAnchor = 0
+// var prevTags = nav.getElementsByTagName('a')
+//
+// function activeSection(scroll_pos) {
+//   for (var i = 0, len = anchorPos.length; i < len; i++) {
+//
+//     if (scroll_pos >= anchorPos[i].eTop && scroll_pos <= anchorPos[i].eBottom) {
+//       var prevAnchor = anchorPos[i].eId
+//       if(activeAnchor == anchorPos[i].eId) {
+//         console.log('no change')
+//       } else {
+//         var activeTag = nav.querySelector('a[data-goto="'+anchorPos[i].eId+'"]')
+//         makeActive(prevTags, 'active')
+//         makeActive(activeTag, 'active')
+//         activeAnchor = prevAnchor
+//       }
+//     }
+//   }
+// }
+//
+// // handle event
+//   if(nav) {
+//     window.addEventListener('scroll', function() {
+//       var currentPos = (scrollY)
+//       activeSection(currentPos)
+//     })
+//   }
+
+function jumpToActive() {
   var nav = document.querySelector('.base-sidebar .navigation .subnav.active')
-
+  var navItems = nav.getElementsByTagName('a')
+  var activeAnchor
+  var prevAnchor
+  var currentPos
   window.addEventListener('scroll', function() {
-    var currentPos = (scrollY + 300)
+    currentPos = (scrollY + 300)
 
-    Array.prototype.forEach.call(anchors, function(anchor) {
-      if(currentPos >= anchor.offsetTop) {
-        // nav.querySelector('a').classList.remove('active')
-        var navItems = nav.querySelectorAll('a.active:not([data-goto="'+anchor.getAttribute('id')+'"])')
-          Array.prototype.forEach.call(navItems, function(navItem) {
-            navItem.classList.remove('active')
-          })
-        nav.querySelector('a[data-goto="'+anchor.getAttribute('id')+'"]').classList.add('active')
+    Array.prototype.forEach.call(anchorPos, function(anchor) {
+      if(currentPos >= anchor.eTop ) {
+        activeAnchor = anchor.eId
+        if(activeAnchor != prevAnchor && activeAnchor == anchor.eId) {
+          makeActive(navItems, 'active')
+          nav.querySelector('a[data-goto="'+ anchor.eId +'"]').classList.add('active')
+          console.log('activeAnchor = ' + activeAnchor)
+          console.log('prevAnchor = ' + prevAnchor)
+          console.log('anchor.eId = ' + anchor.eId)
+          prevAnchor = anchor.eId
+        } else {
+          console.log('no change')
+          prevAnchor = anchor.eId
+        }
       }
     })
   })
 }
+
 
 // Search the DPL
   //create an object to push these items to in order to create actionable addresses outside of the typeahead
