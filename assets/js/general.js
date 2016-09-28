@@ -208,7 +208,7 @@ function jumpToActive() {
   var prevAnchor
   var currentPos
   window.addEventListener('scroll', function() {
-    currentPos = (scrollY + 300)
+    currentPos = (scrollY + 100)
 
     Array.prototype.forEach.call(anchorPos, function(anchor) {
       if(currentPos >= anchor.eTop ) {
@@ -216,9 +216,9 @@ function jumpToActive() {
         if(activeAnchor != prevAnchor && activeAnchor == anchor.eId) {
           makeActive(navItems, 'active')
           nav.querySelector('a[data-goto="'+ anchor.eId +'"]').classList.add('active')
-          console.log('activeAnchor = ' + activeAnchor)
-          console.log('prevAnchor = ' + prevAnchor)
-          console.log('anchor.eId = ' + anchor.eId)
+          // console.log('activeAnchor = ' + activeAnchor)
+          // console.log('prevAnchor = ' + prevAnchor)
+          // console.log('anchor.eId = ' + anchor.eId)
           prevAnchor = anchor.eId
         } else {
           console.log('no change')

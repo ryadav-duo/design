@@ -1,5 +1,5 @@
-@import "duo/variables";
-@import "duo/mixins";
+@import "variables";
+@import "mixins";
 
 $update-feed-width: 220px;
 
@@ -175,18 +175,18 @@ ul.user-actions {
         font-weight:bold;
         margin-bottom: 7px
     }
-  
+
     tr {
         vertical-align: top;
-          
+
         ul {
             text-align:center;
         }
-        
+
         li {
             margin-bottom: 5px;
         }
-        
+
         td {
             border-right:none;
             border-left:none;

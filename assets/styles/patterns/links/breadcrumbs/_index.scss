@@ -1,0 +1,21 @@
+.breadcrumbs {
+  font-size: small;
+
+  a {
+      color: $grey;
+
+      &:hover {
+          color: $grey-dark;
+      }
+  }
+
+  i {
+      margin: 0 8px;
+  }
+
+  @include low-res {
+      a:hover {
+          color: $grey-dark-low-res;
+      }
+  }
+}

@@ -77,3 +77,19 @@
         color: transparentize($base-color, $disabled-opacity);
     }
 }
+//This is used to create info boxes with set color text in them
+@mixin message($color, $color-light) {
+    background-color: $color-light;
+    border-radius: $border-radius;
+    color: $color;
+    padding: 1rem;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    a {
+        color: darken($color, 10%);
+
+        &:hover { color: darken($color, 20%); }
+    }
+}

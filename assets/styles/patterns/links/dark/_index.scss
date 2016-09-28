@@ -1,0 +1,4 @@
+.page-message {
+  @extend %dark-link;
+    @include message($grey-dark, $info-blue-light);
+  }

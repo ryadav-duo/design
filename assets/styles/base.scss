@@ -77,15 +77,6 @@ h1 {
 
 }
 
-a[target="_blank"] {
-  i.icon-new-window {
-      display: inline-block;
-      text-decoration: none;
-      padding-left: 6px;
-      font-size: 75%;
-    }
-  }
-
 // 2.1 Atom
 .bold {
   font-weight: 500;
@@ -327,6 +318,7 @@ $items: 6;
     > i {
       display: block;
       width: 8vw;
+      min-width: 8vw;
       height: 8vw;
       background: map-get($gray, light);
       border-radius: $border-radius;
@@ -721,27 +713,6 @@ select#billing_info_credit_card_month {
   vertical-align: 10%;
 }
 
-.breadcrumbs {
-    font-size: small;
-
-    a {
-        color: $grey;
-
-        &:hover {
-            color: $grey-dark;
-        }
-    }
-
-    i {
-        margin: 0 8px;
-    }
-
-    @include low-res {
-        a:hover {
-            color: $grey-dark-low-res;
-        }
-    }
-}
 
 .navigation {
     margin-bottom: 0;
@@ -2047,28 +2018,7 @@ input[name="port"] {
         }
     }
 }
-//policy class for small link
-.policy-link {
-  margin-top: 5px;
-  font-size: 12px;
-  line-height: 17px;
-}
-// dark link in message box-text
-.page-message {
-  background-color: $info-blue-light;
-  border-radius: $grey-dark;
-  color: $grey-dark;
-  padding: 1rem;
-  position: relative;
-  margin-top: 0;
-  margin-bottom: 1rem;
 
-  a {
-      color: darken($grey-dark, 10%);
-
-      &:hover { color: darken($grey-dark, 20%); }
-  }
-}
 // Form Styles
 // Narrow form
 #user-table_wrapper {
@@ -2795,15 +2745,6 @@ $browsers: unknown, safari, firefox, chrome, ie, opera, edge;
     }
 }
 
-.policy-link {
-    margin-top: 5px;
-    font-size: 12px;
-    line-height: 17px;
-
-    p {
-        color: #4A4A4A;
-    }
-}
 
 .total-device-count-container {
     width: 24%;

@@ -1,0 +1,15 @@
+a {
+    @include transition(color);
+    color: $info-blue;
+
+    &:hover {
+        color: darken($info-blue, 15%);
+    }
+
+    &:focus {
+        outline: 2px solid $duo-green;
+    }
+}
+@import "new-window/index";
+@import "dark/index";
+@import "small/index";

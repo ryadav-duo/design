@@ -1,5 +1,3 @@
-@import "duo/variables";
-@import "duo/mixins";
 
 @mixin button-style($background-color, $color: white) {
     background-color: $background-color;
@@ -25,7 +23,7 @@
 
     &:focus {
         background-color: darken($background-color, 10%);
-        outline: 2px solid $background-color; 
+        outline: 2px solid $background-color;
         outline-offset: 3px;
     }
 
@@ -102,16 +100,6 @@
         background-color: transparent;
     }
 
-    &.tiny {
-        font-size: $base-font-size * 0.8;
-        padding: 6px 8px;
-
-        i {
-            vertical-align: middle;
-            margin-right: 0;
-        }
-    }
-
     &.huge {
         font-size: $base-font-size * 1.25;
         padding: 16px 20px;
@@ -135,83 +123,31 @@
         width: 100%;
     }
 }
-
-button, .button, input[type="submit"]:not(.link), input[type="reset"], input[type="button"] {
-    @include button;
-    @include button-style($grey);
-
-    &.primary {
-        @include button-style($info-blue);
-    }
-
-    &.secondary {
-        @include button-style($grey-light, $info-blue);
-    }
-
-    &.positive {
-        @include button-style($duo-green);
-    }
-
-    &.danger {
-        @include button-style($error-red);
-    }
-
-    &.warning {
-        @include button-style($white);
-    }
+button, .button, input[type="submit"]:not(.link), input[type="reset"], input[type="button"], %btn {
+  @include button;
+  @import "positive/index";
+  @import "cancel/index";
+  @import "creation/index";
+  @import "destructive/index";
+  @import "tiny/index";
+  @import "secondary/index";
 }
+@import "dropdown/index";
+@import "rows/index";
 
-button.link {
-    @include transition(color);
+@include deprecate('2.0.0', 'Please dont use buttons as links') {
+  button.link {
+      @include transition(color);
 
-    background-color: transparent;
-    color: $info-blue;
+      background-color: transparent;
+      color: $info-blue;
 
-    &:hover {
-        background-color: transparent;
-        color: lighten($info-blue, 20%);
-    }
-    &:focus {
-        background-color: transparent;
-    }
-}
-
-.button-row {
-    @include clearfix;
-
-    > * {
-        float: left;
-        margin-right: 16px;
-    }
-
-    &.reverse > * {
-        float: right;
-        margin-left: 16px;
-        margin-right: 0;
-    }
-
-    &.centered {
-        text-align: center;
-    }
-
-    [type="text"] {
-        width: 200px;
-    }
-
-    .flexbox & {
-        display: flex;
-        align-items: baseline;
-
-        &.reverse {
-            flex-direction: row-reverse;
-        }
-
-        &.centered {
-            justify-content: center;
-
-            > :last-child {
-                margin-right: 0;
-            }
-        }
-    }
+      &:hover {
+          background-color: transparent;
+          color: lighten($info-blue, 20%);
+      }
+      &:focus {
+          background-color: transparent;
+      }
+  }
 }
