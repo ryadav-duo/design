@@ -1,5 +1,8 @@
 "use strict";
 // Global Variables
+const ESC_KEY = 27;
+const SPACE_KEY = 32;
+const ENTER_KEY = 13;
 
 // Functioning Functions
   //This function adds event listeners
@@ -32,6 +35,71 @@ function makeActive(els, activeClass, index) {
     }
   }
 }
+function changeClasses(e, actions) {
+		for (let key in actions) {
+			if (actions.hasOwnProperty(key)) {
+				let aName = key
+				let classes = actions[key]
+				for(let i = 0, len = classes.length; i < len; i++) {
+					e.classList[aName](classes[i])
+				}
+			}
+		}
+	}
+ 	function findDropdowns() {
+		let dropObjects = document.querySelectorAll('.a--dropdown-trigger');
+		Array.prototype.forEach.call(dropObjects, function(dropObject) {
+			dropObject.addEventListener('click', function(e) {
+				e.preventDefault(this)
+				e.stopPropagation()
+				toggleDropdown(this)
+			}, false)
+			dropObject.addEventListener('keydown', function(e) {
+				if(e.which === SPACE_KEY || e.which === ENTER_KEY) {
+					e.preventDefault(this)
+					e.stopPropagation()
+					toggleDropdown(this)
+				}
+				else if(e.which === ESC_KEY) {
+					closeAllDropdowns()
+				}
+			}, false)
+		})
+	}
+	function closeAllDropdowns(e) {
+		let allDropdowns = document
+			// close all dropdowns
+			.querySelectorAll('.c--dropdown');
+
+		Array.prototype.forEach.call(allDropdowns, function(dropdown) {
+			let dropdownContent = dropdown.querySelector('.a--dropdown-content')
+			let dropdownTrigger = dropdown.querySelector('.a--dropdown-trigger')
+			changeClasses(dropdownContent, {add: ['closed'], remove: ['open']})
+			changeClasses(dropdownTrigger, {remove: ['open']})
+		})
+	}
+	function toggleDropdown(e) {
+		let thisDropDown = e.parentElement.querySelector('.a--dropdown-content')
+		changeClasses(thisDropDown, {toggle: ['open', 'closed']})
+		changeClasses(e, {toggle: ['open']})
+		thisDropDown.addEventListener('blur', function(e) {
+			closeAllDropdowns()
+		})
+		let dropDownMenuItems = thisDropDown.children;
+		Array.prototype.forEach.call(dropDownMenuItems, function(dropDownItem) {
+			dropDownItem.addEventListener('click', function(e) {
+				closeAllDropdowns()
+			})
+		})
+		document.addEventListener('click', function() {
+			closeAllDropdowns()
+		})
+		document.addEventListener('keydown', function(e) {
+			if(e.which === ESC_KEY) {
+				closeAllDropdowns()
+			}
+		})
+	}
 
 //  Create switchable code tabs
 function snippetTabs(containers) {
