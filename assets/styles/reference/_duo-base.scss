@@ -1,4 +1,3 @@
-
 // because border-box is awesome
 // http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 html {
@@ -15,12 +14,21 @@ html, body {
 
 body {
     background-color: $grey-lighter;
-    color: $grey-darker;
+    color: $default-text-color;
 
     @include low-res {
         color: black;
     }
 }
+
+a[target="_blank"] {
+  i.icon-new-window {
+      display: inline-block;
+      text-decoration: none;
+      padding-left: 4px;
+      font-size: 80%;
+    }
+  }
 
 dl {
     margin-top: 0;

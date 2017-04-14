@@ -1,3 +1,5 @@
+@import "duo/variables";
+@import "duo/mixins";
 
 form:not(.inline) {
   @include box;
@@ -19,9 +21,6 @@ label {
 
   [type=checkbox] + &, [type=radio] + & {
     color: inherit;
-  }
-  span {
-    color: $grey-darker;
   }
 
   @include low-res {
@@ -103,7 +102,7 @@ ul.error-list {
     }
 
     .field {
-      flex: 1;
+      flex: 1 0 0;
       margin-left: 1rem;
     }
   }
@@ -142,7 +141,7 @@ ul.error-list {
     }
 }
 
-/* FORM ELEMENTS */
+// FORM ELEMENTS
 button, input, select, textarea {
   font-size: 100%;
   margin: 0;
@@ -158,24 +157,10 @@ button, input {
 }
 
 input, textarea, select {
-  border-color: $base-border-color;
 
   @include low-res {
     border-color: $base-border-color-low-res;
   }
-}
-
-select {
-  margin-top: 1px;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: normal;
-  display: inline-block;
-  border-width: 1px;
-  border-style: solid;
-  color: #333;
-  border-radius: $border-radius;
-  border-color: $base-border-color;
 }
 
 select[multiple] {
@@ -194,23 +179,8 @@ input, textarea {
   @include transition(color, border-color, box-shadow);
 
   font-family: $base-font-family;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: $border-radius;
-  color: $grey-dark;
   padding: 0.5rem;
   width: 100%;
-  outline: none;
-
-  &:hover {
-    border-color: darken($grey-light, 5%);
-  }
-
-  &:focus {
-    color: $grey-darker;
-    border-color: $duo-green;
-    box-shadow: 0 0 5px 0 transparentize($duo-green, 0.5);
-  }
 
   &.half-width {
     width: 50%;
@@ -241,7 +211,7 @@ input[type=checkbox] {
   margin-right: 0.5rem;
 
   &:focus {
-      outline: 2px solid $duo-green;
+      @include box-shadow;
   }
 }
 
@@ -340,7 +310,7 @@ select#predelay, select#postdelay {
     margin: 2px 5px 5px 5px;
     a {
         .select2-chosen {
-            color: black;
+            color: $default-text-color;
         }
         .select2-arrow > b {
             margin-top: -2px;

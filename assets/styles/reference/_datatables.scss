@@ -78,10 +78,6 @@
     .indented {
         margin: 0 0 0 24px;
     }
-
-    a:not(.button) {
-        color: $info-blue;
-    }
   }
 
   @mixin sort-arrow($icon) {
@@ -304,109 +300,9 @@
     padding-left: 10px;
 }
 
-// Pagination
-.dataTables_paginate {
-  float: right;
-
-  a {
-    text-decoration: none;
-  }
-
-  .paginate_button, .paginate_active {
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: inline-block;
-    height: 30px;
-    line-height: 20px;
-    margin: 3px;
-    padding: 6px;
-    text-align: center;
-    width: 30px;
-  }
-
-  .paginate_button {
-    @include transition(color, background-color);
-    color: $info-blue;
-    &.current {
-      background-color: $duo-green;
-      color: white;
-
-      &:hover {
-        background-color: $duo-green-dark;
-        color: white;
-      }
-    }
-
-    &:hover {
-      color: $duo-green-darkest;
-    }
-
-    &.disabled, &.disabled:hover {
-      cursor: default;
-      color: #DEE0E7;
-      border-color: #CFD3E0;
-
-      @include low-res {
-        color: $grey-dark-low-res;
-      }
-    }
-  }
-
-  .first, .next, .previous, .last {
-    font-size: 10px;
-    color: $info-blue;
-  }
-
-  .first, .last {
-    letter-spacing: -3px;
-    display: none;
-  }
-}
-
 .selected-count {
   display: inline-block;
   line-height: 18px;
-}
-
-// Custom formatted cells
-.result-cell {
-  white-space: nowrap;
-  text-transform: capitalize;
-
-  &:before {
-    width: 16px;
-    height: 16px;
-    background-size: 16px;
-    vertical-align: -3px;
-    margin-right: 4px;
-    line-height: 12px;
-    content: ' ';
-    display: inline-block;
-  }
-
-  $types:
-    (success, #63C76A),
-    (failure, #EF6000),
-    (fraud, #9D3F00),
-    (error, #9B9B9B);
-
-  @each $x in $types {
-    $type: nth($x, 1);
-    $color: nth($x, 2);
-
-    &.result-#{$type} {
-      color: $color;
-
-      &:before {
-        background-image: url("/static/images/markers/#{$type}.png");
-
-        @include retina {
-          background-image: url("/static/images/markers/#{$type}@2x.png");
-        }
-      }
-    }
-  }
 }
 
 .table-wrapper + .table-wrapper {
@@ -438,11 +334,14 @@
     vertical-align: top;
     display: inline-block;
     height: 100%;
+    float: left;
 }
 
 .os-text-column {
     display: inline-block;
-    width: calc(100% - 25px);
+    float: left;
+    max-width: calc(100% - 25px);
+    white-space: nowrap;
 }
 
 .browser-text-column {

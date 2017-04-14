@@ -6,7 +6,7 @@ $font-path: "../../fonts/duo-admin";
 
 @font-face {
   font-family: $font-family-name;
-  src: url("#{$font-path}/#{$font-name}.eot"); /* IE */
+  src: url("#{$font-path}/#{$font-name}.eot"); // IE
   src:url("#{$font-path}/#{$font-name}.eot?#iefix") format("embedded-opentype"),
       url("#{$font-path}/#{$font-name}.woff") format("woff");
   font-weight: normal;
@@ -354,9 +354,6 @@ $font-path: "../../fonts/duo-admin";
 .icon-linux:before {
   content: "\e03a";
 }
-.icon-clock:before {
-  content: "\e03b";
-}
 .icon-opera:before {
   content: "\e040";
 }
@@ -446,4 +443,16 @@ $font-path: "../../fonts/duo-admin";
 }
 .icon-browser-window:before {
   content: "\e051";
+}
+.icon-arrow-right:before {
+  content: "\e057";
+}
+.icon-clock:before {
+  content: "\e03b";
+}
+.icon-circle-checkmark:before {
+  content: "\e052";
+}
+.icon-trusted-endpoints:before {
+  content: "\e053";
 }

@@ -137,6 +137,11 @@ select#billing_info_credit_card_month {
 .navigation {
     margin-bottom: 0;
 
+    a,
+    a:hover {
+        box-shadow: none;
+    }
+
     > a {
         @include transition(background, color);
 
@@ -147,10 +152,6 @@ select#billing_info_credit_card_month {
         padding: 8px 12px;
         position: relative;
         text-decoration: none;
-
-        &:focus {
-            transition-duration: 0s;
-        }
 
         &:hover, &:focus {
             background-color: $grey-light;
@@ -225,7 +226,6 @@ select#billing_info_credit_card_month {
 }
 
 .subnav {
-    background-color: $grey-lighter;
     padding: 8px 0;
 
     .count, .new {
@@ -333,6 +333,7 @@ $base-sidebar-width: 200px;
     a {
         display: block;
         padding: 20px 0;
+        box-shadow: none;
     }
 
     h1 {

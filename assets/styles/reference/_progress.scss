@@ -8,42 +8,30 @@
         vertical-align: middle;
     }
 
-    .dropdown-finish {
-        .dropdown-content {
-            box-shadow: 0 4px 8px 0 $grey;
-            z-index: 1001;
-
-            &:before {
-                border-bottom-color: $duo-green;
-            }
-        }
-        .dropdown-toggle:hover {
-            background-color: $duo-green-dark;
-        }
-    }
-
     .dropdown-progress {
-        .dropdown-content {
-            border: 1px solid $grey-light;
-            right: calc(1rem - 2px);
-
-        }
-        .dropdown-toggle {
+        .a--dropdown-trigger {
             height: 2rem;
             margin: 0 1rem;
+            color: $white;
+            @include no-box-shadow;
+            border-radius: 0;
 
             &:hover {
-                background-color: black;
+                @include box-shadow(0 3px 0 0 currentColor);
             }
 
-            i {
-                left: 0;
-                top: 8px;
-
-                &.completed {
-                    color: $duo-green;
+            &.completed {
+                &:after {
+                    color: $success-green;
                 }
             }
+            &:after {
+                margin: 0 1rem;
+            }
+
+        }
+        .a--dropdown-content {
+            padding: 0 1em;
         }
     }
 }
@@ -87,12 +75,12 @@
         }
 
         &.completed {
-            background-color: $duo-green;
+            background-color: $success-green;
             color: white;
 
             &:before,
             &:after {
-                background-color: $duo-green;
+                background-color: $success-green;
             }
         }
         &:not(.completed) {
@@ -126,6 +114,18 @@
         &:not(.completed) {
             margin-left: 30px;
         }
+        a {
+            padding: 0;
+            @include box-shadow(0 1px 0 0 currentColor);
+            color: $default-text-color;
+            width: auto;
+            display: inline;
+            &:hover {
+                color: $default-text-color;
+                @include box-shadow(0 3px 0 0 currentColor);
+                background-color: transparent;
+            }
+        }
     }
 
     .completed {
@@ -134,7 +134,7 @@
         text-decoration: line-through;
 
         &:before {
-            color: $duo-green;
+            color: $success-green;
             content: '\e033';
             display: inline-block;
             font-family: $icon-font-family;
@@ -174,11 +174,17 @@
     }
 }
 
-.progress-finish-button {
-    float: right;
-
-    &:hover + .progress-finish-box {
-        display: block;
+.dropdown-finish {
+    .c--primary {
+        &:before {
+            content: '';
+            display: none;
+        }
+    }
+    .a--dropdown-content {
+        min-width: 300px;
+        max-width: 500px;
+        padding: 1em;
     }
 }
 
@@ -200,7 +206,8 @@
     background-size: 100%;
     margin: -1rem -1rem 1rem -1rem;
     text-align: center;
-    width: 300px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 
     img {
         display: inline-block;
@@ -211,6 +218,7 @@
 
 .progress-finish-message {
     text-align: center;
+    white-space: normal;
 }
 
 .progress-welcome {

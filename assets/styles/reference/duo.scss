@@ -3,25 +3,33 @@
 @import "normalize/normalize.scss";
 // Use this to deprecate old transitional sass
 $app-version: '1.1.0';
+$deprecate-mode: 'verbose';
 @import "deprecate";
 
-
-@import "variables";
-@import "mixins";
+@import "colors";
+@import "duo/variables";
+@import "duo/mixins";
+@import "duo/extends";
 
 @import "duo-base";
-@import "../patterns/links/base";
-@import "../patterns/buttons/base";
-@import "base";
-@import "progress";
-@import "fonts/duo-admin";
+@import "../patterns/icons/base";
 @import "fonts/ss-standard";
-@import "typography";
+@import "../patterns/typography/base";
+@import "../patterns/links/base";
+@import "base";
+@import "../patterns/navigation/base";
+@import "progress";
 @import "box";
 @import "forms";
 @import "messages";
 @import "modals";
-@import "confirm";
+@import "datatables";
+@import "../patterns/buttons/base";
+@import "../patterns/metric-card/base";
+@import "../patterns/insight-graphs/base";
 @import "header";
 @import "grid";
-@import "datatables"
+@import "carousel";
+@import "root-index";
+@import "users-index";
+@import "base";
