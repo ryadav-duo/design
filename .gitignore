@@ -1,7 +1,9 @@
 .sass-cache
 assets/.sass-cache
 assets/.eslintrc
-dist
+dist/
 node_modules
 npm-debug.log
-
+.eslintrc
+.eslintrc-serv
+.eslintrc-test
