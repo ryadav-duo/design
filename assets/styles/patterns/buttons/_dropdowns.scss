@@ -1,36 +1,24 @@
----
-title: Buttons & Links
-template: child-2col-coded
-active_page: 'dropdown'
-snippet_title: Dropdown Button
-notes: 'Clicking on this will cause a small dropdown menu to appear with options related to the dropdown button title.'
-example: '<nav class="c--dropdown" role="navigation">
-<a class="a--dropdown-trigger button" aria-expanded="false" tabindex="0" role="button"> Dropdown Button </a>
-<ul class="a--dropdown-content" aria-hidden="true">
-<li> <a href="#"> Sub Item 1 </a> </li>
-<li> <a href="#"> Sub Item 2 </a> </li>
-<li> <a href="#"> Sub Item 3 </a> </li>
-<li> <a class="a--destruction" href="#"> Destructive Sub Item </a> </li>
-</ul> </nav>'
----
+// Title:
+// Destructive Action
+//
+// Version:
+// Development
+// Styleguide 1.1.0
+//
+// Code:
+//  <nav class="options-menu c--dropdown" role="navigation">
+//    <a role="button" class="a--dropdown-trigger" tabindex="0" aria-label="device options" aria-expanded="false" aria-controls="dropdown1">
+//      Device Options
+//    </a>
+//    <ul class="a--dropdown-content closed" id="dropdown1" aria-hidden="true">
+//      <li><a href="#" title="">Reactivate Duo Mobile</a></li>
+//      <li><a href="#" title="">Change Device Name</a></li>
+//      <li><a href="#" class="a--destruction" title="">Delete</a></li>
+//    </ul>
+//  </nav>
+//
 
-* [HTML](0)
-* [SCSS](1)
 
-```html
-<nav class="c--dropdown" role="navigation">
-    <a class="a--dropdown-trigger button" aria-expanded="false" tabindex="0" role="button">
-        Dropdown Button
-    </a>
-    <ul class="a--dropdown-content" aria-hidden="true">
-        <li> <a href="#"> Sub Item 1 </a> </li>
-        <li> <a href="#"> Sub Item 2 </a> </li>
-        <li> <a href="#"> Sub Item 3 </a> </li>
-        <li> <a class="a--destruction" href="#"> Destructive Sub Item </a> </li>
-    </ul>
-</nav>
-```
-```sass
 .c--dropdown {
     position: relative;
     display: inline-block;
@@ -72,18 +60,18 @@ example: '<nav class="c--dropdown" role="navigation">
             line-height: 1em;
             bottom: -1.3em;
             height: 0.8em;
-            right: -4px;
+            right: -2px;
             z-index: 5000;
             width: 25px;
             height: 14px;
-            content: url('../shared/images/dropdown-arrow.svg');
+            content: url('../images/dropdown-arrow.svg');
             stroke: map-get($gray, light);
         }
 
     }
     &.button {
         &[aria-expanded="true"]:after {
-            left: calc(100% - 42px);
+            left: calc(100% - 45px);
         }
         &:before {
             padding-top: 0;
@@ -160,4 +148,3 @@ example: '<nav class="c--dropdown" role="navigation">
         }
     }
 }
-```

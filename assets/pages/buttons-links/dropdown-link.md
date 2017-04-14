@@ -1,11 +1,11 @@
 ---
 title: Buttons & Links
 template: child-2col-coded
-active_page: 'dropdown'
+active_page: 'dropdown-link'
 snippet_title: Dropdown Button
 notes: 'Clicking on this will cause a small dropdown menu to appear with options related to the dropdown button title.'
 example: '<nav class="c--dropdown" role="navigation">
-<a class="a--dropdown-trigger button" aria-expanded="false" tabindex="0" role="button"> Dropdown Button </a>
+<a class="a--dropdown-trigger" aria-expanded="false" tabindex="0" role="button"> Dropdown Button </a>
 <ul class="a--dropdown-content" aria-hidden="true">
 <li> <a href="#"> Sub Item 1 </a> </li>
 <li> <a href="#"> Sub Item 2 </a> </li>
@@ -19,7 +19,7 @@ example: '<nav class="c--dropdown" role="navigation">
 
 ```html
 <nav class="c--dropdown" role="navigation">
-    <a class="a--dropdown-trigger button" aria-expanded="false" tabindex="0" role="button">
+    <a class="a--dropdown-trigger" aria-expanded="false" tabindex="0" role="button">
         Dropdown Button
     </a>
     <ul class="a--dropdown-content" aria-hidden="true">
