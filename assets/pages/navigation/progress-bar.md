@@ -25,12 +25,12 @@ example: '
     <li class="progress-bar-section  completed ">
       <i class="icon-check content"></i>
     </li>
+
   </ul>
-  <div class="dropdown dropdown-light dropdown-progress">
-    <div class="dropdown-toggle">
-      <i class="icon-chevron-thick-down  completed "></i>
-    </div>
-    <nav class="dropdown-content" style="display: none;">
+  <div class="c--dropdown dropdown-progress">
+    <a class="a--dropdown-trigger  completed " aria-expanded="false" tabindex="0" role="button">
+    </a>
+    <nav class="a--dropdown-content" aria-hidden="true">
       <ul class="progress-checklist">
         <li class="progress-step completed">Step 1: Sign up for Duo</li>
         <li class="progress-step completed">Step 2: Set up two-factor authentication</li>
@@ -48,18 +48,19 @@ example: '
       </ul>
     </nav>
   </div>
-  <div class="dropdown dropdown-light dropdown-finish">
-    <button type="submit" class="positive button dropdown-toggle"> <i class="icon-check"></i> Finish </button>
-    <nav class="dropdown-content" style="display: none;">
+
+  <div class="c--dropdown dropdown-finish">
+    <button type="submit" class="button c--primary positive a--dropdown-trigger" aria-expanded="false"> Finish </button>
+    <nav class="a--dropdown-content" aria-hidden="true">
       <div class="progress-finish-image">
         <img class="zen-taco" src="/images/zen-taco.png?v=c53df">
       </div>
       <div class="progress-finish-message">
         <h1>Congrats!</h1>
         <p>
-          Sit back and enjoy a taco. You&#39;re now protected with Duo. Next, go to Settings in the sidebar to customize your Duo experience.
+          Sit back and enjoy a taco. Youre now protected with Duo. Next, go to Settings in the sidebar to customize your Duo experience.
         </p>
-        <button class="ghost progress-dismiss"> Got it, thanks! </button>
+        <button class="progress-dismiss ghost"> Got it, thanks! </button>
       </div>
     </nav>
   </div>
@@ -89,12 +90,12 @@ example: '
     <li class="progress-bar-section  completed ">
       <i class="icon-check content"></i>
     </li>
+
   </ul>
-  <div class="dropdown dropdown-light dropdown-progress">
-    <div class="dropdown-toggle">
-      <i class="icon-chevron-thick-down  completed "></i>
-    </div>
-    <nav class="dropdown-content" style="display: none;">
+  <div class="c--dropdown dropdown-progress">
+    <a class="a--dropdown-trigger  completed " aria-expanded="false" tabindex="0" role="button">
+    </a>
+    <nav class="a--dropdown-content" aria-hidden="true">
       <ul class="progress-checklist">
         <li class="progress-step completed">Step 1: Sign up for Duo</li>
         <li class="progress-step completed">Step 2: Set up two-factor authentication</li>
@@ -112,18 +113,19 @@ example: '
       </ul>
     </nav>
   </div>
-  <div class="dropdown dropdown-light dropdown-finish">
-    <button type="submit" class="positive button dropdown-toggle"> <i class="icon-check"></i> Finish </button>
-    <nav class="dropdown-content" style="display: none;">
+
+  <div class="c--dropdown dropdown-finish">
+    <button type="submit" class="button c--primary positive a--dropdown-trigger" aria-expanded="false"> Finish </button>
+    <nav class="a--dropdown-content" aria-hidden="true">
       <div class="progress-finish-image">
         <img class="zen-taco" src="/images/zen-taco.png?v=c53df">
       </div>
       <div class="progress-finish-message">
         <h1>Congrats!</h1>
         <p>
-          Sit back and enjoy a taco. You&#39;re now protected with Duo. Next, go to Settings in the sidebar to customize your Duo experience.
+          Sit back and enjoy a taco. Youre now protected with Duo. Next, go to Settings in the sidebar to customize your Duo experience.
         </p>
-        <button class="ghost progress-dismiss"> Got it, thanks! </button>
+        <button class="progress-dismiss ghost"> Got it, thanks! </button>
       </div>
     </nav>
   </div>
@@ -140,42 +142,30 @@ example: '
         vertical-align: middle;
     }
 
-    .dropdown-finish {
-        .dropdown-content {
-            box-shadow: 0 4px 8px 0 $grey;
-            z-index: 1001;
-
-            &:before {
-                border-bottom-color: $duo-green;
-            }
-        }
-        .dropdown-toggle:hover {
-            background-color: $duo-green-dark;
-        }
-    }
-
     .dropdown-progress {
-        .dropdown-content {
-            border: 1px solid $grey-light;
-            right: calc(1rem - 2px);
-
-        }
-        .dropdown-toggle {
+        .a--dropdown-trigger {
             height: 2rem;
             margin: 0 1rem;
+            color: $white;
+            @include no-box-shadow;
+            border-radius: 0;
 
             &:hover {
-                background-color: black;
+                @include box-shadow(0 3px 0 0 currentColor);
             }
 
-            i {
-                left: 0;
-                top: 8px;
-
-                &.completed {
-                    color: $duo-green;
+            &.completed {
+                &:after {
+                    color: $success-green;
                 }
             }
+            &:after {
+                margin: 0 1rem;
+            }
+
+        }
+        .a--dropdown-content {
+            padding: 0 1em;
         }
     }
 }
@@ -219,12 +209,12 @@ example: '
         }
 
         &.completed {
-            background-color: $duo-green;
+            background-color: $success-green;
             color: white;
 
             &:before,
             &:after {
-                background-color: $duo-green;
+                background-color: $success-green;
             }
         }
         &:not(.completed) {
@@ -258,6 +248,18 @@ example: '
         &:not(.completed) {
             margin-left: 30px;
         }
+        a {
+            padding: 0;
+            @include box-shadow(0 1px 0 0 currentColor);
+            color: $default-text-color;
+            width: auto;
+            display: inline;
+            &:hover {
+                color: $default-text-color;
+                @include box-shadow(0 3px 0 0 currentColor);
+                background-color: transparent;
+            }
+        }
     }
 
     .completed {
@@ -266,7 +268,7 @@ example: '
         text-decoration: line-through;
 
         &:before {
-            color: $duo-green;
+            color: $success-green;
             content: '\e033';
             display: inline-block;
             font-family: $icon-font-family;
@@ -306,11 +308,17 @@ example: '
     }
 }
 
-.progress-finish-button {
-    float: right;
-
-    &:hover + .progress-finish-box {
-        display: block;
+.dropdown-finish {
+    .c--primary {
+        &:before {
+            content: '';
+            display: none;
+        }
+    }
+    .a--dropdown-content {
+        min-width: 300px;
+        max-width: 500px;
+        padding: 1em;
     }
 }
 
@@ -332,7 +340,8 @@ example: '
     background-size: 100%;
     margin: -1rem -1rem 1rem -1rem;
     text-align: center;
-    width: 300px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 
     img {
         display: inline-block;
@@ -343,6 +352,7 @@ example: '
 
 .progress-finish-message {
     text-align: center;
+    white-space: normal;
 }
 
 .progress-welcome {

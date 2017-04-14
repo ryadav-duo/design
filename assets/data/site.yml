@@ -94,41 +94,37 @@
   description: how to build buttons and links
   sections:
     -
-      name: Cancel Button
-      id: cancel
-      description: cancel button example
-    -
-      name: Creation Button
-      id: creation
-      description: creation button example
-    -
-      name: Destruction Button
-      id: destruction
-      description: destruction button example
-    -
-      name: Dropdown Button
-      id: dropdown
-      description: dropdown button example
-    -
-      name: Inline Button
-      id: inline
-      description: inline button example
-    -
-      name: Positive Button
-      id: positive
-      description: positive button example
+      name: Primary Button
+      id: primary
+      description: primary button example
     -
       name: Secondary Button
       id: secondary
       description: secondary button example
     -
+      name: Destructive Button
+      id: destructive
+      description: destructive button example
+    -
+      name: Destructive Icon Button
+      id: destructive-icon
+      description: destructive icon only button example
+    -
+      name: Download Button
+      id: download
+      description: file download button example
+    -
+      name: Dropdown Button
+      id: dropdown
+      description: dropdown button example
+    -
+      name: Dropdown LInk
+      id: dropdown-link
+      description: dropdown link example
+    -
       name: Default Link
       id: default-link
       description: default link example
-    -
-      name: Dark Link
-      id: dark-link
-      description: dark link styling
     -
       name: New Window Link
       id: new-window
