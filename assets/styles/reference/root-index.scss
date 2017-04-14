@@ -1,4 +1,5 @@
 @import "duo/variables";
+@import "../patterns/colors/colors";
 @import "duo/mixins";
 
 $update-feed-width: 220px;
@@ -43,70 +44,6 @@ $update-feed-width: 220px;
         & + .feed-section {
             margin-top: 0;
         }
-    }
-}
-
-.at-a-glance {
-    margin-bottom: 20px;
-
-    .flexbox & {
-        display: flex;
-    }
-}
-
-.number-link {
-    display: inline-block;
-    margin-right: 10px;
-    min-width: 120px;
-
-    .flexbox & {
-        flex: 1;
-    }
-
-    a {
-        background: white;
-        display: block;
-        text-decoration: none;
-        padding: 1rem;
-        text-align: center;
-
-        &[href]:hover {
-            background: darken(white, 1%);
-        }
-
-        .number {
-            display: block;
-            font-size: 2.5vw;
-            line-height: 48px;
-            margin-bottom: 8px;
-            color: $duo-blue;
-            font-weight: 300;
-        }
-
-        .what {
-            text-transform: uppercase;
-            font-size: 12px;
-            color: $grey;
-
-            @include low-res {
-                color: $grey-dark-low-res;
-            }
-        }
-
-        @media screen and (max-width: 1060px) {
-            .number {
-                font-size: 24px;
-                line-height: 36px;
-            }
-
-            .what {
-                font-size: 10px;
-            }
-        }
-    }
-
-    &:last-child {
-        margin-right: 0;
     }
 }
 
@@ -175,18 +112,18 @@ ul.user-actions {
         font-weight:bold;
         margin-bottom: 7px
     }
-  
+
     tr {
         vertical-align: top;
-          
+
         ul {
             text-align:center;
         }
-        
+
         li {
             margin-bottom: 5px;
         }
-        
+
         td {
             border-right:none;
             border-left:none;

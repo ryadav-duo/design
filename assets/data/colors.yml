@@ -5,23 +5,11 @@
     notes: |
       Use Duo Blue as a background color for promotional items
   -
-    name: Light Blue
-    hex: 2798D4
-    var: duo-blue-light
+    name: Primary Action
+    hex: 306FC3
+    var: primary-button-color
     notes: |
-      Use Light Blue for navigational buttons and links, and informational messages.
-  -
-    name: Duo Green
-    hex: 63b246
-    var: duo-green
-    notes: |
-      Use Duo Green to denote success or to communicate a primary action.
-  -
-    name: Gray
-    hex: 888
-    var: gray
-    notes: |
-      Use Gray for lighter instructional text, labels, default buttons, table header text, and icons.
+      Use Primary Action color to signify the most important action or information on the screen for the user.
   -
     name: Dark Gray
     hex: 444
@@ -29,19 +17,37 @@
     notes: |
       Use Dark Gray for text.
   -
+    name: Gray
+    hex: 888
+    var: gray
+    notes: |
+      Use Gray for lighter instructional text, labels, default buttons, table header text, and icons.
+  -
     name: Light Gray
     hex: efefef
     var: gray-light
     notes: |
       Use Light Gray as a background element to create separation from white cards.
   -
-    name: Warning Orange
+    name: Success
+    hex: 44A91D
+    var: success-green
+    notes: |
+      Use Success Green to denote a successful or positive action that either the user or element has achieved.
+  -
+    name: Info
+    hex: 2698D4
+    var: info-blue
+    notes: |
+      Use Info Blue for informational messages.
+  -
+    name: Warning
     hex: df6a27
     var: orange-warning
     notes: |
       Use Warning Orange to warn users of something that might happen.
   -
-    name: Alert Red
+    name: Alert/Error
     hex: D4423B
     var: red-alert
     notes: |

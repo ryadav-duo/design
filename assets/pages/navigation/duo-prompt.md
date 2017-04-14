@@ -4,48 +4,120 @@ template: child-2col-coded
 active_page: 'duo-prompt'
 snippet_title: Duo Prompt Navigation
 notes: "Use the left link navigation for instances where the above navigation is too chunky or doesn't make sense. Currently in use on the Duo Prompt."
-example: '<div class="help-sidebar"><div class="help-links">
-  <nav role="navigation">
-    <a class="help-url" target="_blank">
-      <span>What is this?</span> <i class="icon-new-window" aria-label="Opens new tab"></i>
-    </a>
-    <a class="help-nav">
-    Add a new device
-    </a>
-    <a class="help-nav">
-    My Settings &amp; Devices
-    </a>
-    <a class="need-help">Need help?</a>
-  </nav>
-  <div role="contentinfo">
-    <a class="branding-link" target="_blank">
-    Powered by Duo Security
-  </a>
-  </div>
-</div></div>'
+example: '<div class="base-navigation">
+<div role="banner">
+<a href="">
+<img src="/images/logo.png" alt="Duo Security Authentication" width="128">
+</a>
+</div>
+<div class="help-sidebar">
+<button class="btn btn-support">
+<i class="icon-align-justify"></i>
+<i class="icon-delete" aria-label="Close"></i>
+Settings
+</button>
+<div class="help-links">
+<nav role="navigation">
+<a class="help-nav" href="https://guide.duo.com/prompt" target="_blank">
+What is this?<i class="icon-new-window" aria-label="Opens new tab"></i>
+</a>
+<a class="help-nav" href="">
+Add a new device
+</a>
+<a class="help-nav" href="">
+My Settings &amp; Devices
+</a>
+<a href="#" class="need-help">Need help?</a>
+</nav>
+<div role="contentinfo">
+<a href="https://duo.com" class="branding-link" target="_blank">
+Powered by Duo Security
+</a>
+</div>
+</div>
+</div>
+<div class="help-overlay offscreen">
+<div class="help-links">
+<nav role="navigation">
+<a class="help-nav" href="https://guide.duo.com/prompt" target="_blank">
+What is this?<i class="icon-new-window" aria-label="Opens new tab"></i>
+</a>
+<a class="help-nav" href="">
+Add a new device
+</a>
+<a class="help-nav" href="">
+My Settings &amp; Devices
+</a>
+<a href="#" class="need-help">Need help?</a>
+</nav>
+<div role="contentinfo">
+<a href="https://duo.com" class="branding-link" target="_blank">
+Powered by Duo Security
+</a>
+</div>
+</div>
+</div>
+</div>'
 ---
 
 * [HTML](0)
 * [SCSS](1)
 
 ```html
-<div class="help-links">
-  <nav role="navigation">
-    <a class="help-url" target="_blank">
-      <span>What is this?</span> <i class="icon-new-window" aria-label="Opens new tab"></i>
+<div class="base-navigation">
+  <div role="banner">
+    <a href="">
+      <img src="" alt="Duo Security Authentication" width="128">
     </a>
-    <a class="help-nav">
-    Add a new device
-    </a>
-    <a class="help-nav">
-    My Settings &amp; Devices
-    </a>
-    <a class="need-help">Need help?</a>
-  </nav>
-  <div role="contentinfo">
-    <a class="branding-link" target="_blank">
-    Powered by Duo Security
-  </a>
+  </div>
+  <div class="help-sidebar">
+    <button class="btn btn-support">
+      <i class="icon-align-justify"></i>
+      <i class="icon-delete" aria-label="Close"></i>
+      Settings
+    </button>
+    <div class="help-links">
+      <nav role="navigation">
+        <a class="help-nav" href="https://guide.duo.com/prompt" target="_blank">
+          What is this?
+          <i class="icon-new-window" aria-label="Opens new tab"></i>
+        </a>
+        <a class="help-nav" href="">
+          Add a new device
+        </a>
+        <a class="help-nav" href="">
+          My Settings &amp; Devices
+        </a>
+        <a href="#" class="need-help">Need help?</a>
+      </nav>
+      <div role="contentinfo">
+        <a href="https://duo.com" class="branding-link" target="_blank">
+          Powered by Duo Security
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="help-overlay offscreen">
+    <div class="help-links">
+      <nav role="navigation">
+        <a class="help-nav" href="https://guide.duo.com/prompt" target="_blank">
+          What is this?
+          <i class="icon-new-window" aria-label="Opens new tab"></i>
+        </a>
+        <a class="help-nav" href="">
+          Add a new device
+        </a>
+        <a class="help-nav" href="">
+          My Settings &amp; Devices
+        </a>
+        <a href="#" class="need-help">Need help?</a>
+      </nav>
+      <div role="contentinfo">
+        <a href="https://duo.com" class="branding-link" target="_blank">
+          Powered by Duo Security
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 ```

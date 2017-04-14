@@ -4,122 +4,159 @@ template: child-2col-coded
 active_page: 'dropdown'
 snippet_title: Dropdown Button
 notes: 'Clicking on this will cause a small dropdown menu to appear with options related to the dropdown button title.'
-example: '<div class="dropdown">
-  <div class="dropdown-toggle button">
-    <span>Dropdown Button</span><i class="icon-chevron-thick-down"></i>
-  </div>
-  <div class="dropdown-content">
-    <a href="#" class="dropdown-print">Sub Item 1</a>
-    <a href="#" class="dropdown-print">Sub Item 2</a>
-    <a href="#" class="dropdown-print">Sub Item 3</a>
-    <a href="#" class="dropdown-print">Sub Item 4</a>
-  </div>
-</div>'
+example: '<nav class="c--dropdown" role="navigation">
+<a class="a--dropdown-trigger button" aria-expanded="false" tabindex="0" role="button"> Dropdown Button </a>
+<ul class="a--dropdown-content" aria-hidden="true">
+<li> <a href="#"> Sub Item 1 </a> </li>
+<li> <a href="#"> Sub Item 2 </a> </li>
+<li> <a href="#"> Sub Item 3 </a> </li>
+<li> <a class="a--destruction" href="#"> Destructive Sub Item </a> </li>
+</ul> </nav>'
 ---
 
 * [HTML](0)
 * [SCSS](1)
 
 ```html
-<div class="dropdown">
-  <div class="dropdown-toggle button">
-    <span>Dropdown Button</span><i class="icon-chevron-thick-down"></i>
-  </div>
-  <div class="dropdown-content">
-    <a href="#" class="dropdown-print">Sub Item 1</a>
-    <a href="#" class="dropdown-print">Sub Item 2</a>
-    <a href="#" class="dropdown-print">Sub Item 3</a>
-    <a href="#" class="dropdown-print">Sub Item 4</a>
-  </div>
-</div>
+<nav class="c--dropdown" role="navigation">
+    <a class="a--dropdown-trigger button" aria-expanded="false" tabindex="0" role="button">
+        Dropdown Button
+    </a>
+    <ul class="a--dropdown-content" aria-hidden="true">
+        <li> <a href="#"> Sub Item 1 </a> </li>
+        <li> <a href="#"> Sub Item 2 </a> </li>
+        <li> <a href="#"> Sub Item 3 </a> </li>
+        <li> <a class="a--destruction" href="#"> Destructive Sub Item </a> </li>
+    </ul>
+</nav>
 ```
 ```sass
-.dropdown {
-    display: inline-block;
+.c--dropdown {
     position: relative;
+    display: inline-block;
 }
 
-.dropdown-toggle {
-    @include transition(background-color);
+.a--dropdown-trigger {
+    @include box-shadow(0 0 0 0 currentColor);
+    text-decoration: none;
+    display: flex;
 
-    border-radius: $border-radius;
-    height: 40px;
-    padding: 0 8px;
-
-    &:not(.disabled):not(.button) {
-        cursor: pointer;
-        &:hover {
-            background-color: $grey-light;
-
-            @include low-res {
-                background-color: $grey-light-low-res;
-            }
-        }
-    }
-
-    &.dropdown-toggle-green {
-        background-color: $duo-green;
-        color: white;
-
-        &:hover {
-            background-color: $duo-green-dark;
-        }
-    }
-
-    img, span {
-        height: calc(100% - 8px);
-        line-height: calc(100% - 8px);
-        vertical-align: middle;
-        margin: 4px;
-    }
-
-    img {
-        border-radius: $border-radius;
-    }
-
-    span:first-child {
-        line-height: 40px;
-    }
-    i[class^="icon"] {
+    &:before {
+        @extend %icon;
+        @extend %icon-after;
+        @include transitions(transform $fast-ease);
+        content: $downCarret;
         position: relative;
+        vertical-align: bottom;
+        display: inline-block;
+        line-height: 1rem;
+        order: 2;
+        align-self: center;
+        padding: 2px 0 0 2px;
     }
-    .icon-chevron-thick-down {
-        top: 2px;
-        left: -2px;
+
+    &:focus {
+        @extend %a-focus;
+    }
+
+    &[aria-expanded="false"] {
+        overflow: hidden;
+    }
+
+    &[aria-expanded="true"] {
+
+        &:after {
+            box-sizing: border-box;
+            position: absolute;
+            display: block;
+            line-height: 1em;
+            bottom: -1.3em;
+            height: 0.8em;
+            right: -4px;
+            z-index: 5000;
+            width: 25px;
+            height: 14px;
+            content: url('../shared/images/dropdown-arrow.svg');
+            stroke: map-get($gray, light);
+        }
+
+    }
+    &.button {
+        &[aria-expanded="true"]:after {
+            left: calc(100% - 42px);
+        }
+        &:before {
+            padding-top: 0;
+        }
     }
 }
+.a--dropdown-trigger:not(.button) {
+    padding-right: 0;
+}
 
-.dropdown-content {
-    background: $grey-darker;
-    border-radius: $border-radius;
-    display: none;
-    padding: 16px;
+
+.a--dropdown-content {
+    @include border-radius;
+    @include box-shadow(0 2px 2px 0 map-get($gray, light));
+    display: block;
     position: absolute;
-    top: calc(100% + 8px);
-    right: 0;
-    z-index: 10;
+    padding: 15px 0 12px;
+    border: 1px solid map-get($gray, light);
+    background-color: $white;
+    width: auto;
+    min-width: 125px;
+    white-space: nowrap;
+    margin-top: 1.15em;
+    z-index: 4000;
 
-    &::before {
-        position: absolute;
-        content: ' ';
-        width: 8px;
-        height: 8px;
-        border: 8px solid transparent;
-        border-bottom-color: $grey-darker;
-        bottom: 100%;
-        right: 8px;
+    &[aria-hidden="true"] {
+        opacity: 0;
+        height: 0;
+        visibility: hidden;
+        display: none;
     }
 
-    a {
-        @include transition(color);
+    &[aria-hidden="false"] {
+        opacity: 1;
+        height: auto;
+        visibility: visible;
+    }
 
-        display: block;
-        padding: 4px 8px;
-        color: $grey-light;
-        text-decoration: none;
+    &.edge {
+        right: -.5em;
+    }
 
-        &:hover {
-            color: white;
+    li {
+        margin-bottom: 0;
+        line-height: 1.5em;
+        list-style: none;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            @include transitions;
+            padding: 5px 45px 5px 20px;
+            display: inline-block;
+            box-sizing: border-box;
+            width: 100%;
+            box-shadow: none;
+            text-align: left;
+
+            &:hover {
+                @include box-shadow(none);
+                background-color: $dropdown-link-hover-color;
+                color: $white;
+
+                &.a--destruction {
+                    background-color: $error-red;
+                }
+            }
+
+            &:focus {
+                @include box-shadow;
+            }
         }
     }
 }

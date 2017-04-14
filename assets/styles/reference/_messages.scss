@@ -17,6 +17,15 @@
     }
 }
 
+@keyframes barberpole {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 2rem 0;
+    }
+}
+
 .flash {
     .info, .message {
         @include message($grey-dark, $info-blue-light);
@@ -32,6 +41,22 @@
 
     .warning {
         @include message($grey-dark, $warning-orange-light);
+    }
+
+    .progress {
+        @include message($grey-darker, $grey-light);
+        background-size: 2rem 2rem;
+        background-image: linear-gradient(
+            45deg,
+            transparentize($grey-darker, .95) 25%,
+            transparent 25%,
+            transparent 50%,
+            transparentize($grey-darker, .95) 50%,
+            transparentize($grey-darker, .95) 75%,
+            transparent 75%,
+            transparent
+        );
+        animation: barberpole 0.5s linear infinite;
     }
 
     p:last-child {
