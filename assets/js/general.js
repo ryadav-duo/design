@@ -7,7 +7,7 @@ const ENTER_KEY = 13;
 // Functioning Functions
   //This function adds event listeners
 function addEars(els, et, f) {
-  Array.prototype.forEach.call(els, function(e) {
+  els.forEach(e => {
     e.addEventListener(et, f, false)
     }
   )
@@ -16,102 +16,147 @@ function addEars(els, et, f) {
 function makeActive(els, activeClass, index) {
   if(els.length >= 1) {
     Array.prototype.forEach.call(els, function(el) {
-      if (el.classList) {
         el.classList.remove(activeClass);
-      } else {
-        el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-      }
     });
-    if (index && els[index].classList) {
       els[index].classList.add(activeClass);
-    } else if (index) {
-      els[index].className += ' ' + activeClass;
-    }
   } else {
-    if (els.classList) {
       els.classList.add(activeClass);
-    } else {
-      els.className += ' ' + activeClass;
-    }
   }
 }
 function changeClasses(e, actions) {
-		for (let key in actions) {
-			if (actions.hasOwnProperty(key)) {
-				let aName = key
-				let classes = actions[key]
-				for(let i = 0, len = classes.length; i < len; i++) {
-					e.classList[aName](classes[i])
-				}
-			}
+	for (let key in actions) {
+		if (actions.hasOwnProperty(key)) {
+			let aName = key
+			let classes = actions[key]
+			classes.forEach(className => {
+				e.classList[aName](className)
+			})
 		}
 	}
- 	function findDropdowns() {
-		let dropObjects = document.querySelectorAll('.a--dropdown-trigger');
-		Array.prototype.forEach.call(dropObjects, function(dropObject) {
-			dropObject.addEventListener('click', function(e) {
-				e.preventDefault(this)
-				e.stopPropagation()
-				toggleDropdown(this)
-			}, false)
-			dropObject.addEventListener('keydown', function(e) {
-				if(e.which === SPACE_KEY || e.which === ENTER_KEY) {
-					e.preventDefault(this)
-					e.stopPropagation()
-					toggleDropdown(this)
-				}
-				else if(e.which === ESC_KEY) {
-					closeAllDropdowns()
-				}
-			}, false)
-		})
-	}
-	function closeAllDropdowns(e) {
-		let allDropdowns = document
-			// close all dropdowns
-			.querySelectorAll('.c--dropdown');
+}
+// Dropdown functionality
 
-		Array.prototype.forEach.call(allDropdowns, function(dropdown) {
-			let dropdownContent = dropdown.querySelector('.a--dropdown-content')
-			let dropdownTrigger = dropdown.querySelector('.a--dropdown-trigger')
-			changeClasses(dropdownContent, {add: ['closed'], remove: ['open']})
-			changeClasses(dropdownTrigger, {remove: ['open']})
-		})
-	}
-	function toggleDropdown(e) {
-		let thisDropDown = e.parentElement.querySelector('.a--dropdown-content')
-		changeClasses(thisDropDown, {toggle: ['open', 'closed']})
-		changeClasses(e, {toggle: ['open']})
-		thisDropDown.addEventListener('blur', function(e) {
-			closeAllDropdowns()
-		})
-		let dropDownMenuItems = thisDropDown.children;
-		Array.prototype.forEach.call(dropDownMenuItems, function(dropDownItem) {
-			dropDownItem.addEventListener('click', function(e) {
-				closeAllDropdowns()
-			})
-		})
-		document.addEventListener('click', function() {
-			closeAllDropdowns()
-		})
-		document.addEventListener('keydown', function(e) {
-			if(e.which === ESC_KEY) {
-				closeAllDropdowns()
+// set the class names for common used selectors
+const dropdownClass         = '.c--dropdown';
+const dropdownTriggerClass  = '.a--dropdown-trigger';
+const dropdownContentClass  = '.a--dropdown-content';
+
+// loop through the page and find all dropdown,
+// then attach event listeners to all of them
+function findDropdowns(cName) {
+	let dropObjects = document.querySelectorAll(cName);
+	dropObjects.forEach(dropObject => {
+		dropObject.addEventListener('click', function(e) {
+            // stop link from linking
+			e.preventDefault(this)
+			e.stopPropagation()
+            // close any other open dropdowns exclude this one
+            closeAllDropdowns(dropdownClass, this)
+            // open this dropdown
+			toggleDropdown(this)
+            // make sure it's totally visible on screen, if not bump it over
+            checkEdge(this)
+		}, false)
+		dropObject.addEventListener('keydown', function(e) {
+			if(e.which === SPACE_KEY || e.which === ENTER_KEY) {
+                // stop link from linking
+    			e.preventDefault(this)
+    			e.stopPropagation()
+                // close any other open dropdowns
+                closeAllDropdowns(dropdownClass, this)
+                // open this dropdown
+    			toggleDropdown(this)
+                // make sure it's totally visible on screen, if not bump it over
+                checkEdge(this)
 			}
-		})
-	}
+			else if(e.which === ESC_KEY) {
+				closeAllDropdowns(dropdownClass)
+			}
+		}, false)
+	})
+    // close the dropdowns if the user clicks anywhere on screen
+    document.querySelector('body').addEventListener('click', function(e) {
+        closeAllDropdowns(dropdownClass);
+    })
+}
+function closeAllDropdowns(e, exclude) {
+	let allDropdowns = document
+		// close all dropdowns
+		.querySelectorAll(e);
+
+	allDropdowns.forEach(dropdown => {
+        // if there is a dropdown to be excluded passed along
+        // check to see if it matches one of the dropdowns in the allDropdowns variable and skip it
+        if (exclude) {
+            if (exclude == dropdown) {
+                return;
+            }
+        }
+        // get the parts of the dropdown that we need to interact with
+		let contentContainer = dropdown.querySelector(dropdownContentClass)
+		let dropdownTrigger = dropdown.querySelector(dropdownTriggerClass)
+
+        // tell the browser that this element is expanded
+        dropdownTrigger.setAttribute('aria-expanded', false)
+        // tell the browser that the content area state of expanded and hidden
+        contentContainer.setAttribute('aria-hidden', true)
+        contentContainer.setAttribute('aria-expanded', false)
+	})
+}
+
+function checkEdge(e) {
+// lets check to see if the dropdown content passed is entirely on screen or not
+    // set our variables
+    const contentContainer = e;
+    // find out how far the content is from the left position of the screen
+    const clientLeft = contentContainer.offsetLeft;
+    // find out how wide the content is
+    const clientWidth = contentContainer.offsetWidth;
+    //find out how wide the dropdown trigger is
+    const triggerWidth = contentContainer.parentElement.querySelector(dropdownTriggerClass).offsetWidth;
+    // find out how wide the document is
+    const documentWidth = document.querySelector('body').offsetWidth;
+
+    if (clientLeft + clientWidth >= documentWidth - 20 || triggerWidth >= clientWidth) {
+        changeClasses(contentContainer, {
+            add: ['edge']
+        });
+    } else {
+        changeClasses(contentContainer, {
+            remove: ['edge']
+        });
+    }
+}
+
+function toggleDropdown(e) {
+    console.log(e);
+// gather all parts of a dropdown
+    // get the trigger element
+    const dropdownTrigger = e.querySelector(dropdownTriggerClass);
+    // get the hidden content area of the dropdown
+    const contentContainer = e.querySelector(dropdownContentClass);
+    // find out the current state of dropdown opened or closed?
+    const ariaExpandedState = dropdownTrigger.getAttribute('aria-expanded') !== 'false';
+
+    // tell the browser that this element is expanded
+    dropdownTrigger.setAttribute('aria-expanded', !ariaExpandedState);
+    // tell the browser that the content area state of expanded and hidden
+    contentContainer.setAttribute('aria-hidden', ariaExpandedState);
+    contentContainer.setAttribute('aria-expanded', !ariaExpandedState);
+
+}
 
 //  Create switchable code tabs
 function snippetTabs(containers) {
-  Array.prototype.forEach.call(containers, function(container) {
-    var codeSnippets = container.querySelectorAll('table.codehilite');
+  containers.forEach(container => {
+    const codeSnippets = container.querySelectorAll('table.codehilite');
 
-    var numOfTabs = codeSnippets.length;
-    var i = 0;
+    const numOfTabs = codeSnippets.length;
+    let i = 0;
 
     //  create toggle navigation
-    var toggleNav = container.querySelector('ul');
-    var toggleNavItem = toggleNav.querySelectorAll('li');
+    const toggleNav = container.querySelector('ul');
+    const toggleNavItem = toggleNav.querySelectorAll('li');
     toggleNav.classList.add('nav--snippet-toggle');
 
     //  Function to call to toggle classes
@@ -125,8 +170,6 @@ function snippetTabs(containers) {
       if (i === 0) {
         toggleNavItem[i].classList.add('current');
         codeSnippets[i].classList.add('active');
-      } else {
-      // codeSnippets[i].classList.add('inactive');
       }
     //  attach a listener event to run the toggle function of the code snippet
       toggleNavItem[i].querySelector('a').addEventListener('click', function(event) {
@@ -136,17 +179,17 @@ function snippetTabs(containers) {
       i++;
     }
     while (i < numOfTabs);
-  });
+  })
 }
 // Make text in input field highlight
-function selectALlCodes() {
+function selectAllCodes() {
   var codeSelects = document.querySelectorAll('.click_to_select_all');
-  Array.prototype.forEach.call(codeSelects, function(codeSelect) {
+  codeSelects.forEach(codeSelect => {
     codeSelect.addEventListener('click',function(){this.select()})
   })
 }
 // make codehilite areas one click highlight
-function selectText( containerid ) {
+function selectText(containerid) {
   var node =  containerid ;
   if ( document.selection ) {
     var range = document.body.createTextRange();
@@ -161,60 +204,14 @@ function selectText( containerid ) {
 }
 //fine all code hilite sections
 function findCodeHiite() {
-  var codeSelectDivs = document.querySelectorAll('div.click_to_select_div');
-  Array.prototype.forEach.call(codeSelectDivs, function(codeSelectDiv) {
+  let codeSelectDivs = document.querySelectorAll('div.click_to_select_div');
+  codeSelectDivs.forEach(codeSelectDiv => {
     codeSelectDiv.addEventListener('click', function() {selectText(codeSelectDiv)})
   })
 }
 
-function findDropdowns() {
-  var dropObjects = document.querySelectorAll('.dropdown');
-  Array.prototype.forEach.call(dropObjects, function(dropObject) {
-    dropObject.addEventListener('click', function(e) {
-      // if there's an href or something on the toggle don't follow it
-      e.preventDefault(this);
-      // contain the click so the body doesn't react to it and close the dropdown
-      e.stopPropagation();
-      toggleDropdown(this)
-
-    }
-    , false);
-    })
-}
-
-//Dropdown code brought over from Application// clicking a dropdown's toggle should, yep, toggle it
-function toggleDropdown(e) {
-
-  //  closeAllDropdowns(e);
-   var thisDropDown = e.querySelector('.dropdown-content');
-     thisDropDown.style.display = (thisDropDown.style.display != 'block' ? 'block' : '' );
-       // clicks inside a dropdown's content should not escape
-     thisDropDown.addEventListener('click', function(e) {
-       e.stopPropagation(this);
-     });
-
-       // clicking on links inside dropdown will cause dropdown to close
-       var dropDownMenuItems = e.querySelectorAll('.dropdown-content > a');
-       Array.prototype.forEach.call(dropDownMenuItems, function(dropDownItem) {
-         dropDownItem.addEventListener('click', function(e) {
-             this.parentElement.style.display = '';
-         })
-       })
-      document.addEventListener('click', function() {
-        closeAllDropdowns();
-      })
-}
-function closeAllDropdowns(e) {
-  var allDropdowns = document
-      // close all dropdowns
-      .querySelectorAll('.dropdown');
-
-      Array.prototype.forEach.call(allDropdowns, function(dropdown) {
-            dropdown.querySelector('.dropdown-content').style.display = 'none';
-          })
-}
 function fakeTypeAhead() {
-  var focused = document.activeElement;
+  let focused = document.activeElement;
   if(this === focused) {
     this.addEventListener('keydown', function() {
       this.nextElementSibling.style.display = "block"
@@ -225,79 +222,64 @@ function closeTypeAhead() {
     this.nextElementSibling.style.display = "none"
 }
 
-function include(arr,obj) {
-    return (arr.indexOf(obj) != -1);
-}
-
-var nav = document.querySelector('.base-sidebar .navigation .subnav.active');
-var anchorPos = new Array
-
-  var i = 0
-  var anchors = document.querySelectorAll('.c--snippet-title')
-
-  Array.prototype.forEach.call(anchors, function (anchor) {
-    anchorPos[i] = {'eTop': anchor.offsetTop, 'eBottom': (anchor.offsetHeight + anchor.offsetTop), 'eId': anchor.getAttribute('id')}
-    i++
-  })
-
-
-// var activeAnchor = 0
-// var prevTags = nav.getElementsByTagName('a')
-//
-// function activeSection(scroll_pos) {
-//   for (var i = 0, len = anchorPos.length; i < len; i++) {
-//
-//     if (scroll_pos >= anchorPos[i].eTop && scroll_pos <= anchorPos[i].eBottom) {
-//       var prevAnchor = anchorPos[i].eId
-//       if(activeAnchor == anchorPos[i].eId) {
-//         console.log('no change')
-//       } else {
-//         var activeTag = nav.querySelector('a[data-goto="'+anchorPos[i].eId+'"]')
-//         makeActive(prevTags, 'active')
-//         makeActive(activeTag, 'active')
-//         activeAnchor = prevAnchor
-//       }
-//     }
-//   }
-// }
-//
-// // handle event
-//   if(nav) {
-//     window.addEventListener('scroll', function() {
-//       var currentPos = (scrollY)
-//       activeSection(currentPos)
-//     })
-//   }
-
 function jumpToActive() {
+  var anchors = document.querySelectorAll('.c--snippet-title')
   var nav = document.querySelector('.base-sidebar .navigation .subnav.active')
-  var navItems = nav.getElementsByTagName('a')
-  var activeAnchor
-  var prevAnchor
-  var currentPos
-  window.addEventListener('scroll', function() {
-    currentPos = (scrollY + 100)
 
-    Array.prototype.forEach.call(anchorPos, function(anchor) {
-      if(currentPos >= anchor.eTop ) {
-        activeAnchor = anchor.eId
-        if(activeAnchor != prevAnchor && activeAnchor == anchor.eId) {
-          makeActive(navItems, 'active')
-          nav.querySelector('a[data-goto="'+ anchor.eId +'"]').classList.add('active')
-          // console.log('activeAnchor = ' + activeAnchor)
-          // console.log('prevAnchor = ' + prevAnchor)
-          // console.log('anchor.eId = ' + anchor.eId)
-          prevAnchor = anchor.eId
-        } else {
-          console.log('no change')
-          prevAnchor = anchor.eId
-        }
+  window.addEventListener('scroll', function() {
+    var currentPos = (scrollY + 300)
+
+    Array.prototype.forEach.call(anchors, function(anchor) {
+      if(currentPos >= anchor.offsetTop) {
+        // nav.querySelector('a').classList.remove('active')
+        var navItems = nav.querySelectorAll('a.active:not([data-goto="'+anchor.getAttribute('id')+'"])')
+          Array.prototype.forEach.call(navItems, function(navItem) {
+            navItem.classList.remove('active')
+          })
+        nav.querySelector('a[data-goto="'+anchor.getAttribute('id')+'"]').classList.add('active')
       }
     })
   })
 }
 
-
+// let nav = document.querySelector('.base-sidebar .navigation .subnav.active');
+//   let anchorPos = new Array
+//   let anchors = document.querySelectorAll('.c--snippet-title')
+//
+//     for(let anchor of anchors) {
+//       anchorPos.push({
+//         eTop: anchor.offsetTop,
+//         eBottom: (anchor.offsetHeight + anchor.offsetTop),
+//         eId: anchor.getAttribute('id')
+//       })
+//     }
+// //Code to watch the scroll and update menu as necessary
+// var last_known_scroll_position = 0;
+// var ticking = false;
+//
+// function jumpToActive(currentPos, navItems) {
+//   for(const anchor of anchorPos) {
+//     if(currentPos > anchor.eTop && currentPos < anchor.eBottom) {
+//       for(let obj of navItems) {
+//         changeClasses(obj, {remove: ['active']})
+//       }
+//       nav.querySelector('a[data-goto="'+ anchor.eId +'"]').classList.add('active')
+//     }
+//   }
+// }
+// if(nav) {
+//   let navItems = nav.children
+//   window.addEventListener('scroll', function(e) {
+//     last_known_scroll_position = window.scrollY;
+//     if (!ticking) {
+//       window.requestAnimationFrame(function() {
+//         jumpToActive(last_known_scroll_position, navItems);
+//         ticking = false;
+//       });
+//     }
+//     ticking = true;
+//   })
+// }
 // Search the DPL
   //create an object to push these items to in order to create actionable addresses outside of the typeahead
 var dplPages = []
@@ -310,9 +292,9 @@ var dplSearch = new Bloodhound({
     url: ['json/search.json'],
     transform: function(response) {
       //all of this is to reformat the json feed to allow searching of child sections inside of a parent page
-      jQuery.each(response, function(i, page) {
+      response.forEach(page => {
         if(page.sections) {
-          jQuery.each(page.sections, function(i, section) {
+          page.sections.forEach(section => {
             section['parent']= page.id
             response.push(section)
           })
@@ -335,15 +317,13 @@ var tParent = {
   source: dplSearch.ttAdapter(),
   templates: {
     empty: function(page) {
-      return '<div class="empty-message"> Your search for <strong>'
-        + page.query +
-      '</strong> has returned 0 results.</div>'
+      return `<div class="empty-message"> Your search for <strong>${page.query}</strong> has returned 0 results.</div>`
     },
     suggestion: function(page) {
       // change the url if the page is a child section of a parent url
-      var searchAddress = new Object();
+      const searchAddress = new Object();
       searchAddress['name'] = page.name
-      var searchResult = '<a class="dpl-s-result" href="'
+      let searchResult = '<a class="dpl-s-result" href="'
       if(page.parent) {
         searchResult += page.parent
         searchAddress['base'] = page.parent
@@ -364,16 +344,13 @@ var tParent = {
 }
 // I'm not sure how hacky this is but it's a work around to make the search results keyboard accessable
 function goToPage(searchItem) {
-  var selected = searchItem.currentTarget.value
+  let selected = searchItem.currentTarget.value
   // loop through array of objects for matching name
-  var selectedAddress = dplPages.filter(function(s) {
-    return s.name == selected
-  })
-  var searchAddress = selectedAddress[0].base + '.html'
-  if(selectedAddress[0].child) {
-    searchAddress += '#' + selectedAddress[0].child
+  let selectedAddress = dplPages.find(s => s.name == selected)
+  let searchAddress = `${selectedAddress.base}.html`
+  if(selectedAddress.child) {
+    searchAddress += `#${selectedAddress.child}`
   }
-  console.log('window location should redirect to ' + searchAddress)
   window.location.replace(searchAddress)
 }
 
@@ -384,8 +361,8 @@ jQuery('#dpl-search').typeahead(null, tParent)
 // Put things here that you want to executed when the document is ready
 var fa = function() {
   // Gobal vars
-  var codeContainers = document.querySelectorAll('.c-example-code');
-  var wonkaBar = document.querySelectorAll('.l-component-cluster .wonka-bar input');
+  const codeContainers = document.querySelectorAll('.c-example-code');
+  const wonkaBar = document.querySelectorAll('.l-component-cluster .wonka-bar input');
 
   if (codeContainers.length >= 1) {
     snippetTabs(codeContainers);
@@ -393,8 +370,8 @@ var fa = function() {
   }
   addEars(wonkaBar, 'focus', fakeTypeAhead)
   addEars(wonkaBar, 'blur', closeTypeAhead)
-  selectALlCodes()
-  findDropdowns()
+  selectAllCodes()
+  findDropdowns('.c--dropdown')
   jumpToActive()
 };
 

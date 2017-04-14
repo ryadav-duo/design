@@ -77,7 +77,7 @@ gulp.task('watch', ['refresh'], () => {
         'assets/templates/**/*.html',
     ], ['pages']).on('change', browserSync.reload)
 
-    gulp.watch('assets/styles/**/*.scss', ['styles'])
+    gulp.watch('assets/styles/**/**/*.scss', ['styles'])
     gulp.watch('assets/js/**/*.js', ['scripts'])
 
     browserSync.init({
