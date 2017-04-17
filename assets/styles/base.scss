@@ -471,7 +471,7 @@ $items: 6;
 .base-sidebar {
   .navigation {
     overflow-y: auto;
-    height: 92%;
+    height: 90%;
     > a {
       &.active {
           background: $duo-green;
@@ -779,6 +779,9 @@ $base-sidebar-width: 200px;
     @media (max-width: 30rem) {
       margin-left: 0;
     }
+    // > div:not(.base-actions) {
+    //     max-width: 1224px;
+    // }
 }
 
 .base-actions {

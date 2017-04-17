@@ -1,6 +1,6 @@
 ---
 title: Dashboard Statistics
-template: child-2col-coded
+template: child-1col-coded
 active_page: 'dashboard-stats'
 snippet_title: Dashboard Stats
 notes: ''
