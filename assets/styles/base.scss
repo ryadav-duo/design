@@ -1,8 +1,15 @@
-@import "../fonts/antenna/antenna.css";
-@import "../fonts/open-sans/open-sans.css";
-@import "fonts/duo-admin/duo-admin.scss";
 //Import duo trusted path style sheets
 @import "reference/duo";
 @import "reference/colors";
 @import "reference/duo/variables";
 
+@import "reference/fonts/ss-standard.scss";
+
+//Comment out any of these modules that you do not need
+@import "patterns/typography";
+@import "patterns/buttons";
+@import "patterns/links";
+@import "patterns/icons";
+@import "patterns/navigation";
+@import "patterns/insight-graphs";
+@import "patterns/metric-card";
