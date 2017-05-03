@@ -4,9 +4,7 @@
   "description": "Duo Design Standards",
   "private": true,
   "scripts": {
-    "build": "gulp build",
-    "publish": "./scripts/publish.sh",
-    "watch": "gulp watch"
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
