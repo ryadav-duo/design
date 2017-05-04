@@ -41,7 +41,7 @@ $green: (
 // we should eventually just get rid of these all together
 $grey-darker: map-get($gray, dark);
 $grey-dark: map-get($gray, mid);
-$grey: map-get($grey-map, mid);
+$grey: map-get($gray, mid);
 $grey-light: map-get($gray, light);
 $grey-lighter: map-get($gray, lightest);
 
