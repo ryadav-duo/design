@@ -6,7 +6,7 @@ const rename = require('gulp-rename')
 
 
 gulp.task('styles', () => (
-    gulp.src('assets/styles/**/*.scss')
+    gulp.src(['assets/styles/**/*.scss', '!assets/styles/fonts'])
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(postcss([
             cssnano()
@@ -15,15 +15,15 @@ gulp.task('styles', () => (
         .pipe(gulp.dest('dist/styles'))
 ))
 
-gulp.task('referenceFiles', () => {
-    gulp.src('assets/styles/**/*.css')
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('dist/styles'))
-  // gulp.src('assets/js/reference/**/**/*.js')
-  //     .pipe(jsmin())
-  //     .pipe(rename({suffix: '.min'}))
-  //     .pipe(gulp.dest('dist/js'))
-})
+//gulp.task('referenceFiles', () => {
+//  gulp.src('assets/styles/**/*.css')
+//    .pipe(rename({suffix: '.min'}))
+//    .pipe(gulp.dest('dist/styles'))
+//  gulp.src('assets/js/reference/**/**/*.js')
+//     .pipe(jsmin())
+//     .pipe(rename({suffix: '.min'}))
+//     .pipe(gulp.dest('dist/js'))
+//})
 
 // gulp.task('scripts', () => (
 //     gulp.src('assets/js/general.js')
@@ -39,11 +39,11 @@ gulp.task('images', () => (
 ))
 
 gulp.task('fonts', () => (
-    gulp.src('assets/fonts/**/*')
-        .pipe(gulp.dest('dist/fonts'))
+    gulp.src('assets/styles/fonts/**/*')
+        .pipe(gulp.dest('dist/styles/fonts'))
 ))
 
 
-gulp.task('build', ['styles', 'images', 'fonts', 'referenceFiles'])
+gulp.task('build', ['styles', 'images', 'fonts'])
 
 gulp.task('refresh', ['styles', 'images'])
