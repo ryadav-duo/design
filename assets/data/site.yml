@@ -73,10 +73,6 @@
       id: unselected
       description: unselected nav item
     -
-      name: New Badge Nav Link
-      id: new-badge
-      description: nav badge on nav item
-    -
       name: Duo Prompt Nav
       id: duo-prompt
       description: duo prompt nav

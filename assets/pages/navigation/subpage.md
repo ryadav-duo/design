@@ -6,16 +6,15 @@ snippet_title: Subpage Links
 notes: "Subpages and actions are listed below the 'current page' nav-item. If you're on the page of the sub-page it will appear green."
 example: '<nav class="navigation">
   <a class="current">
-    <i class="icon-users"></i>
-    <span class="label">Users</span>
+    Users
     <span class="count">534</span>
   </a>
   <div class="subnav open">
     <a class="">
-    <span class="label current">Sub-Link 1</span>
+    Sub-Link 1
     </a>
     <a class="">
-    <span class="label">Sub-Link 2</span>
+    Sub-Link 2
     </a>
   </div>
 </nav>'
@@ -27,146 +26,130 @@ example: '<nav class="navigation">
 ```html
 <nav class="navigation">
   <a class="current">
-    <i class="icon-users"></i>
-    <span class="label">Users</span>
+    Users
     <span class="count">534</span>
   </a>
   <div class="subnav">
     <a class="">
-      <span class="label current">Sub-Link 1</span>
+      Sub-Link 1
     </a>
     <a class="">
-      <span class="label">Sub-Link 2</span>
+      Sub-Link 2
     </a>
   </div>
 </nav>
 ```
 ```sass
 .navigation {
-  margin-bottom: 0;
+    margin-bottom: .688rem; // 11/16
 
-  > a {
-      @include transition(background, color);
+    > a {
+        @include transition(background, color);
+        @include no-box-shadow;
+        color: $default-link-color;
+        display: block;
+        font-size: .875rem;
+        line-height: 1.25em;
+        padding: .687rem 1.5rem;
+        position: relative;
+        text-decoration: none;
 
-      color: inherit;
-      display: block;
-      font-size: 14px;
-      line-height: 26px;
-      padding: 8px 12px;
-      position: relative;
-      text-decoration: none;
+        &:focus {
+            @include no-box-shadow;
+            transition-duration: 0s;
+            border-radius: 0;
+            z-index: 3000;
+        }
 
-      &:focus {
-          transition-duration: 0s;
-      }
+        &:hover {
+            @include no-box-shadow;
+            background-color: $nav-state-color;
+            .count {
+                color: $default-link-color;
+            }
+        }
 
-      &:hover, &:focus {
-          color: $duo-green;
-      }
+        &:active {
+            background-color: $white;
+        }
 
-      &.current {
-          background: $duo-green;
-          color: white;
+        &.current {
+            background: $nav-state-color;
 
-          .new {
-            border-color: white;
-            color: white;
-          }
+            .count {
+                color: $default-link-color;
+            }
+        }
 
-          &:hover {
-              background: $duo-green-dark;
-          }
-      }
+        .flexbox & {
+            display: flex;
+            align-items: baseline;
 
-      .flexbox & {
-          display: flex;
-          align-items: baseline;
+        }
+    }
 
-          .label {
-              flex: 1;
-          }
-      }
-  }
+    .count {
+        position: absolute;
+        top: .688rem; // 11/16
+        right: 1.5rem; // 24/16
+        color: $count-color;
+        transition: color $fast-ease;
 
-  [class^="icon"] {
-      display: inline-block;
-      font-size: 16px;
-      margin-right: 12px;
-      opacity: 0.8;
-      text-align: center;
-      width: 18px;
-
-      .flexbox & {
-          align-self: center;
-      }
-  }
-
-  .count, .new {
-      font-size: small;
-      opacity: 0.5;
-      position: absolute;
-      top: 10px;
-      right: 16px;
-
-      .flexbox & {
-          position: absolute;
-      }
-  }
-
-  .new {
-      border: 2px solid $duo-green;
-      border-radius: $border-radius;
-      color: $duo-green;
-      font-size: 11px;
-      height: 20px;
-      line-height: 11px;
-      padding: 2px;
-
-      & + .count {
-          display: none;
-      }
-
-      &.expired + .count {
-          display: block;
-      }
-  }
+        .flexbox & {
+            position: absolute;
+        }
+    }
 }
 
 .subnav {
-  background-color: $grey-lighter;
-  padding: 8px 0;
+    padding: 0 0 4px 0;
 
-  .count, .new {
-      top: 3px;
-  }
+    .count {
+        top: .5rem; // 8/16
+    }
 
-  > a {
-      @include transition(color);
+    > a {
+        @include transition(color);
+        @include no-box-shadow;
+        color: $default-link-color;
+        display: block;
+        font-size: .75rem; // 12/16
+        line-height: 1.25em;
+        padding: .5rem .375rem .5rem 2.25rem; // 8/16, 8/16
+        position: relative;
+        text-decoration: none;
 
-      color: $grey-darker;
-      display: block;
-      font-size: 12px;
-      line-height: 22px;
-      padding: 4px 16px;
-      position: relative;
-      text-decoration: none;
+        &:hover {
+            @include no-box-shadow;
+            background-color: $nav-state-color;
+            border-radius: 0;
+            .count {
+                color: $default-link-color;
+            }
+        }
 
-      &:hover, &:focus {
-          color: $duo-green-dark;
-      }
+        &:focus {
+            @include no-box-shadow;
+            border-radius: 0;
+            z-index: 3000;
+        }
 
-      &.current {
-          color: $duo-green;
-      }
+        &:active {
+            background-color: $white;
+        }
 
-      .flexbox & {
-          display: flex;
-          align-items: baseline;
+        &.current {
+            background-color: $nav-state-color;
+            .count {
+                color: $default-link-color;
+            }
+        }
 
-          .label {
-              flex: 1;
-          }
-      }
-  }
+        .flexbox & {
+            display: flex;
+            align-items: baseline;
+        }
+    }
 }
+
 ```
