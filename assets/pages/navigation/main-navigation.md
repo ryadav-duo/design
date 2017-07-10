@@ -3,80 +3,66 @@ title: Navigation
 template: child-2col-coded
 active_page: 'main-navigation'
 snippet_title: Main Navigation
-notes: 'A green background denotes the current page users are on. Green links below page titles also tell what page the user is currently on. Pages with an associated quantity of items get a number floated to the right (ie: 100 users = Users 100) For new pages we use the "new" tag floated to the right.'
+notes: 'A blue background denotes the current page users are on. Grey links below page titles also tell what page the user is currently on. Pages with an associated quantity of items get a number floated to the right (ie: 100 users = Users 100).'
 example: '<nav class="navigation">
   <a class="">
-    <i class="icon-monitor"></i>
-    <span class="label">Dashboard</span>
+    Dashboard
   </a>
   <a class="">
-    <i class="icon-pie-chart"></i>
-    <span class="label">Device Insight</span>
-    <span class="new expired" data-expire-name="new-tab-device-insight" data-expire-count="3">NEW</span>
+    Device Insight
   </a>
   <a class="">
-    <i class="icon-globe"></i>
-    <span class="label">Policies</span>
-    <span class="new visible" data-expire-name="new-tab-policy" data-expire-count="3">NEW</span>
+    Policies
     <span class="count">34</span>
   </a>
   <a class="">
-    <i class="icon-padlock-round-locked"></i>
-    <span class="label">Applications</span>
+    Applications
     <span class="count">316</span>
   </a>
   <a class="current">
-    <i class="icon-users"></i>
-    <span class="label">Users</span>
+    Users
     <span class="count">534</span>
   </a>
   <div class="subnav open">
     <a class="">
-    <span class="label">New User</span>
+    New User
     </a>
     <a class="">
-    <span class="label">Pending Enrollments</span>
+    Pending Enrollments
     </a>
     <a class="">
-    <span class="label">Bulk Enroll Users</span>
+    Bulk Enroll Users
     </a>
     <a class="">
-    <span class="label">Import Users</span>
+    Import Users
     </a>
     <a class="">
-    <span class="label">Directory Sync</span>
+    Directory Sync
     </a>
     <a class="">
-    <span class="label">Bypass Codes</span>
+    Bypass Codes
     </a>
   </div>
   <a class="">
-    <i class="icon-endpoints"></i>
-    <span class="label">Endpoints</span>
-    <span class="new visible" data-expire-name="new-tab-endpoints" data-expire-count="3">NEW</span>
+    Endpoints
     <span class="count">19</span>
   </a>
   <a class="">
-    <i class="icon-smartphone"></i>
-    <span class="label">2FA Devices</span>
+    2FA Devices
     <span class="count">478</span>
   </a>
   <a class="">
-    <i class="icon-users"></i>
-    <span class="label">Groups</span>
+    Groups
     <span class="count">48</span>
   </a>
   <a class="">
-    <i class="icon-file-line-graph"></i>
-    <span class="label">Reports</span>
+    Reports
   </a>
   <a class="">
-    <i class="icon-users"></i>
-    <span class="label">Accounts</span>
+    Accounts
   </a>
   <a class="">
-    <i class="icon-gear"></i>
-    <span class="label">Settings</span>
+    Settings
   </a>
   <div class="support">
   <dl class="helpful-links">
@@ -103,257 +89,237 @@ example: '<nav class="navigation">
 
 ```html
 <nav class="navigation">
-  <a href="/" class="">
-    <i class="icon-monitor"></i>
-    <span class="label">Dashboard</span>
+  <a class="">
+    Dashboard
   </a>
-  <a href="/insight-overview" class="">
-    <i class="icon-pie-chart"></i>
-    <span class="label">Device Insight</span>
-    <span class="new expired" data-expire-name="new-tab-device-insight" data-expire-count="3">NEW</span>
+  <a class="">
+    Device Insight
   </a>
-  <a href="/policies" class="">
-    <i class="icon-globe"></i>
-    <span class="label">Policies</span>
-    <span class="new visible" data-expire-name="new-tab-policy" data-expire-count="3">NEW</span>
+  <a class="">
+    Policies
     <span class="count">34</span>
   </a>
-  <a href="/applications" class="">
-    <i class="icon-padlock-round-locked"></i>
-    <span class="label">Applications</span>
+  <a class="">
+    Applications
     <span class="count">316</span>
   </a>
-  <a href="/users" class="current">
-    <i class="icon-users"></i>
-    <span class="label">Users</span>
+  <a class="current">
+    Users
     <span class="count">534</span>
   </a>
-  <div class="subnav">
-    <a href="/users/add" class="">
-    <span class="label">New User</span>
+  <div class="subnav open">
+    <a class="">
+    New User
     </a>
-    <a href="/users/enroll-codes" class="">
-    <span class="label">Pending Enrollments</span>
+    <a class="">
+    Pending Enrollments
     </a>
-    <a href="/users/bulkenroll" class="">
-    <span class="label">Bulk Enroll Users</span>
+    <a class="">
+    Bulk Enroll Users
     </a>
-    <a href="/users/import" class="">
-    <span class="label">Import Users</span>
+    <a class="">
+    Import Users
     </a>
-    <a href="/users/directorysync" class="">
-    <span class="label">Directory Sync</span>
+    <a class="">
+    Directory Sync
     </a>
-    <a href="/users/bypasscodes" class="">
-    <span class="label">Bypass Codes</span>
+    <a class="">
+    Bypass Codes
     </a>
   </div>
-  <a href="/endpoints" class="">
-    <i class="icon-endpoints"></i>
-    <span class="label">Endpoints</span>
-    <span class="new visible" data-expire-name="new-tab-endpoints" data-expire-count="3">NEW</span>
+  <a class="">
+    Endpoints
     <span class="count">19</span>
   </a>
-  <a href="/phones" class="">
-    <i class="icon-smartphone"></i>
-    <span class="label">2FA Devices</span>
+  <a class="">
+    2FA Devices
     <span class="count">478</span>
   </a>
-  <a href="/groups" class="">
-    <i class="icon-users"></i>
-    <span class="label">Groups</span>
+  <a class="">
+    Groups
     <span class="count">48</span>
   </a>
-  <a href="/logs" class="">
-    <i class="icon-file-line-graph"></i>
-    <span class="label">Reports</span>
+  <a class="">
+    Reports
   </a>
-  <a href="/accounts" class="">
-    <i class="icon-users"></i>
-    <span class="label">Accounts</span>
+  <a class="">
+    Accounts
   </a>
-  <a href="/settings" class="">
-    <i class="icon-gear"></i>
-    <span class="label">Settings</span>
+  <a class="">
+    Settings
   </a>
   <div class="support">
-    <dl class="helpful-links">
-      <dt><h2>Support</h2></dt>
-      <dd>
-        Need help? <a href="mailto:support@duosecurity.com" title="launch email addressed to duo">Email Support</a><br> or call 1-855-386-2884.
-      </dd>
-      <dt><h3>Account ID</h3></dt>
-      <dd>[account id goes here]</dd>
-      <dt><h3>Deployment ID</h3></dt>
-      <dd><a href="https://status.duo.com" target="_blank">DUOALPHA<i class="icon-new-window"></i></a></dd>
-      <dt><h3>Helpful Links</h3></dt>
-      <dd><a href="https://duo.com/docs" target="_blank">Documentation<i class="icon-new-window"></i></a></dd>
-      <dd><a href="https://guide.duo.com" target="_blank">User Guide<i class="icon-new-window"></i></a></dd>
-      <dd><a href="https://kb.duo.com" target="_blank">Knowledge Base<i class="icon-new-window"></i></a></dd>
-      <dd>
-      </dd>
-    </dl>
-  </div>
+  <dl class="helpful-links">
+    <dt><h2>Support</h2></dt>
+    <dd>
+      Need help? <a href="mailto:support@duosecurity.com" title="launch email addressed to duo">Email Support</a><br> or call 1-855-386-2884.
+    </dd>
+    <dt><h3>Account ID</h3></dt>
+    <dd>[account id goes here]</dd>
+    <dt><h3>Deployment ID</h3></dt>
+    <dd><a href="https://status.duo.com" target="_blank">DUOALPHA<i class="icon-new-window"></i></a></dd>
+    <dt><h3>Helpful Links</h3></dt>
+    <dd><a href="https://duo.com/docs" target="_blank">Documentation<i class="icon-new-window"></i></a></dd>
+    <dd><a href="https://guide.duo.com" target="_blank">User Guide<i class="icon-new-window"></i></a></dd>
+    <dd><a href="https://kb.duo.com" target="_blank">Knowledge Base<i class="icon-new-window"></i></a></dd>
+    <dd>
+    </dd>
+  </dl></div>
 </nav>
 ```
 ```sass
 .navigation {
-  margin-bottom: 0;
+    margin-bottom: .688rem; // 11/16
 
-  > a {
-      @include transition(background, color);
+    > a {
+        @include transition(background, color);
+        @include no-box-shadow;
+        color: $default-link-color;
+        display: block;
+        font-size: .875rem;
+        line-height: 1.25em;
+        padding: .687rem 1.5rem;
+        position: relative;
+        text-decoration: none;
 
-      color: inherit;
-      display: block;
-      font-size: 14px;
-      line-height: 26px;
-      padding: 8px 12px;
-      position: relative;
-      text-decoration: none;
+        &:focus {
+            @include no-box-shadow;
+            transition-duration: 0s;
+            border-radius: 0;
+            z-index: 3000;
+        }
 
-      &:focus {
-          transition-duration: 0s;
-      }
+        &:hover {
+            @include no-box-shadow;
+            background-color: $nav-state-color;
+            .count {
+                color: $default-link-color;
+            }
+        }
 
-      &:hover, &:focus {
-          color: $duo-green;
-      }
+        &:active {
+            background-color: $white;
+        }
 
-      &.current {
-          background: $duo-green;
-          color: white;
+        &.current {
+            background: $nav-state-color;
 
-          .new {
-            border-color: white;
-            color: white;
-          }
+            .count {
+                color: $default-link-color;
+            }
+        }
 
-          &:hover {
-              background: $duo-green-dark;
-          }
-      }
+        .flexbox & {
+            display: flex;
+            align-items: baseline;
 
-      .flexbox & {
-          display: flex;
-          align-items: baseline;
+        }
+    }
 
-          .label {
-              flex: 1;
-          }
-      }
-  }
+    .count {
+        position: absolute;
+        top: .688rem; // 11/16
+        right: 1.5rem; // 24/16
+        color: $count-color;
+        transition: color $fast-ease;
 
-  [class^="icon"] {
-      display: inline-block;
-      font-size: 16px;
-      margin-right: 12px;
-      opacity: 0.8;
-      text-align: center;
-      width: 18px;
-
-      .flexbox & {
-          align-self: center;
-      }
-  }
-
-  .count, .new {
-      font-size: small;
-      opacity: 0.5;
-      position: absolute;
-      top: 10px;
-      right: 16px;
-
-      .flexbox & {
-          position: absolute;
-      }
-  }
-
-  .new {
-      border: 2px solid $duo-green;
-      border-radius: $border-radius;
-      color: $duo-green;
-      font-size: 11px;
-      height: 20px;
-      line-height: 11px;
-      padding: 2px;
-
-      & + .count {
-          display: none;
-      }
-
-      &.expired + .count {
-          display: block;
-      }
-  }
+        .flexbox & {
+            position: absolute;
+        }
+    }
 }
 
 .subnav {
-  background-color: $grey-lighter;
-  padding: 8px 0;
+    padding: 0 0 4px 0;
 
-  .count, .new {
-      top: 3px;
-  }
+    .count {
+        top: .5rem; // 8/16
+    }
 
-  > a {
-      @include transition(color);
+    > a {
+        @include transition(color);
+        @include no-box-shadow;
+        color: $default-link-color;
+        display: block;
+        font-size: .75rem; // 12/16
+        line-height: 1.25em;
+        padding: .5rem .375rem .5rem 2.25rem; // 8/16, 8/16
+        position: relative;
+        text-decoration: none;
 
-      color: $grey-darker;
-      display: block;
-      font-size: 12px;
-      line-height: 22px;
-      padding: 4px 16px;
-      position: relative;
-      text-decoration: none;
+        &:hover {
+            @include no-box-shadow;
+            background-color: $nav-state-color;
+            border-radius: 0;
+            .count {
+                color: $default-link-color;
+            }
+        }
 
-      &:hover, &:focus {
-          color: $duo-green-dark;
-      }
+        &:focus {
+            @include no-box-shadow;
+            border-radius: 0;
+            z-index: 3000;
+        }
 
-      &.current {
-          color: $duo-green;
-      }
+        &:active {
+            background-color: $white;
+        }
 
-      .flexbox & {
-          display: flex;
-          align-items: baseline;
+        &.current {
+            background-color: $nav-state-color;
+            .count {
+                color: $default-link-color;
+            }
+        }
 
-          .label {
-              flex: 1;
-          }
-      }
-  }
+        .flexbox & {
+            display: flex;
+            align-items: baseline;
+        }
+    }
 }
 
 .support {
-  $support-font-size: 12px;
+    font-size: $small-font-size;
+    padding: 1.5rem .75rem 2rem 1.5rem; // 24/16
+    border-top: solid 1px $grey-lighter;
 
-  font-size: $support-font-size;
-  padding: 0.75rem;
-  border-top: solid 1px $grey-lighter;
+    h2,
+    h3 {
+        color: $grey;
+        font-family: $base-font-family;
+        font-size: .7rem;
+        font-weight: $base-font-weight;
+        line-height: 1;
+        margin-bottom: 0.25rem;
+    }
 
-  h2, h3 {
-      color: $grey;
-      font-family: $base-font-family;
-      font-size: $support-font-size;
-      font-weight: $base-font-weight;
-      line-height: 1;
-      margin-bottom: 0.25rem;
-  }
+    h2 {
+        margin-top: 0;
+    }
 
     .helpful-links {
         list-style: none;
         margin: 0;
         padding: 0;
 
-        dd, dt {
-          margin-left: 0;
-          display: block;
-          font-weight: normal;
-
-        }
+        dd,
         dt {
-          margin-top: 0.875rem;
+            margin-left: 0;
+            display: block;
+            font-weight: normal;
+        }
+
+        dt {
+            margin-top: 0.875rem;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        dd {
+            margin-bottom: .25rem; // 4/16 set to 4px to add some breathing room
         }
     }
 }

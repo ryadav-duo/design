@@ -6,8 +6,7 @@ snippet_title: Selected Page
 notes: 'A nav-item with full green background indicates the current page that the user is on.'
 example: '<nav class="navigation">
   <a class="current">
-    <i class="icon-users"></i>
-    <span class="label">Users</span>
+    Users
   </a>
 </nav>'
 ---
@@ -18,99 +17,69 @@ example: '<nav class="navigation">
 ```html
 <nav class="navigation">
   <a class="current">
-    <i class="icon-users"></i>
-    <span class="label">Users</span>
+    Users
   </a>
 </nav>
 ```
 ```sass
 .navigation {
-  margin-bottom: 0;
+    margin-bottom: .688rem; // 11/16
 
-  > a {
-      @include transition(background, color);
+    > a {
+        @include transition(background, color);
+        @include no-box-shadow;
+        color: $default-link-color;
+        display: block;
+        font-size: .875rem;
+        line-height: 1.25em;
+        padding: .687rem 1.5rem;
+        position: relative;
+        text-decoration: none;
 
-      color: inherit;
-      display: block;
-      font-size: 14px;
-      line-height: 26px;
-      padding: 8px 12px;
-      position: relative;
-      text-decoration: none;
+        &:focus {
+            @include no-box-shadow;
+            transition-duration: 0s;
+            border-radius: 0;
+            z-index: 3000;
+        }
 
-      &:focus {
-          transition-duration: 0s;
-      }
+        &:hover {
+            @include no-box-shadow;
+            background-color: $nav-state-color;
+            .count {
+                color: $default-link-color;
+            }
+        }
 
-      &:hover, &:focus {
-          color: $duo-green;
-      }
+        &:active {
+            background-color: $white;
+        }
 
-      &.current {
-          background: $duo-green;
-          color: white;
+        &.current {
+            background: $nav-state-color;
 
-          .new {
-            border-color: white;
-            color: white;
-          }
+            .count {
+                color: $default-link-color;
+            }
+        }
 
-          &:hover {
-              background: $duo-green-dark;
-          }
-      }
+        .flexbox & {
+            display: flex;
+            align-items: baseline;
 
-      .flexbox & {
-          display: flex;
-          align-items: baseline;
+        }
+    }
 
-          .label {
-              flex: 1;
-          }
-      }
-  }
+    .count {
+        position: absolute;
+        top: .688rem; // 11/16
+        right: 1.5rem; // 24/16
+        color: $count-color;
+        transition: color $fast-ease;
 
-  [class^="icon"] {
-      display: inline-block;
-      font-size: 16px;
-      margin-right: 12px;
-      opacity: 0.8;
-      text-align: center;
-      width: 18px;
-
-      .flexbox & {
-          align-self: center;
-      }
-  }
-
-  .count, .new {
-      font-size: small;
-      opacity: 0.5;
-      position: absolute;
-      top: 10px;
-      right: 16px;
-
-      .flexbox & {
-          position: absolute;
-      }
-  }
-
-  .new {
-      border: 2px solid $duo-green;
-      border-radius: $border-radius;
-      color: $duo-green;
-      font-size: 11px;
-      height: 20px;
-      line-height: 11px;
-      padding: 2px;
-
-      & + .count {
-          display: none;
-      }
-
-      &.expired + .count {
-          display: block;
-      }
-  }
+        .flexbox & {
+            position: absolute;
+        }
+    }
 }
 ```
