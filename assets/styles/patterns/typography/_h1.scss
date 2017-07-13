@@ -1,3 +1,5 @@
+@import "../../reference/duo/variables";
+
 // Title:
 // Main Heading
 //
@@ -13,6 +15,7 @@
 
 h1 {
   @extend %header;
-  font-size: em(32px);
-  line-height: 1.375em;
+  font-size:   $largest-font-size;
+  margin-bottom: $h1-header-margin-bottom-spacing;
+  letter-spacing: 0rem;
 }

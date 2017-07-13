@@ -1,3 +1,5 @@
+@import "../../reference/duo/variables";
+
 // Title:
 // Subtitle
 //
@@ -13,6 +15,7 @@
 
 h2 {
   @extend %header;
-  font-size: em(24px);
-  line-height: 1.34em;
+  font-size: $xlarge-font-size;
+  margin-bottom: $header-margin-bottom-spacing;
+  letter-spacing: -.0125em;
 }

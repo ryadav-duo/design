@@ -19,7 +19,7 @@ input {
     font-family: inherit;
     background: $white;
     color: $default-text-color;
-    padding: 0.5rem;
+    padding: .375rem .75rem .25rem; // 10/16, 12 /* 6/16, 4/16 */
     outline: none;
 
     &:focus {
@@ -34,6 +34,12 @@ input {
         &:active,
         &:hover {
             @include no-box-shadow;
+        }
+    }
+    &[type="checkbox"] {
+        &:focus {
+            border-radius: 15%;
+            @include box-shadow(0 -1px 0 2px white, 0px -1px 0 4px currentColor);
         }
     }
     &:not([disabled]):hover {

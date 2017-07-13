@@ -7,12 +7,16 @@
 
 .box-header {
   @include clearfix;
-  border-bottom: 1px solid $grey-light;
-  padding-bottom: 24px;
+  border-bottom: 1px solid $default-border-color;
   position: relative;
 
   h3 {
-    margin-bottom: 4px;
+    margin-bottom: 0;
+    margin-top: .375rem; /* 6/16 */
+
+    & + .box-header-info {
+        margin-bottom: 1.414em;
+    }
   }
 }
 
@@ -27,7 +31,7 @@
 
 .box-header-buttons {
   float: right;
-  margin-top: 8px;
+  margin-top: .5rem; /* 8/16 */
 
   & > * {
     float: right;

@@ -1,3 +1,5 @@
+@import "../../reference/duo/variables";
+
 // Title:
 // Subsection Header
 //
@@ -13,6 +15,7 @@
 
 h5 {
   @extend %header;
-  font-size: em(16px);
-  line-height: 1.38em;
+  font-size: $base-font-size;
+  margin-bottom: $header-margin-bottom-spacing;
+  letter-spacing: -.0125em;
 }

@@ -15,18 +15,21 @@ html, body {
 body {
     background-color: $grey-lighter;
     color: $default-text-color;
-
-    @include low-res {
-        color: black;
-    }
 }
 
 a[target="_blank"] {
-  i.icon-new-window {
+    margin-right: 1.4em;
+
+    .feed-section & {
+        margin-right: 0;
+    }
+
+    i.icon-new-window {
       display: inline-block;
       text-decoration: none;
       padding-left: 4px;
       font-size: 80%;
+      margin-right: -1.6em; // -20/16
     }
   }
 

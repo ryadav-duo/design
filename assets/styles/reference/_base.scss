@@ -16,14 +16,6 @@ body {
     display: none;
 }
 
-.minor {
-    color: $grey;
-
-    @include low-res {
-        color: $grey-dark-low-res;
-    }
-}
-
 .important {
     font-weight: bold;
 }
@@ -125,6 +117,9 @@ select#billing_info_credit_card_month {
 
     i {
         margin: 0 8px;
+        line-height: 1.5em;
+        display: inline-block;
+        vertical-align: text-top;
     }
 
     @include low-res {
@@ -134,172 +129,9 @@ select#billing_info_credit_card_month {
     }
 }
 
-.navigation {
-    margin-bottom: 0;
-
-    a,
-    a:hover {
-        box-shadow: none;
-    }
-
-    > a {
-        @include transition(background, color);
-
-        color: inherit;
-        display: block;
-        font-size: 14px;
-        line-height: 26px;
-        padding: 8px 12px;
-        position: relative;
-        text-decoration: none;
-
-        &:hover, &:focus {
-            background-color: $grey-light;
-        }
-
-        &.current {
-            background: $duo-green;
-            color: white;
-
-            .new {
-              border-color: white;
-              color: white;
-            }
-
-            &:hover {
-                background: $duo-green-dark;
-            }
-        }
-
-        .flexbox & {
-            display: flex;
-            align-items: baseline;
-
-            .label {
-                flex: 1;
-            }
-        }
-    }
-
-    [class^="icon"] {
-        display: inline-block;
-        font-size: 16px;
-        margin-right: 12px;
-        opacity: 0.8;
-        text-align: center;
-        width: 18px;
-
-        .flexbox & {
-            align-self: center;
-        }
-    }
-
-    .count, .new {
-        font-size: small;
-        opacity: 0.5;
-        position: absolute;
-        top: 10px;
-        right: 16px;
-
-        .flexbox & {
-            position: absolute;
-        }
-    }
-
-    .new {
-        border: 2px solid $duo-green;
-        border-radius: $border-radius;
-        color: $duo-green;
-        font-size: 11px;
-        height: 20px;
-        line-height: 11px;
-        padding: 2px;
-
-        & + .count {
-            display: none;
-        }
-
-        &.expired + .count {
-            display: block;
-        }
-    }
-}
-
-.subnav {
-    padding: 8px 0;
-
-    .count, .new {
-        top: 3px;
-    }
-
-    > a {
-        @include transition(color);
-
-        color: $grey-darker;
-        display: block;
-        font-size: 12px;
-        line-height: 22px;
-        padding: 4px 16px;
-        position: relative;
-        text-decoration: none;
-
-        &:hover, &:focus {
-            background-color: $grey-light;
-        }
-
-        &.current {
-            color: $duo-green;
-        }
-
-        .flexbox & {
-            display: flex;
-            align-items: baseline;
-
-            .label {
-                flex: 1;
-            }
-        }
-    }
-}
-
-.support {
-    $support-font-size: 12px;
-
-    font-size: $support-font-size;
-    padding: 0.75rem;
-    border-top: solid 1px $grey-lighter;
-
-    h2, h3 {
-        color: $grey;
-        font-family: $base-font-family;
-        font-size: $support-font-size;
-        font-weight: $base-font-weight;
-        line-height: 1;
-        margin-bottom: 0.25rem;
-    }
-
-    .helpful-links {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-        dd, dt {
-          margin-left: 0;
-          display: block;
-          font-weight: normal;
-
-        }
-        dt {
-          margin-top: 0.875rem;
-        }
-    }
-}
-
 // .base-container
 //   > .base-sidebar
 //   | > .base-header
-//   | > .navigation
-//   | | > .subnav
 //   | > .help-links
 //   > .base-main
 //   | > .base-actions
@@ -345,6 +177,7 @@ $base-sidebar-width: 200px;
         margin: 0 auto;
         height: 40px;
         max-width: 100px;
+        width: 100%;
     }
 
     img.logo {
@@ -450,19 +283,14 @@ $base-sidebar-width: 200px;
   padding-top: 1px;
 }
 
-h3.hassubtitle {
-  margin-bottom: 0;
+.base-title {
+    h1 {
+        margin-top: 0;
+    }
 }
 
 .subtitle {
   color: #555;
-  margin-bottom: 10px;
-}
-
-h4.hard_tokens {
-  font-size: 13px;
-  line-height: 16px;
-  margin-bottom: 1px;
 }
 
 #div_phones, #div_endpoints, #div_desktoptokens, #div_hardtokens, #div_bypass {
@@ -672,7 +500,7 @@ select.medium {
 }
 
 .image-placeholder p.drop-text {
-  font-family: Helvetica;
+  font-family: $base-font-family;
   font-size: 15px;
 }
 
@@ -707,14 +535,22 @@ select.medium {
 
 .help-block {
     display: block;
-    margin-top: 7px;
-    margin-bottom: 10px;
+    margin-top: 4px;
+    margin-bottom: 1.3em;
     color: #777;
     font-size: 12px;
     line-height: 20px;
 
     @include low-res {
         color: $grey-dark-low-res;
+    }
+
+    &.l--margin-top-reset-default {
+        @extend .l--margin-top-reset-default;
+    }
+
+    &.l--margin-bottom-default {
+        @extend .l--margin-bottom-default;
     }
 }
 
@@ -735,7 +571,7 @@ select.medium {
 }
 
 .checkbox-indent {
-    margin-left: 24px;
+    margin-left: 1.25rem; /* 20/16 */
 
     &.subline {
         display: block;

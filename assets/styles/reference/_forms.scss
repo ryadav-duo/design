@@ -17,14 +17,10 @@ legend {
 }
 
 label {
-  color: $grey;
+  color: $default-text-color;
 
   [type=checkbox] + &, [type=radio] + & {
     color: inherit;
-  }
-
-  @include low-res {
-    color: $grey-dark-low-res;
   }
 }
 
@@ -64,11 +60,11 @@ ul.error-list {
   @include clearfix;
 
   clear: both;
-  margin-bottom: 1rem;
+  margin-bottom: $default-margin-spacing;
 
   &:not(.vertical) > label:first-of-type {
     min-width: 12rem;
-    padding-top: 6px;
+    padding-top: 2px;
     float: left;
     text-align: right;
     line-height: 18px;
@@ -110,7 +106,7 @@ ul.error-list {
 
 .subline {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .indent {
@@ -208,7 +204,7 @@ input, textarea {
 
 input[type=checkbox] {
   width: auto;
-  margin-right: 0.5rem;
+  margin-right: 0.25rem;
 
   &:focus {
       @include box-shadow;
@@ -217,7 +213,7 @@ input[type=checkbox] {
 
 input[type=radio] {
   width: auto;
-  margin-right: 0.5rem;
+  margin-right: 0.25rem;
  }
 
 input[type=number]::-webkit-outer-spin-button,

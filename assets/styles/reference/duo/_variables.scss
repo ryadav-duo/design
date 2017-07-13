@@ -37,11 +37,46 @@ $warning-orange-light: lighten($warning-orange, 40%);
 // Base colors, fonts and sizes
 $base-color: $grey-darker;
 $base-link-color: map-get($gray, dark);
-$base-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-family: 'NeueHaasGrotesk', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-letter-spacing: .02em;
 $base-font-size: 14px;
-$base-font-weight: normal;
 $base-line-height: 21px;
+
+//font weights
+$base-font-weight: 300;
+$medium-font-weight: 600;
+$bold-font-weight: 900;
+
 $base-border-color: #ccc;
+//font sizes & line heights
+$base-font-size: .875rem;
+$base-line-height: 1.45;
+$small-line-height: 1.25;
+$smaller-font-size: .65em;
+$small-font-size: .8em;
+$medium-font-size: 1.125rem;
+$large-font-size: 1.5rem;
+$xlarge-font-size: 1.953rem;
+$largest-font-size: 2.441rem;
+
+// Margins
+$default-margin-spacing: 1.3em;
+$large-margin-spacing: 1.56rem;
+$header-margin-spacing: 1.5em;
+$header-margin-bottom-spacing: .25em;
+$large-header-margin-bottom-spacing: .125em;
+$h1-header-margin-bottom-spacing: .5em;
+
+//font sizes & line heights
+$base-font-size: .875rem;
+$base-line-height: 1.45;
+$small-line-height: 1.25;
+$smaller-font-size: .65em;
+$small-font-size: .8em;
+$medium-font-size: 1.125rem;
+$large-font-size: 1.5rem;
+$xlarge-font-size: 1.953rem;
+$largest-font-size: 2.441rem;
 
 // High contrast colors
 $grey-dark-low-res: #444;
@@ -50,8 +85,8 @@ $grey-lighter-low-res: #f2f2f2;
 $base-border-color-low-res: #dadada;
 
 // Heading fonts and colors
-$heading-color: $grey-dark;
-$heading-font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$heading-color: map-get($gray, dark);
+$heading-font-family: 'NeueHaasGrotesk', "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 $icon-font-family: "Duo Admin Icons";
 
@@ -157,6 +192,14 @@ $search-icon-color: map-get($gray, mid);
 // Modal/Messages
 $default-message-background-color: map-get($blue, cta);
 
+// Header names
+$default-header-color: map-get($gray, dark);
+$mid-header-color: map-get($gray, mid);
+$light-header-color: map-get($gray, light);
+
+// Main Nav
+$nav-state-color: #D4ECFF;
+$count-color: #DADADA;
 
 // Transitions
 $delayed-slow-ease: ease-in-out 200ms 80ms;

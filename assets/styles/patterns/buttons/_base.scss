@@ -23,9 +23,10 @@ input[type="src"]:not(.link) input[type="reset"] {
     line-height: 1rem;
     min-height: 2.5rem;
     border: 2px solid $button-border-color;
-    padding: 9px 20px 10px;
+    padding: .65rem 1.25rem .5rem; // 10/16, 20/16
     color: $button-text-color;
     background-color: transparent;
+    letter-spacing: .04em;
 
     &:hover {
         background-color: transparent;

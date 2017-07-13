@@ -1,37 +1,50 @@
 .subnav {
-    background-color: $grey-lighter;
-    padding: 8px 0;
+    padding: 0 0 4px 0;
 
-    .count, .new {
-        top: 3px;
+    .count {
+        top: .5rem; // 8/16
     }
 
     > a {
         @include transition(color);
-
-        color: $grey-darker;
+        @include no-box-shadow;
+        color: $default-link-color;
         display: block;
-        font-size: 12px;
-        line-height: 22px;
-        padding: 4px 16px;
+        font-size: .75rem; // 12/16
+        line-height: 1.25em;
+        padding: .5rem .375rem .5rem 2.25rem; // 8/16, 8/16
         position: relative;
         text-decoration: none;
 
-        &:hover, &:focus {
-            background-color: $grey-light;
+        &:hover {
+            @include no-box-shadow;
+            background-color: $nav-state-color;
+            border-radius: 0;
+            .count {
+                color: $default-link-color;
+            }
+        }
+
+        &:focus {
+            @include no-box-shadow;
+            border-radius: 0;
+            z-index: 3000;
+        }
+
+        &:active {
+            background-color: $white;
         }
 
         &.current {
-            color: $duo-green;
+            background-color: $nav-state-color;
+            .count {
+                color: $default-link-color;
+            }
         }
 
         .flexbox & {
             display: flex;
             align-items: baseline;
-
-            .label {
-                flex: 1;
-            }
         }
     }
 }
