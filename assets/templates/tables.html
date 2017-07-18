@@ -1,9 +1,0 @@
-{% extends 'layouts/base.html' %}
-{% block title %}
-  <h1 class="l-marg--pattern-header">Tables</h1>
-{% endblock %}
-{% block body %}
-  {% for section in page.sections %}
-    {{ render_section(page.id, section.id) }}
-  {% endfor %}
-{% endblock %}
